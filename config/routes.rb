@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :vehicules
-  ressources :booking, only: %i[index create show destroy]
+  resources :booking, only: %i[index create show destroy]
 end
