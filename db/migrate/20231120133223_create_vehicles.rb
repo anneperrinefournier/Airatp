@@ -3,7 +3,7 @@ class CreateVehicles < ActiveRecord::Migration[7.1]
     create_table :vehicles do |t|
       t.references :user, null: false, foreign_key: true
       t.string :name
-      t.string :type
+      t.string :vehicle_type
       t.string :address
       t.integer :passengers_capacity
       t.float :price_per_day
