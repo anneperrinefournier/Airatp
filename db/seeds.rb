@@ -8,7 +8,14 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+p "is detroying - #{Vehicle.all.count} vehicles - #{User.all.count} users"
+Vehicle.destroy_all
+User.destroy_all
+p "destroyed- #{Vehicle.all.count} and #{User.all.count}"
+p "number of vehicles"
 p Vehicle.count
+p "number of users"
+p User.count
 
 user = User.create!(email: 'john@example.com', password: 'password')
 
@@ -328,3 +335,5 @@ Vehicle.create!(
   ecological_label: 'G',
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
+
+p "created vehicles number - #{Vehicle.all.count} and user number #{User.all.count} "
