@@ -10,7 +10,6 @@
 
 p Vehicle.count
 
-
 user = User.create!(email: 'john@example.com', password: 'password')
 
 Vehicle.create!(
@@ -20,7 +19,7 @@ Vehicle.create!(
   address: '123 Main Street',
   passengers_capacity: 4,
   price_per_day: 50.0,
-  cruising_cruising_speed: 120.0,
+  cruising_speed: 120.0,
   fuel_type: 'Gasoline',
   ecological_label: 'Eco-Friendly',
   description: 'A comfortable and fuel-efficient car for your travels.'
@@ -55,7 +54,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: "Fairy's wings",
-	type: 'aerial',
+	vehicle_type: 'aerial',
 	address: 'Istanbul',
 	passengers_capacity: 1,
 	price_per_day: 3700,
@@ -192,7 +191,7 @@ Vehicle.create!(
   address: 'California, United States',
   passengers_capacity: 1,
   price_per_day: 15,
-  cruising_cruising_speed: 10,
+  cruising_speed: 10,
   fuel_type: 'anti-gravity technology',
   ecological_label: 'A',
   description: "The Hoverboard is a sleek and futuristic personal transportation device equipped with anti-gravity technology. With a minimalist design and a smooth hover, it offers an effortless and stylish mode of travel through urban landscapes. Riders can effortlessly glide above the ground, zipping through city streets and futuristic plazas. The Hoverboard is the epitome of modern mobility, combining efficiency with a touch of sci-fi flair."
@@ -205,7 +204,7 @@ Vehicle.create!(
   address: '68 Ave Parmentier, 75011 Paris',
   passengers_capacity: 35,
   price_per_day: 7900,
-  cruising_cruising_speed: 500,
+  cruising_speed: 500,
   fuel_type: 'Creative logic',
   ecological_label: 'A',
   description: "The Wagon is not your ordinary mode of transportation; it's a rolling coding school on wheels, designed for aspiring programmers and tech enthusiasts. With its sleek, tech-inspired exterior, the Wagon travels from city to city, bringing coding education to the masses. Inside, state-of-the-art workstations equipped with the latest technology await eager learners. Fueled by creative logic, the Wagon provides a dynamic and collaborative coding environment. Whether you're a novice or an experienced developer, the Wagon is the perfect mobile classroom for unlocking the secrets of programming and innovation. Get on board and embark on a code-learning journey like never before!"
@@ -218,10 +217,10 @@ Vehicle.create!(
   address: 'Paris, France',
   passengers_capacity: 2,
   price_per_day: 10,
-  cruising_cruising_speed:  7,
+  cruising_speed:  7,
   fuel_type: 'dream essence',
   ecological_label: 'A',
-  description: ​​"If you have difficulties to leave your bed, go outside with it and finish your night! The Stilt Bed is no ordinary sleeping arrangement, it's a magical elevated dream platform that transcends the boundaries of the waking world. Suspended on slender stilts, the bed hovers above the ground, allowing the dreamer to enter the realm of dreams with ease. Crafted from the softest clouds and adorned with starlight, the Stilt Bed offers a peaceful and otherworldly space for a restful night's sleep. Fuelled by the essence of imagination, this enchanted bed takes its occupant on fantastical journeys through the landscapes of dreams, where anything is possible and every night is an adventure in Slumber Haven."
+  description: "If you have difficulties to leave your bed, go outside with it and finish your night! The Stilt Bed is no ordinary sleeping arrangement; it's a magical elevated dream platform that transcends the boundaries of the waking world. Suspended on slender stilts, the bed hovers above the ground, allowing the dreamer to enter the realm of dreams with ease. Crafted from the softest clouds and adorned with starlight, the Stilt Bed offers a peaceful and otherworldly space for a restful night's sleep. Fuelled by the essence of imagination, this enchanted bed takes its occupant on fantastical journeys through the landscapes of dreams, where anything is possible and every night is an adventure in Slumber Haven."
 )
 
 Vehicle.create!(
@@ -231,7 +230,7 @@ Vehicle.create!(
   address: 'London, UK',
   passengers_capacity: 50,
   price_per_day: 117,
-  cruising_cruising_speed: 100000000,
+  cruising_speed: 100000000,
   fuel_type: 'Floo Powder',
   ecological_label: 'B',
   description: "The Knight Bus is a magical mode of transportation for witches and wizards in need. With its vibrant purple color and eccentric design, it appears in a pinch, transporting passengers to their desired destination. The bus is known for its unique ability to navigate through the magical and non-magical realms, providing a quick and reliable way for wizards to travel. The interior is surprisingly spacious, featuring beds, chandeliers, and a shrunken head that provides entertainment during the journey. The Knight Bus is a quirky and essential part of the wizarding world's transportation network."
@@ -244,8 +243,8 @@ Vehicle.create!(
   address: 'Gold Coast, Australia',
   passengers_capacity: 1,
   price_per_day: 50,
-  cruising_cruising_speed: 20,
-  fuel_type: 'Mechanical'
+  cruising_speed: 20,
+  fuel_type: 'Mechanical',
   ecological_label: 'A',
   description: "The Mermaid Tail is an elegant and magical means of personal aquatic transportation. Crafted from enchanted seashells and powered by the magic of the ocean, it allows you to gracefully glide through underwater realms. The Mermaid Tail offers a smooth and enchanting journey beneath the waves."
 )
@@ -254,10 +253,10 @@ Vehicle.create!(
   user: user,
 	name: 'Jolly Roger',
   vehicle_type: 'aerial',
-  address: 'Brighton, England'
+  address: 'Brighton, England',
   passengers_capacity: 50,
   price_per_day: 700,
-  cruising_cruising_speed: 5,
+  cruising_speed: 5,
   fuel_type: 'fairy dust',
   ecological_label: 'F',
   description: "The Jolly Roger is the infamous pirate ship commanded by the cunning Captain Hook, terrorizing the waters of Neverland. With its menacing black sails adorned with a skull and crossbones, the ship strikes fear into the hearts of sailors. Manned by a crew of mischievous pirates, the Jolly Roger is a formidable vessel, sailing the magical seas with the intent of capturing Peter Pan and his Lost Boys. Powered by the mystical essence of mermaid's tears, the Jolly Roger is a symbol of adventure, danger, and the eternal pursuit of treasure in the whimsical world of Neverland."
@@ -271,7 +270,7 @@ Vehicle.create!(
   address: 'Edinburgh, Scotland',
   passengers_capacity: 2,
   price_per_day: 100,
-  cruising_cruising_speed: 17,
+  cruising_speed: 17,
   fuel_type: 'Phoenix Feather Core',
   ecological_label: 'B',
   description: "The Firebolt is a top-of-the-line racing broomstick, renowned for its incredible cruising_speed and precision. With a sleek design and a phoenix feather core, it's the choice of professional Quidditch players and cruising_speed enthusiasts. The Firebolt offers a thrilling and exhilarating ride through the magical skies."
@@ -284,19 +283,20 @@ Vehicle.create!(
   address: 'Delamere Forest, England',
   passengers_capacity: 2,
   price_per_day: 250,
-  cruising_cruising_speed: 30,
+  cruising_speed: 30,
   fuel_type: 'animal',
   ecological_label: 'B',
-  description: "The Hippogriff is a majestic magical creature capable of flight. With its powerful wings and loyal nature, it serves as a noble and elegant steed for wizards seeking a unique and enchanting mode of transportation. Riding a Hippogriff offers a breathtaking experience as it soars through the skies."})
+  description: "The Hippogriff is a majestic magical creature capable of flight. With its powerful wings and loyal nature, it serves as a noble and elegant steed for wizards seeking a unique and enchanting mode of transportation. Riding a Hippogriff offers a breathtaking experience as it soars through the skies."
+)
 
 Vehicle.create!(
   user: user,
-	name: 'Dragon',
+  name: 'Dragon',
   vehicle_type: 'aerial',
   address: 'Cairo, Egypt',
   passengers_capacity: 3,
   price_per_day: 425,
-  cruising_cruising_speed: 25,
+  cruising_speed: 25,
   fuel_type: 'mechanical',
   ecological_label: 'G',
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
@@ -309,7 +309,7 @@ Vehicle.create!(
   address: 'Sahara',
   passengers_capacity: 3,
   price_per_day: 25,
-  cruising_cruising_speed: 12,
+  cruising_speed: 12,
   fuel_type: 'magical',
   ecological_label: 'C',
   description: "The flying carpet is a magical flying carpet, woven with enchanted threads that allow it to soar through the skies. Originating from the mystical city of Agrabah, it offers a comfortable and smooth ride for adventurers. The flying carpet is a classic and timeless choice for transportation."
@@ -323,7 +323,7 @@ Vehicle.create!(
   address: '39-41 Barking Road, London E6 1PY England',
   passengers_capacity: 100000,
   price_per_day: 14000000,
-  cruising_cruising_speed: '5',
+  cruising_speed: '5',
   fuel_type: 'dying stars',
   ecological_label: 'G',
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
