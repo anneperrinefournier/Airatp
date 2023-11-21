@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
-  belongs_to :user
-  belongs_to :vehicle
+  belongs_to :user, dependent: :destroy
+  belongs_to :vehicle, dependent: :destroy
 
   enum status: {
     pending: 0,

@@ -8,12 +8,17 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require "open-uri"
+
 p "is detroying - #{Vehicle.all.count} vehicles - #{User.all.count} users - #{Booking.all.count}"
+Booking.destroy_all
+Vehicle.all.each do |vehicle|
+  vehicle.photo.purge
+end
 Vehicle.destroy_all
 User.destroy_all
-Booking.destroy_all
 
-p "destroyed- vehicles: #{Vehicle.all.count}  and users:#{User.all.count} "
+p "destroyed- vehicles: #{Vehicle.all.count} - users:#{User.all.count}"
 p "destroyed- bookings:#{Booking.all.count}"
 p "number of vehicles"
 p Vehicle.count
@@ -23,11 +28,10 @@ p "number of bookings"
 p Booking.count
 
 user = User.create!(email: 'john@example.com', password: 'password')
-p user
 renter = User.create!(email: 'renter@example.com', password: 'password2')
-p renter
 
-vehicle1 = Vehicle.create!(
+vehicles = []
+vehicles.push(Vehicle.new(
   user: user,
   name: 'Tesla Model S',
   vehicle_type: 'terrestrial',
@@ -38,11 +42,12 @@ vehicle1 = Vehicle.create!(
   fuel_type: 'Gasoline',
   ecological_label: 'Eco-Friendly',
   description: 'A comfortable and fuel-efficient car for your travels.'
-)
+))
+file = URI.open("https://static.actu.fr/uploads/2023/04/photo-tesla-plaid-face-960x640.jpg")
+vehicles.last.photo.attach(io: file, filename: "tesla-model-s.png", content_type: "image/png")
+vehicles.last.save
 
-p vehicle1
-
-vehicle2 = Vehicle.create!(
+vehicles.push(Vehicle.new(
   user: user,
 	name: 'Nautilus',
   vehicle_type: 'maritime',
@@ -53,9 +58,10 @@ vehicle2 = Vehicle.create!(
   fuel_type: 'essence',
   ecological_label: 'F',
   description: "The Nautilus is the famous submarine able to navigate far under the seas. You will enjoy your travel as it is equipped with the best furniture possible. Unfortunately you won't be able to command it yourself,  its captain, Nemo, comes with the rental."
-)
-
-p vehicle2
+))
+file = URI.open("https://www.disneyphile.fr/wp-content/uploads/2021/08/nautilus-boat.jpg")
+vehicles.last.photo.attach(io: file, filename: "nautilus.png", content_type: "image/png")
+vehicles.last.save
 
 Vehicle.create!(
   user: user,
@@ -148,7 +154,6 @@ Vehicle.create!(
   description: "This bad boy is quite old now, even technically it will only be invented in the future. Because it is quite old, it is now available at an unbeatable price, so do not hesitate for too long!"
 )
 
-
 Vehicle.create!(
   user: user,
 	name: 'Seven League Boots',
@@ -200,8 +205,6 @@ Vehicle.create!(
   ecological_label: 'H',
   description: "What an engine, what a machine! If you are always late at work or think your current means of transportation is too slow, you might like this incredible podracer: you will definitely be the fastest on earth!"
 )
-
-
 
 Vehicle.create!(
   user: user,
@@ -350,7 +353,7 @@ Vehicle.create!(
 
 booking_1 = Booking.create!(
   user: renter,
-  vehicle: vehicle1,
+  vehicle: vehicles[0],
   start_date: Date.new(2023, 11, 15),
   end_date: Date.new(2023, 11, 19),
   total_price: 400,
@@ -359,14 +362,11 @@ booking_1 = Booking.create!(
 
 booking_2 = Booking.create!(
   user: renter,
-  vehicle: vehicle2,
+  vehicle: vehicles[1],
   start_date: Date.new(2023, 11, 22),
   end_date: Date.new(2023, 11, 26),
   total_price: 300,
   status: 1
 )
-
-p booking_1
-p booking_2
 
 p "created vehicles number - #{Vehicle.all.count} / user number #{User.all.count} / booking number #{Booking.all.count} "
