@@ -8,20 +8,28 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-p "is detroying - #{Vehicle.all.count} vehicles - #{User.all.count} users"
+p "is detroying - #{Vehicle.all.count} vehicles - #{User.all.count} users - #{Booking.all.count}"
 Vehicle.destroy_all
 User.destroy_all
-p "destroyed- #{Vehicle.all.count} and #{User.all.count}"
+Booking.destroy_all
+
+p "destroyed- vehicles: #{Vehicle.all.count}  and users:#{User.all.count} "
+p "destroyed- bookings:#{Booking.all.count}"
 p "number of vehicles"
 p Vehicle.count
 p "number of users"
 p User.count
+p "number of bookings"
+p Booking.count
 
 user = User.create!(email: 'john@example.com', password: 'password')
+p user
+renter = User.create!(email: 'renter@example.com', password: 'password2')
+p renter
 
-Vehicle.create!(
+vehicle1 = Vehicle.create!(
   user: user,
-  name: 'Car Model X',
+  name: 'Tesla Model S',
   vehicle_type: 'terrestrial',
   address: '123 Main Street',
   passengers_capacity: 4,
@@ -32,7 +40,9 @@ Vehicle.create!(
   description: 'A comfortable and fuel-efficient car for your travels.'
 )
 
-Vehicle.create!(
+p vehicle1
+
+vehicle2 = Vehicle.create!(
   user: user,
 	name: 'Nautilus',
   vehicle_type: 'maritime',
@@ -44,6 +54,8 @@ Vehicle.create!(
   ecological_label: 'F',
   description: "The Nautilus is the famous submarine able to navigate far under the seas. You will enjoy your travel as it is equipped with the best furniture possible. Unfortunately you won't be able to command it yourself,  its captain, Nemo, comes with the rental."
 )
+
+p vehicle2
 
 Vehicle.create!(
   user: user,
@@ -336,4 +348,25 @@ Vehicle.create!(
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
 
-p "created vehicles number - #{Vehicle.all.count} and user number #{User.all.count} "
+booking_1 = Booking.create!(
+  user: renter,
+  vehicle: vehicle1,
+  start_date: Date.new(2023, 11, 15),
+  end_date: Date.new(2023, 11, 19),
+  total_price: 400,
+  status: 1
+)
+
+booking_2 = Booking.create!(
+  user: renter,
+  vehicle: vehicle2,
+  start_date: Date.new(2023, 11, 22),
+  end_date: Date.new(2023, 11, 26),
+  total_price: 300,
+  status: 1
+)
+
+p booking_1
+p booking_2
+
+p "created vehicles number - #{Vehicle.all.count} / user number #{User.all.count} / booking number #{Booking.all.count} "
