@@ -4,7 +4,11 @@
     <% @vehicles.each do |vehicle| %>
       <div class="p-3">
         <div class="card">
-          <img src="https://radiodisneyclub.fr/wp-content/uploads/2016/03/tapis-volant.jpg" alt="vehicle-picture">
+          <% if vehicle.photo.attached? %>
+            <%= cl_image_tag(vehicle.photo.key, height: 300, width: 400, crop: :fill) %>
+          <% else %>
+            <%= cl_image_tag('/r1rzia1lymr7cszrdumm', height: 300, width: 400, crop: :fill) %>
+          <% end %>
           <div class="d-flex vehicle-description flex-column">
             <h2><%= link_to vehicle.name, vehicle_path(vehicle) %></h2>
             <p>Capacity: <%= vehicle.passengers_capacity %> <%= vehicle.passengers_capacity > 1 ? 'peoples' : 'person' %></p>
