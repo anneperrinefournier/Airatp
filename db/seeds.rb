@@ -44,7 +44,7 @@ vehicles.push(Vehicle.new(
   description: 'A comfortable and fuel-efficient car for your travels.'
 ))
 file = URI.open("https://static.actu.fr/uploads/2023/04/photo-tesla-plaid-face-960x640.jpg")
-vehicles.last.photo.attach(io: file, filename: "tesla-model-s.png", content_type: "image/png")
+vehicles.last.photo.attach(io: file, filename: "tesla-model-s.png", content_type: "image/jpg")
 vehicles.last.save
 
 vehicles.push(Vehicle.new(
@@ -60,7 +60,7 @@ vehicles.push(Vehicle.new(
   description: "The Nautilus is the famous submarine able to navigate far under the seas. You will enjoy your travel as it is equipped with the best furniture possible. Unfortunately you won't be able to command it yourself,  its captain, Nemo, comes with the rental."
 ))
 file = URI.open("https://www.disneyphile.fr/wp-content/uploads/2021/08/nautilus-boat.jpg")
-vehicles.last.photo.attach(io: file, filename: "nautilus.png", content_type: "image/png")
+vehicles.last.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
 vehicles.last.save
 
 Vehicle.create!(
@@ -351,7 +351,7 @@ Vehicle.create!(
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
 
-booking_1 = Booking.create!(
+Booking.create!(
   user: renter,
   vehicle: vehicles[0],
   start_date: Date.new(2023, 11, 15),
@@ -360,7 +360,7 @@ booking_1 = Booking.create!(
   status: 1
 )
 
-booking_2 = Booking.create!(
+Booking.create!(
   user: renter,
   vehicle: vehicles[1],
   start_date: Date.new(2023, 11, 22),
