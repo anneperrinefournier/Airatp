@@ -1,3 +1,5 @@
+<% require 'date' %>
+
 <div class="container">
   <div class="card-test">
     <div class="card-info">
@@ -10,6 +12,7 @@
   </div>
 
 
+<div class="booking">
   <div class="booking-info my-4">
     <h3><%= @vehicle.price_per_day %>€ per day</h3>
   </div>
@@ -17,8 +20,9 @@
   <div class="my-3">
      <%= render 'bookings/form', vehicle: @vehicle %>
   </div>
+</div>
 
   <div class="my-3">
-    <%=link_to "back", vehicles_path, class:"btn btn-primary"%>
+  <%= link_to "back", vehicles_path({vehicle_type: "terrestrial"}), class:"btn btn-primary"%>
   </div>
 </div>

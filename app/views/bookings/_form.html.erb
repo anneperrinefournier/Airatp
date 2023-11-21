@@ -2,7 +2,6 @@
   <%= simple_form_for([@vehicle, @booking], local: true) do |form| %>
     <%= form.input :start_date %>
     <%= form.input :end_date %>
-    <%= form.input :total_price %>
 
     <div class="actions my-3">
       <%= form.button :submit, 'Book', class: "btn btn-success" %>
