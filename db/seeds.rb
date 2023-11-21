@@ -22,7 +22,7 @@ user = User.create!(email: 'john@example.com', password: 'password')
 Vehicle.create!(
   user: user,
   name: 'Car Model X',
-  vehicle_type: 'Car',
+  vehicle_type: 'terrestrial',
   address: '123 Main Street',
   passengers_capacity: 4,
   price_per_day: 50.0,
@@ -35,7 +35,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: 'Nautilus',
-  vehicle_type: 'marine',
+  vehicle_type: 'maritime',
   address: '20000 leagues under the sea',
   passengers_capacity: 150,
   price_per_day: 2000,
@@ -48,7 +48,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: 'The Black Pearl Baby',
-  vehicle_type: 'marine',
+  vehicle_type: 'maritime',
   address: 'Caribbean',
   passengers_capacity: 80,
   price_per_day: 1200,
@@ -74,7 +74,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: 'Flying Boat',
-  vehicle_type: 'air',
+  vehicle_type: 'aerial',
   address: 'Paris',
   passengers_capacity: 20,
   price_per_day: 1000,
@@ -87,7 +87,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: 'Hot Air Ballon',
-  vehicle_type: 'air',
+  vehicle_type: 'aerial',
   address: 'Paris, parc André Citroën',
   passengers_capacity: 5,
   price_per_day: 300,
@@ -100,7 +100,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: 'Iron Man Suit',
-  vehicle_type: 'air',
+  vehicle_type: 'aerial',
   address: 'San Francisco',
   passengers_capacity: 1,
   price_per_day: 500,
@@ -113,7 +113,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: 'Aerial Subway',
-  vehicle_type: 'air',
+  vehicle_type: 'aerial',
   address: 'London',
   passengers_capacity: 300,
   price_per_day: 120,
@@ -126,7 +126,7 @@ Vehicle.create!(
 Vehicle.create!(
   user: user,
 	name: 'Millennium Falcon',
-  vehicle_type: 'air',
+  vehicle_type: 'aerial',
   address: 'Grand Central',
   passengers_capacity: 22,
   price_per_day: 5000,
