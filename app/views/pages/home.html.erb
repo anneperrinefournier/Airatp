@@ -1,2 +1,42 @@
-<h1>Airatp</h1>
-<p>super</p>
+<div class="container">
+  <div class="row">
+    <div class="column">
+<div class="d-flex justify-content-between">
+  <div><img src="" alt="Logo Airatp"></div>
+    <div class="buttons">
+      <div class="btn btn-dark">
+      <%= link_to "Suscribe", new_user_registration_path %>
+      </div>
+
+    <div class="btn btn-dark">
+      <%= link_to "Connect", new_user_session_path %>
+    </div>
+  </div>
+</div>
+
+    <h2>Choose the vehicle you need:
+    you’ll never be late ever again!</h2>
+
+  <h3>Which type of vehicle do you want to try this time?</h3>
+
+<div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <%= link_to "Terrestrial", vehicles_path({vehicle_type: "terrestrial"}) %>
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <%= link_to "Aerial", vehicles_path({vehicle_type: "aerial"}) %>
+    </div>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <%= link_to "Marine", vehicles_path({vehicle_type: "marine"}) %>
+    </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <%= link_to "Spatial", vehicles_path({vehicle_type: "spatial"}) %>
+  </div>
+</div>
+
+
+</div>
+    </div>
+  </div>
