@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Vehicles list</h1>
+  <div class="cards-list d-flex flex-wrap">
+    <% @vehicles.each do |vehicle| %>
+      <div class="p-3">
+        <div class="card">
+          <img src="https://radiodisneyclub.fr/wp-content/uploads/2016/03/tapis-volant.jpg" alt="vehicle-picture">
+          <div class="d-flex vehicle-description flex-column">
+            <h2><%= link_to vehicle.name, vehicle_path(vehicle) %></h2>
+            <p>Capacity: <%= vehicle.passengers_capacity %> <%= vehicle.passengers_capacity > 1 ? 'peoples' : 'person' %></p>
+            <p>Price: <%= vehicle.price_per_day %>€/day</p>
+            <p>Vehicle type: <%= vehicle.vehicle_type %></p>
+            <p>Ecological label: <%= vehicle.ecological_label %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
