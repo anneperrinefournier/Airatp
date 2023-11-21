@@ -1,0 +1,18 @@
+<div class="container mt-3">
+
+<ul class="list-group">
+  <li class="list-group-item">Name: <%= @vehicle.name %></li>
+  <li class="list-group-item">Vehicle Type: <%= @vehicle.vehicle_type %></li>
+  <li class="list-group-item">Address: <%= @vehicle.address %></li>
+  <li class="list-group-item">Price per day: <%= @vehicle.price_per_day %></li>
+  <li class="list-group-item">Numbers of Passengers <%= @vehicle.passengers_capacity%></li>
+  <li class="list-group-item">Description <%= @vehicle.description%></li>
+</ul>
+
+
+<div class="d-flex  align-items-end mt-3">
+  <div class=" flex-column mx-1">
+  <%=link_to "back", vehicles_path, class:"btn btn-primary"%>
+  </div>
+</div>
+</div>
