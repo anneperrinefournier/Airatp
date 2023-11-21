@@ -1,17 +1,29 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>Dashboard : your bookings</h1>
-      <p>You have <strong><%= Booking.count %> bookings</strong>.</p>
+<div class="container py-5">
+  <div class="row py-3">
+    <div class="col-10">
+      <h1>Dashboard: your bookings</h1>
+      <p>You have <strong><%= Booking.count %></strong> bookings.</p>
     </div>
   </div>
+
   <div class="row">
-    <div class="col-12">
-      <ul>
-        <% @bookings.each do |booking| %>
-          <li><%= booking.vehicle.name %> <%= booking.user.email %></li>
-        <% end %>
-      </ul>
-    </div>
+    <% @bookings.each do |booking| %>
+      <div class="col-10 dashboard-card-padding py-3">
+        <div class="dashboard-card">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="dashboard-card-infos">
+            <div>
+              <h2><%= booking.vehicle.name %></h2>
+              <p> Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
+              <p> Your booking starts in xx days </p>
+            </div>
+            <div>
+              <p>rented by <%= booking.user.email %></p>
+              <h2 class="dashboard-card-status"><%= booking.status %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
