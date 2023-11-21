@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card-test">
+    <div class="card-info">
+      <h3><%= @vehicle.name %></h3>
+      4.9<i class="fa-solid fa-star"></i>
+      <%= @vehicle.passengers_capacity%><i class="fa-solid fa-user-astronaut"></i>
+      <p class="card-text" style="width: 25rem;"><%=@vehicle.description%></p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200" alt="">
+  </div>
+
+  <div class="booking-info my-4">
+    <h3><%= @vehicle.price_per_day %>€ per day</h3>
+
+  </div>
+  <div class="my-3">
+    <%=link_to "back", vehicles_path, class:"btn btn-primary"%>
+  </div>
+</div>
