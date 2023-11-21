@@ -1,0 +1,17 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>Dashboard : your bookings</h1>
+      <p>You have <strong><%= Booking.count %> bookings</strong>.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul>
+        <% @bookings.each do |booking| %>
+          <li><%= booking.vehicle.name %> <%= booking.user.email %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
