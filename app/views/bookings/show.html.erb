@@ -1,0 +1,42 @@
+<%= render "shared/navbar" %>
+
+<br>
+
+<div class="container">
+  <div class="card-test">
+    <div class="card-info">
+      <h3 style="text-align: center"><%= @booking.vehicle.name %></h3>
+      <div class="center">
+       <i class="fa-solid fa-star">   4.9</i>
+       <i class="fa-solid fa-user-astronaut">      <%= @booking.vehicle.passengers_capacity%></i>
+      </div>
+      <p class="card-text mt-5"><%=@booking.vehicle.description%></p>
+    </div>
+    <% if @booking.vehicle.photo.attached? %>
+      <%= cl_image_tag(@booking.vehicle.photo.key, height: 300, width: 400, crop: :fill) %>
+    <% else %>
+      <%= cl_image_tag('development/eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+    <% end %>
+  </div>
+
+
+<div class="booking">
+  <div class="booking-info my-4">
+    <h3><%= @booking.vehicle.price_per_day %>€ per day</h3>
+    <h3>Total Price: <%= @booking.total_price %>€ total</h3>
+
+    <h5> Cruising speed : <%= @booking.vehicle.cruising_speed%></h5>
+    <h5> Fuel type : <%= @booking.vehicle.fuel_type%></h5>
+  </div>
+  <div>
+  <h5>Booking Details</h5>
+    <p>Start Date: <%= @booking.start_date %></p>
+    <p>End Date: <%= @booking.end_date %></p>
+    <!-- Add more details as needed -->
+  </div>
+
+
+  <div class="my-3">
+  <%= link_to "Back to Dashboard", bookings_path, class: "btn btn-secondary" %>
+  </div>
+</div>

@@ -1,42 +1,87 @@
-<div class="container">
-  <div class="row">
-    <div class="column">
-<div class="d-flex justify-content-between">
-  <div><img src="" alt="Logo Airatp"></div>
-    <div class="buttons">
-      <div class="btn btn-dark">
-      <%= link_to "Suscribe", new_user_registration_path %>
+<div class="header-background">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-between my-5">
+        <div class="d-flex align-items-center m-10">
+            <%= image_tag("airatp-logo.png", alt: "Logo Airatp", id: "logo-img") %>
+          <div class="h1-position">
+            <h1>Rent any kind of vehicle,<br>
+            you’ll never be late again!</h1>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <% if user_signed_in? %>
+            <div class="nav-item dropdown">
+              <%= image_tag "https://i.pinimg.com/474x/f3/24/08/f32408382ef9e9de1ef32ba0dc6ed007.jpg", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileNavbarDropdown">
+                <%= link_to "Dashboard", bookings_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              </div>
+            </div>
+          <% else %>
+            <div id="suscribe" class="btn">
+              <%= link_to "Suscribe", new_user_registration_path, class: "links" %>
+            </div>
+            <div id="connect" class="btn">
+              <%= link_to "Connect", new_user_session_path, class: "links" %>
+            </div>
+          <% end %>
+        </div>
       </div>
+    </div>
 
-    <div class="btn btn-dark">
-      <%= link_to "Connect", new_user_session_path %>
+      <div class="row">
+        <div class="col">
+          <p>Welcome to Airatp, where extraordinary journeys begin! 🚀 </p>
+          <p>Explore a unique platform with legendary transports – from magical brooms to iconic Millennium Falcons. Choose your dream ride and bid farewell to fashionably late arrivals! More than a rental service, Airatp is a portal to unforgettable experiences.</p>
+          <p>Glide on a dragon or time-travel in a TARDIS. Our user-friendly platform lets you pick, choose, and start your adventure instantly. No more waiting – redefine travel with Airatp! ✨</p>
+        </div>
+        <%# <div class="col"><img class="img-header" src="https://i.ibb.co/nrMQrBQ/hippo.webp" alt="flying on a hippogriff"></div> %>
+
+        <div class="col">
+          <div id="mixup-images" class="d-flex">
+            <div><img class="img-header-1" src="https://i.ibb.co/N1P3xgv/hippo-copie.png" alt="flying on a hippogriff"></div>
+            <div><div><img class="img-header-2" src="https://i.ibb.co/yYVL7kV/faucon.jpg" alt="spaceship falcon millenium"></div>
+            <img class="img-header-3" src="https://i.ibb.co/2ybMF68/sirene-copie.png" alt="mermaid under the sea"></div></div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div id="background-home-cards">
+  <div class="container">
+    <div class="column">
+      <h2>Choose a type of vehicle</h2>
+      <div class="cards">
+          <%= link_to vehicles_path(vehicle_type: "terrestrial"), class:"text-decoration-none" do %>
+            <div id="terrestrial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/tCKKg1W/road-220058-1280.jpg)">
+            Terrestrial
+            </div>
+          <% end %>
+
+          <%= link_to vehicles_path(vehicle_type: "aerial"), class:"text-decoration-none" do %>
+            <div id="aerial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/GT9xH3d/sky-1441936-1280.jpg)">
+              Aerial
+            </div>
+          <% end %>
+
+          <%= link_to vehicles_path(vehicle_type: "maritime"), class:"text-decoration-none" do %>
+            <div id="maritime" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/5L4rKft/waves-3473335-1280.jpg)">
+              Maritime
+            </div>
+          <% end %>
+
+          <%= link_to vehicles_path(vehicle_type: "spatial"), class:"text-decoration-none" do %>
+            <div id="spatial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/rGfZ0HG/astronomy-1867616-1280.jpg)">
+              Spatial
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
 
-    <h2>Choose the vehicle you need:
-    you’ll never be late ever again!</h2>
-
-  <h3>Which type of vehicle do you want to try this time?</h3>
-
-<div class="cards">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-      <%= link_to "Terrestrial", vehicles_path({vehicle_type: "terrestrial"}) %>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-      <%= link_to "Aerial", vehicles_path({vehicle_type: "aerial"}) %>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-        <%= link_to "Marine", vehicles_path({vehicle_type: "marine"}) %>
-    </div>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-        <%= link_to "Spatial", vehicles_path({vehicle_type: "spatial"}) %>
-  </div>
+<div id="footer" class="container">
+  <p>© 2023 Le Wagon #1410 with ♥️</p>
 </div>
-
-
-</div>
-    </div>
-  </div>

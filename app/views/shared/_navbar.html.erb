@@ -1,0 +1,62 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <div class= "nav-begin">
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag("airatp-logo.png", alt: "Logo Airatp", id: "logo-nav") %>
+      <% end %>
+    </div>
+
+    <div class="nav-filers">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <% if params[:vehicle_type]%>
+                <div class="filter"><%= selected_type = "Vehicle type" %></div>
+                <div><%= selected_type = params[:vehicle_type].capitalize %></div>
+              <% else %>
+                <div class="filter"><%= selected_type = "Vehicle type" %></div>
+              <% end %>
+            </a>
+              <div class="dropdown-menu" aria-labelledby="vehicleTypeNavbarDropdown">
+                <%= link_to "All", vehicles_path, class:"dropdown-item" %>
+                <%= link_to "Terrestrial", vehicles_path(vehicle_type: "terrestrial"), class:"dropdown-item" %>
+                <%= link_to "Aerial", vehicles_path(vehicle_type: "aerial"), class:"dropdown-item" %>
+                <%= link_to "Maritime", vehicles_path(vehicle_type: "maritime"), class:"dropdown-item" %>
+                <%= link_to "Spatial", vehicles_path(vehicle_type: "spatial"), class:"dropdown-item" %>
+              </div>
+          </li>
+
+          <li class="nav-item active">
+            <input type="text" data-controller= "datepicker" id="startDatePicker" placeholder="Dates">
+          </li>
+          <li class="nav-item active">
+            <input type="text" placeholder="Number of travelers" >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nav-end">
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://i.pinimg.com/474x/f3/24/08/f32408382ef9e9de1ef32ba0dc6ed007.jpg", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileNavbarDropdown">
+              <%= link_to "Dashboard", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <% else %>
+          <!--li class="nav-item"-->
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
