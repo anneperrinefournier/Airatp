@@ -21,7 +21,8 @@
 
 <div class="booking">
   <div class="booking-info my-4">
-    <h3 class="price-per-day">Price/day : <%= @vehicle.price_per_day %>€</h3>
+    <h3>Price/day : <%= @vehicle.price_per_day %>€</h3>
+    <h3 class="price-per-day d-none"><%= @vehicle.price_per_day %></h3>
     <h5> Cruising speed : <%= @vehicle.cruising_speed%></h5>
     <h5> Fuel type : <%= @vehicle.fuel_type%></h5>
   </div>
