@@ -76,8 +76,8 @@ vehicle = Vehicle.new(
   description: "You will arrive at your destination in the blink of an eye. Though you might become immortal in the process and turn into a skeleton under the moonlight, you will enjoy the company of rude and funny pirates."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176894639492571206/bohemond8467_the_black_pearl_from_pirates_of_the_carribbean_cfa0c3ef-7259-4c0b-a3f2-54541cf4105d.png?ex=6570878b&is=655e128b&hm=4f43632b82a4ba67933eef2ad0e93430d6f968b90795494c0c0cc72b571f44bb&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "black_pearl.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "black_pearl.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -92,8 +92,8 @@ vehicle = Vehicle.new(
 	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462878790918144/bohemond8467_on_a_hanger_in_a_closet_two_translucid_wings_134bf63b-4637-42b8-ac8a-fab734e03b09.png?ex=656ef56f&is=655c806f&hm=cd18a7888ce5943007bf90f85299c2eb0ce696fb4f1bf02238a06c284ba1ab4d&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -108,8 +108,8 @@ vehicle = Vehicle.new(
   description: "Better not be seasick because riding the clouds is very much like riding waves from a raging sea ! This vehicle is a bit old but it allows you to cross worlds and go beyond our good old earth."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176895364197003324/bohemond8467_a_flying_boat_a720103e-b119-447b-93de-6213265c5393.png?ex=65708838&is=655e1338&hm=c2b746fdef267c512c7d8014b9361729f41b490ded7308b7d0cd043cd34193b8&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "flying_boat.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "flying_boat.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -124,8 +124,8 @@ vehicle = Vehicle.new(
   description: "For a romantic walk among the parisian sky with your loved one, this hot-air balloon will be the perfect ride. Enjoy a cup of champagne and the view on the Eiffel tower."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463363597930516/bohemond8467_a_hot_air_balloon_but_in_science_fiction_b2fbab63-1b7e-4523-a263-b66ebbd0330b.png?ex=656ef5e3&is=655c80e3&hm=99a89a8d6a41d9552e4f2cd82473c349023de7bbdcc090df3f6fb358ddf466cc&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "hot_air_balloon.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "hot_air_balloon.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -140,8 +140,8 @@ vehicle = Vehicle.new(
   description: "Ever dreamt of flying high and fast ? Rent this suit to get the chance of being a super-hero the time of your rental. Perfect for work. xoxo, gossip girl."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462888442023976/bohemond8467_the_suit_from_Iron_Man_in_a_dressing_ec667fdf-600c-45d1-92ad-236525f7d59d.png?ex=656ef572&is=655c8072&hm=1ac381567f8edb9a55c162ae64fe17105f4e2131baae965100e1973009e5c390&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "iron_man_suit.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "iron_man_suit.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -156,8 +156,8 @@ vehicle = Vehicle.new(
   description: "Are you tired of being stuck underearth in a noisy and smelly and crowded and basically horrible subway ? Well, you can now travel in the same environment but in the sky. Pretty cool, huh ?"
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463436893388810/bohemond8467_an_aerial_subway_12db04fd-e15e-45fe-8953-f256460c1f83.png?ex=656ef5f4&is=655c80f4&hm=4bbf44ea469be12270ee62a9f7ff9fb7ea2a2a7cce270cc7bf0b3ea27cb414dd&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "aerial_subway.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "aerial_subway.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -172,8 +172,8 @@ vehicle = Vehicle.new(
   description: "This bad boy is quite old now, even technically it will only be invented in the future. Because it is quite old, it is now available at an unbeatable price, so do not hesitate for too long!"
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176896250054975538/bohemond8467_the_falcon_millenium_from_star_wars_c6cdc0c6-c4ed-4bc3-a290-4a7aa67e6690.png?ex=6570890b&is=655e140b&hm=344bf0c43cb42083e5e8198385f19a64976ddd556f452e7fd216e0073bb32542&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "millenium_falcon.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "millenium_falcon.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -188,8 +188,8 @@ vehicle = Vehicle.new(
   description: "You have short legs and your friends always walk faster than you and they're not very nice and don't wait up? Rent these awesome giant boots and get your revenge now! But be careful, with these, you will be the one to wait up!"
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463012748591114/bohemond8467_boots_from_giants_to_travel_in_adb910bb-6df9-4d30-8b56-be374c3c2eb9.png?ex=656ef58f&is=655c808f&hm=c33f0f6650a67490f7dcf8c33909bd08a07f5cbc78606da87d3a6e5e1aca2969&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "seven_league_boots.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "seven_league_boots.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -204,8 +204,8 @@ vehicle = Vehicle.new(
   description: "You hate the subway? Well we hate it too, and we will actually pay you to take it, it is the least we can do, especially with line 13."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463436893388810/bohemond8467_an_aerial_subway_12db04fd-e15e-45fe-8953-f256460c1f83.png?ex=656ef5f4&is=655c80f4&hm=4bbf44ea469be12270ee62a9f7ff9fb7ea2a2a7cce270cc7bf0b3ea27cb414dd&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "subway_line.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "subway_line.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -220,8 +220,8 @@ vehicle = Vehicle.new(
   description: "Do not fear the hotness of Tattooine, with this superfast moto you will catch every cool refreshment existing on this planet. Be careful though, you might be chased down by a lord sith."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176896951292276776/bohemond8467_the_motorcycles_from_tatooine_in_star_wars_01bf781a-ac31-41fe-8322-21c62957d512.png?ex=657089b2&is=655e14b2&hm=265bf7e93a50191d398f57300d6efc982773bc7423f2e491466627bfa52a077a&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "motojet.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.photo.attach(io: file, filename: "motojet.png", content_type: "image/jpg")
+vehicle.save
 
 Vehicle.create!(
   user: user,
