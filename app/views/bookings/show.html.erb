@@ -1,0 +1,38 @@
+<%= render "shared/navbar" %>
+
+<br>
+
+<div class="container">
+  <div class="card-test">
+    <div class="card-info">
+      <h3 style="text-align: center"><%= @booking.vehicle.name %></h3>
+      <div class="center">
+       <i class="fa-solid fa-star">   4.9</i>
+       <i class="fa-solid fa-user-astronaut">      <%= @booking.vehicle.passengers_capacity%></i>
+      </div>
+      <p class="card-text mt-5"><%=@booking.vehicle.description%></p>
+    </div>
+    <img src="https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&" alt="">
+  </div>
+
+
+<div class="booking">
+  <div class="booking-info my-4">
+    <h3><%= @booking.vehicle.price_per_day %>€ per day</h3>
+    <h3>Total Price: <%= @booking.total_price %>€ total</h3>
+
+    <h5> Cruising speed : <%= @booking.vehicle.cruising_speed%></h5>
+    <h5> Fuel type : <%= @booking.vehicle.fuel_type%></h5>
+  </div>
+  <div>
+  <h5>Booking Details</h5>
+    <p>Start Date: <%= @booking.start_date %></p>
+    <p>End Date: <%= @booking.end_date %></p>
+    <!-- Add more details as needed -->
+  </div>
+
+
+  <div class="my-3">
+  <%= link_to "Back to Dashboard", bookings_path, class: "btn btn-secondary" %>
+  </div>
+</div>
