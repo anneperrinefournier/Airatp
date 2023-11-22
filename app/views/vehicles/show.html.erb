@@ -1,4 +1,6 @@
-<div class="container">
+<%= render "shared/navbar" %>
+
+<div class="container mt-5">
   <div class="card-test">
     <div class="card-info">
       <h3 style="text-align: center"><%= @vehicle.name %></h3>
@@ -8,8 +10,14 @@
       </div>
       <p class="card-text mt-5"><%=@vehicle.description%></p>
     </div>
-    <img src="https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&" alt="">
+
+     <%= image_tag "#{@vehicle.name.parameterize.underscore}.png", alt: "" %>
+
   </div>
+
+
+<p>Number of Days in the Range: <%= @booking.number_of_days %></p>
+<p>Number of Days in the Range: <span id="number_of_days_display"></span></p>
 
 
 <div class="booking">
@@ -17,6 +25,10 @@
     <h3><%= @vehicle.price_per_day %>€ per day</h3>
     <h5> Cruising speed : <%= @vehicle.cruising_speed%></h5>
     <h5> Fuel type : <%= @vehicle.fuel_type%></h5>
+    <div id="totalPriceContainer">
+        <p data-datepicker-target="totalPrice">Total Price: 0€</p>
+    </div>
+
   </div>
 
   <div class="line data-controller="datepicker">

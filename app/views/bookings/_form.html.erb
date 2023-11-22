@@ -1,11 +1,11 @@
 <div class="container my-5">
-  <%= simple_form_for([@vehicle, @booking], local: true) do |form| %>
-    <%= form.input :start_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
-    <%= form.input :end_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+
+<div class="container my-5" >
+  <%= simple_form_for([@vehicle, Booking.new], local: true) do |form| %>
+    <div id="number_of_days_placeholder"></div>
+    <%= form.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+     <%= form.hidden_field :number_of_days, id: "number_of_days_hidden" %>
+     <p>Number of Days: <span id="number_of_days_display"></span></p>
 
     <div class="actions my-3">
       <%= form.button :submit, 'Book', class: "btn btn-success" %>

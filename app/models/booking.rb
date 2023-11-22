@@ -7,4 +7,6 @@ class Booking < ApplicationRecord
     validated: 1,
     refused: 2
   }
+
+  attribute :number_of_days, :integer
 end
