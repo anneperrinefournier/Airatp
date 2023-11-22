@@ -383,8 +383,8 @@ Vehicle.create!(
 Booking.create!(
   user: renter,
   vehicle: vehicles[0],
-  start_date: Date.new(2023, 11, 15),
-  end_date: Date.new(2023, 11, 19),
+  start_date: Date.new(2023, 11, 20),
+  end_date: Date.new(2023, 11, 24),
   total_price: 400,
   status: 1
 )

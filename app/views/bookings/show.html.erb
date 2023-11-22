@@ -12,7 +12,11 @@
       </div>
       <p class="card-text mt-5"><%=@booking.vehicle.description%></p>
     </div>
-    <%= cl_image_tag(@booking.vehicle.photo.key, height: 300, width: 400, crop: :fill) %>
+    <% if @booking.vehicle.photo.attached? %>
+      <%= cl_image_tag(@booking.vehicle.photo.key, height: 300, width: 400, crop: :fill) %>
+    <% else %>
+      <%= cl_image_tag('development/eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+    <% end %>
   </div>
 
 
