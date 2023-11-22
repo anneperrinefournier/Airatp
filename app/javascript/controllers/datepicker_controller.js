@@ -6,7 +6,6 @@ export default class extends Controller {
     const option = {
       minDate: "today",
       mode: "range"
-
     }
 
     flatpickr(this.element, option)

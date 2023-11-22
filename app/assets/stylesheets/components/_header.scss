@@ -1,0 +1,67 @@
+// header background body
+#header {
+  background-color: $background-gray;
+  margin-bottom: 30px;
+}
+
+// beginning of the header content
+.header-content {
+  display: grid;
+  grid-template-columns: 200px, 200px;
+}
+
+.home-text {
+  margin-bottom: 30px;
+}
+
+.img-header-1 {
+  width: 300px;
+  padding-left: 10px;
+  // border-radius: 30% 70% 75% 25% / 30% 30% 70% 70%;
+  border-radius: 75% 25% 86% 14% / 78% 53% 47% 22%;
+  // border-radius: 75% 25% 69% 31% / 30% 35% 65% 70% ;
+  position: relative;
+  z-index: 2;
+  left: 10px;
+}
+
+.img-header-2 {
+  width: 300px;
+  padding-left: 10px;
+  // border-radius: 75% 25% 30% 70% / 30% 30% 70% 70%;
+  // border-radius: 18% 82% 9% 91% / 14% 47% 53% 86% ;
+  // border-radius: 88% 12% 70% 30% / 47% 22% 78% 53%;
+  border-radius: 30% 60% 70% 30% / 30% 30% 70% 70% ;
+
+  position: relative;
+  z-index: 1;
+  bottom: 30px;
+  left: 5px;
+}
+
+.img-header-3 {
+  width: 300px;
+  padding-left: 10px;
+  border-radius: 50% 50% 48% 52% / 65% 65% 35% 35%;
+  position: relative;
+  right: 140px;
+  bottom: 30px;
+  z-index: 3;
+}
+
+// end of the header content
+
+
+// cards background body
+
+#background-home-cards {
+  background-color: $white;
+  padding-top: 30px;
+
+}
+
+#mixup-images {
+  max-width: 500px;
+  position: relative;
+  top: 30px;
+}
