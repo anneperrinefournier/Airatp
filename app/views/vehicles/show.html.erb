@@ -10,9 +10,7 @@
       </div>
       <p class="card-text mt-5"><%=@vehicle.description%></p>
     </div>
-
-     <%= image_tag "#{@vehicle.name.parameterize.underscore}.png", alt: "" %>
-
+    <%= cl_image_tag(@vehicle.photo.key, alt: (@vehicle.name + "-picture"), id: "vehicle-picture") %>
   </div>
 
 
