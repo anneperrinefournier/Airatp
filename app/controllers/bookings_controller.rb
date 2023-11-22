@@ -4,13 +4,15 @@ class BookingsController < ApplicationController
     @user_bookings = current_user.bookings
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     @vehicle = Vehicle.find(params[:vehicle_id])
     @booking = @vehicle.bookings.new(booking_params)
     @booking.user = current_user
     @booking.status = :pending
-
-    @booking.number_of_days = params[:vehicle][:number_of_days].to_i
 
     if @booking.save!
       redirect_to bookings_path, notice: 'Booking was successfully created.'

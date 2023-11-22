@@ -10,7 +10,11 @@
       </div>
       <p class="card-text mt-5"><%=@vehicle.description%></p>
     </div>
-    <%= cl_image_tag(@vehicle.photo.key, alt: (@vehicle.name + "-picture"), id: "vehicle-picture") %>
+    <% if @vehicle.photo.attached? %>
+      <%= cl_image_tag(@vehicle.photo.key, alt: (@vehicle.name + "-picture"), id: "vehicle-picture") %>
+    <% else %>
+      <%= cl_image_tag('development/eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+    <% end %>
   </div>
 
 
@@ -19,8 +23,8 @@
 
 <div class="booking data-controller="datepicker">
   <div class="booking-info my-4">
-    <h3 class="price-per-day"><%= @vehicle.price_per_day %></h3>
-    <h5> Cruising speed : <%= @vehicle.cruising_speed%></h5>
+    <h3 class="price-per-day"><%= @vehicle.price_per_day %> €</h3>
+    <h5> Cruising speed : TBD</h5>
     <h5> Fuel type : <%= @vehicle.fuel_type%></h5>
     <div id="totalPriceContainer">
         <p data-search-target="totalPrice" > Number of days <span id="number_of_days_display"></span></p>
