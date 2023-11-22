@@ -21,4 +21,5 @@ class Booking < ApplicationRecord
     end
   end
 
+  attribute :number_of_days, :integer
 end

@@ -19,7 +19,6 @@
             <div>
               <h3><%= booking.vehicle.name %></h3>
               <p> Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
-              <p> Your booking starts in <%= (booking.start_date - Date.today).to_i %> days </p>
             </div>
             <div>
               <p>rented by <%= booking.user.email %></p>
