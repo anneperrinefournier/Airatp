@@ -12,7 +12,9 @@
       </div>
       <p class="card-text mt-5"><%=@booking.vehicle.description%></p>
     </div>
-    <img src="https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&" alt="">
+    <%= cl_image_tag(@booking.vehicle.photo.key, height: 300, width: 400, crop: :fill) %>
+
+    <%# <img src="https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&" alt=""> %>
   </div>
 
 
