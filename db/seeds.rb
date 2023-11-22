@@ -63,7 +63,7 @@ file = URI.open("https://www.disneyphile.fr/wp-content/uploads/2021/08/nautilus-
 vehicles.last.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
 vehicles.last.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'The Black Pearl Baby',
   vehicle_type: 'maritime',
@@ -76,7 +76,7 @@ Vehicle.create!(
   description: "You will arrive at your destination in the blink of an eye. Though you might become immortal in the process and turn into a skeleton under the moonlight, you will enjoy the company of rude and funny pirates."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: "Fairy's wings",
 	vehicle_type: 'aerial',
@@ -89,7 +89,7 @@ Vehicle.create!(
 	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Flying Boat',
   vehicle_type: 'aerial',
@@ -102,7 +102,7 @@ Vehicle.create!(
   description: "Better not be seasick because riding the clouds is very much like riding waves from a raging sea ! This vehicle is a bit old but it allows you to cross worlds and go beyond our good old earth."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Hot Air Ballon',
   vehicle_type: 'aerial',
@@ -115,7 +115,7 @@ Vehicle.create!(
   description: "For a romantic walk among the parisian sky with your loved one, this hot-air balloon will be the perfect ride. Enjoy a cup of champagne and the view on the Eiffel tower."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Iron Man Suit',
   vehicle_type: 'aerial',
@@ -128,7 +128,7 @@ Vehicle.create!(
   description: "Ever dreamt of flying high and fast ? Rent this suit to get the chance of being a super-hero the time of your rental. Perfect for work. xoxo, gossip girl."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Aerial Subway',
   vehicle_type: 'aerial',
@@ -141,7 +141,7 @@ Vehicle.create!(
   description: "Are you tired of being stuck underearth in a noisy and smelly and crowded and basically horrible subway ? Well, you can now travel in the same environment but in the sky. Pretty cool, huh ?"
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Millennium Falcon',
   vehicle_type: 'aerial',
@@ -154,7 +154,7 @@ Vehicle.create!(
   description: "This bad boy is quite old now, even technically it will only be invented in the future. Because it is quite old, it is now available at an unbeatable price, so do not hesitate for too long!"
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Seven League Boots',
   vehicle_type: 'terrestrial',
@@ -167,7 +167,7 @@ Vehicle.create!(
   description: "You have short legs and your friends always walk faster than you and they're not very nice and don't wait up? Rent these awesome giant boots and get your revenge now! But be careful, with these, you will be the one to wait up!"
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'subway line 13 from Paris',
   vehicle_type: 'terrestrial',
@@ -180,7 +180,7 @@ Vehicle.create!(
   description: "You hate the subway? Well we hate it too, and we will actually pay you to take it, it is the least we can do, especially with line 13."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'motojet FC-20',
   vehicle_type: 'terrestrial',
@@ -193,7 +193,7 @@ Vehicle.create!(
   description: "Do not fear the hotness of Tattooine, with this superfast moto you will catch every cool refreshment existing on this planet. Be careful though, you might be chased down by a lord sith."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: "Anakin's podracer",
   vehicle_type: 'terrestrial',
@@ -206,7 +206,7 @@ Vehicle.create!(
   description: "What an engine, what a machine! If you are always late at work or think your current means of transportation is too slow, you might like this incredible podracer: you will definitely be the fastest on earth!"
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Hoverboard',
   vehicle_type: 'terrestrial',
@@ -219,7 +219,7 @@ Vehicle.create!(
   description: "The Hoverboard is a sleek and futuristic personal transportation device equipped with anti-gravity technology. With a minimalist design and a smooth hover, it offers an effortless and stylish mode of travel through urban landscapes. Riders can effortlessly glide above the ground, zipping through city streets and futuristic plazas. The Hoverboard is the epitome of modern mobility, combining efficiency with a touch of sci-fi flair."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Wagon',
   vehicle_type: 'terrestrial',
@@ -232,7 +232,7 @@ Vehicle.create!(
   description: "The Wagon is not your ordinary mode of transportation; it's a rolling coding school on wheels, designed for aspiring programmers and tech enthusiasts. With its sleek, tech-inspired exterior, the Wagon travels from city to city, bringing coding education to the masses. Inside, state-of-the-art workstations equipped with the latest technology await eager learners. Fueled by creative logic, the Wagon provides a dynamic and collaborative coding environment. Whether you're a novice or an experienced developer, the Wagon is the perfect mobile classroom for unlocking the secrets of programming and innovation. Get on board and embark on a code-learning journey like never before!"
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Stilt Bed',
   vehicle_type: 'terrestrial',
@@ -245,7 +245,7 @@ Vehicle.create!(
   description: "If you have difficulties to leave your bed, go outside with it and finish your night! The Stilt Bed is no ordinary sleeping arrangement; it's a magical elevated dream platform that transcends the boundaries of the waking world. Suspended on slender stilts, the bed hovers above the ground, allowing the dreamer to enter the realm of dreams with ease. Crafted from the softest clouds and adorned with starlight, the Stilt Bed offers a peaceful and otherworldly space for a restful night's sleep. Fuelled by the essence of imagination, this enchanted bed takes its occupant on fantastical journeys through the landscapes of dreams, where anything is possible and every night is an adventure in Slumber Haven."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Knight Bus',
   vehicle_type: 'terrestrial',
@@ -258,7 +258,7 @@ Vehicle.create!(
   description: "The Knight Bus is a magical mode of transportation for witches and wizards in need. With its vibrant purple color and eccentric design, it appears in a pinch, transporting passengers to their desired destination. The bus is known for its unique ability to navigate through the magical and non-magical realms, providing a quick and reliable way for wizards to travel. The interior is surprisingly spacious, featuring beds, chandeliers, and a shrunken head that provides entertainment during the journey. The Knight Bus is a quirky and essential part of the wizarding world's transportation network."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
   name: 'Mermaid Tail',
   vehicle_type: 'terrestrial',
@@ -271,7 +271,7 @@ Vehicle.create!(
   description: "The Mermaid Tail is an elegant and magical means of personal aquatic transportation. Crafted from enchanted seashells and powered by the magic of the ocean, it allows you to gracefully glide through underwater realms. The Mermaid Tail offers a smooth and enchanting journey beneath the waves."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Jolly Roger',
   vehicle_type: 'aerial',
@@ -285,7 +285,7 @@ Vehicle.create!(
 )
 
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Firebolt',
   vehicle_type: 'aerial',
@@ -298,7 +298,7 @@ Vehicle.create!(
   description: "The Firebolt is a top-of-the-line racing broomstick, renowned for its incredible cruising_speed and precision. With a sleek design and a phoenix feather core, it's the choice of professional Quidditch players and cruising_speed enthusiasts. The Firebolt offers a thrilling and exhilarating ride through the magical skies."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Hippogriff',
   vehicle_type: 'aerial',
@@ -311,7 +311,7 @@ Vehicle.create!(
   description: "The Hippogriff is a majestic magical creature capable of flight. With its powerful wings and loyal nature, it serves as a noble and elegant steed for wizards seeking a unique and enchanting mode of transportation. Riding a Hippogriff offers a breathtaking experience as it soars through the skies."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
   name: 'Dragon',
   vehicle_type: 'aerial',
@@ -324,7 +324,7 @@ Vehicle.create!(
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
 )
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Flying carpet',
   vehicle_type: 'aerial',
@@ -337,8 +337,7 @@ Vehicle.create!(
   description: "The flying carpet is a magical flying carpet, woven with enchanted threads that allow it to soar through the skies. Originating from the mystical city of Agrabah, it offers a comfortable and smooth ride for adventurers. The flying carpet is a classic and timeless choice for transportation."
 )
 
-
-Vehicle.create!(
+vehicle = Vehicle.save(
   user: user,
   name: 'Tardis',
   vehicle_type: 'spatial',
@@ -350,6 +349,9 @@ Vehicle.create!(
   ecological_label: 'G',
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
+file = URI.open("https://static.actu.fr/uploads/2023/04/photo-tesla-plaid-face-960x640.jpg")
+vehicle.last.photo.attach(io: file, filename: "tesla-model-s.png", content_type: "image/jpg")
+vehicle.last.save
 
 Booking.create!(
   user: renter,
