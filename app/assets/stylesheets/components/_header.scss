@@ -1,17 +1,12 @@
 // header background body
-#header {
+.header-background {
   background-color: $background-gray;
-  margin-bottom: 30px;
 }
 
 // beginning of the header content
 .header-content {
   display: grid;
   grid-template-columns: 200px, 200px;
-}
-
-.home-text {
-  margin-bottom: 30px;
 }
 
 .img-header-1 {
@@ -55,13 +50,20 @@
 // cards background body
 
 #background-home-cards {
-  background-color: $white;
   padding-top: 30px;
+  padding-bottom: 30px;
 
 }
 
 #mixup-images {
-  max-width: 500px;
+  max-width: 400px;
   position: relative;
-  top: 30px;
+  bottom: 50px;
+  left: 50px;
+  margin: -60px;
+}
+
+#footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

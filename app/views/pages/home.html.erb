@@ -1,47 +1,60 @@
-<div id="header">
+<div class="header-background">
   <div class="container">
     <div class="row">
       <div class="d-flex justify-content-between my-5">
-        <div><%= cl_image_tag("z7nc2sxqtney3h6hj85q.svg", alt: "Logo Airatp", id: "logo-img",
-        width: 400, height: 300, crop: :fill) %></div>
+        <div class="d-flex align-items-center m-10">
+            <%= image_tag("airatp-logo.png", alt: "Logo Airatp", id: "logo-img") %>
+          <div class="h1-position">
+            <h1>Rent any kind of vehicle,<br>
+            you’ll never be late again!</h1>
+          </div>
+        </div>
 
         <div class="buttons">
-          <div id="suscribe" class="btn">
-            <%= link_to "Suscribe", new_user_registration_path, class: "links" %>
-          </div>
-          <div id="connect" class="btn">
-            <%= link_to "Connect", new_user_session_path, class: "links" %>
-          </div>
+          <% if user_signed_in? %>
+            <div class="nav-item dropdown">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileNavbarDropdown">
+                <%= link_to "Dashboard", bookings_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              </div>
+            </div>
+          <% else %>
+            <div id="suscribe" class="btn">
+              <%= link_to "Suscribe", new_user_registration_path, class: "links" %>
+            </div>
+            <div id="connect" class="btn">
+              <%= link_to "Connect", new_user_session_path, class: "links" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
 
       <div class="row">
         <div class="col">
-          <h1>Rent any kind of vehicle,<br>
-          you’ll never be late again!</h2>
-          <p>Welcome to Airatp, where extraordinary journeys begin! 🚀 </p>
+          <p>Welcome to Airatp, where extraordinary journeys begin! 🚀 </p>
           <p>Explore a unique platform with legendary transports – from magical brooms to iconic Millennium Falcons. Choose your dream ride and bid farewell to fashionably late arrivals! More than a rental service, Airatp is a portal to unforgettable experiences.</p>
-          <p>Glide on a dragon or time-travel in a TARDIS. Our user-friendly platform lets you pick, choose, and start your adventure instantly. No more waiting – redefine travel with Airatp! ✨</p>
+          <p>Glide on a dragon or time-travel in a TARDIS. Our user-friendly platform lets you pick, choose, and start your adventure instantly. No more waiting – redefine travel with Airatp! ✨</p>
         </div>
         <%# <div class="col"><img class="img-header" src="https://i.ibb.co/nrMQrBQ/hippo.webp" alt="flying on a hippogriff"></div> %>
 
         <div class="col">
           <div id="mixup-images" class="d-flex">
             <div><img class="img-header-1" src="https://i.ibb.co/N1P3xgv/hippo-copie.png" alt="flying on a hippogriff"></div>
-            <div><img class="img-header-2" src="https://i.ibb.co/yYVL7kV/faucon.jpg" alt="spaceship falcon millenium">
-            <img class="img-header-3" src="https://i.ibb.co/2ybMF68/sirene-copie.png" alt="mermaid under the sea"></div>
+            <div><div><img class="img-header-2" src="https://i.ibb.co/yYVL7kV/faucon.jpg" alt="spaceship falcon millenium"></div>
+            <img class="img-header-3" src="https://i.ibb.co/2ybMF68/sirene-copie.png" alt="mermaid under the sea"></div></div>
         </div>
       </div>
-    </div>
+  </div>
 </div>
 
 <div id="background-home-cards">
   <div class="container">
     <div class="column">
-      <h2>Choose a type of vehicle</h3>
+      <h2>Choose a type of vehicle</h2>
       <div class="cards">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/tCKKg1W/road-220058-1280.jpg);">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/tCKKg1W/road-220058-1280.jpg)">
             <%= link_to "Terrestrial", vehicles_path({vehicle_type: "terrestrial"}) %>
           </div>
 
@@ -50,13 +63,17 @@
           </div>
 
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/5L4rKft/waves-3473335-1280.jpg)">
-              <%= link_to "Maritime", vehicles_path({vehicle_type: "maritime"}) %>
+            <%= link_to "Maritime", vehicles_path({vehicle_type: "maritime"}) %>
           </div>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/rGfZ0HG/astronomy-1867616-1280.jpg)">
-              <%= link_to "Spatial", vehicles_path({vehicle_type: "spatial"}) %>
-        </div>
-      </div>
 
-    <div>© 2023 Le Wagon #1410 with ♥️</div>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/rGfZ0HG/astronomy-1867616-1280.jpg)">
+            <%= link_to "Spatial", vehicles_path({vehicle_type: "spatial"}) %>
+          </div>
+        </div>
+    </div>
   </div>
+</div>
+
+<div id="footer" class="container">
+  <p>© 2023 Le Wagon #1410 with ♥️</p>
 </div>
