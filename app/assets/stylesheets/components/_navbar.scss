@@ -12,8 +12,24 @@
 }
 
 .nav-filers {
+  width: 40%;
   display:flex;
+  gap: 10px;
+  justify-content: center;
   align-items: center;
+  border: 2px solid $lightblue;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.navbar-nav mr-auto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.nav-item-position {
+  padding: 10px;
 }
 
 .navbar {

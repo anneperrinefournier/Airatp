@@ -13,7 +13,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
+          <div class="nav-item-position"><li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if params[:vehicle_type]%>
                 <div class="filter"><%= selected_type = "Vehicle type" %></div>
@@ -29,14 +29,17 @@
                 <%= link_to "Maritime", vehicles_path(vehicle_type: "maritime"), class:"dropdown-item" %>
                 <%= link_to "Spatial", vehicles_path(vehicle_type: "spatial"), class:"dropdown-item" %>
               </div>
-          </li>
+          </li></div>
 
-          <li class="nav-item active">
+          <div class="nav-item-position"><li class="nav-item active">
+            <div class="filter">Dates</div>
             <input type="text" data-controller= "datepicker" id="startDatePicker" placeholder="Dates">
-          </li>
-          <li class="nav-item active">
+          </li></div>
+
+          <div class="nav-item-position" data-controller= "travelers" data-action="keyup->travelers#search"><li class="nav-item active">
+            <div class="filter" data-target= "numberOfTravelers">Travelers</div>
             <input type="text" placeholder="Number of travelers" >
-          </li>
+          </li></div>
         </ul>
       </div>
     </div>
