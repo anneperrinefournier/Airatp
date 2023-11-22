@@ -1,28 +1,27 @@
 <% require 'date' %>
 
 <div class="container py-5">
-  <div class="row py-3">
-    <div class="col-10">
+  <div class="row py-5">
+    <div class="col-8">
       <h1>Dashboard: your bookings</h1>
       <p>You have <strong><%= Booking.count %></strong> bookings.</p>
     </div>
   </div>
 
-  <div class="row">
-    <% @bookings.each do |booking| %>
-      <div class="col-10 dashboard-card-padding py-3">
-        <div class="dashboard-card">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-          <div class="dashboard-card-infos">
-            <div>
-              <h2><%= booking.vehicle.name %></h2>
-              <p> Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
-              <p> Your booking starts in <%= (booking.start_date - Date.today).to_i %> days </p>
-            </div>
-            <div>
-              <p>rented by <%= booking.user.email %></p>
-              <h2 class="dashboard-card-status"><%= booking.status %></h2>
-            </div>
+  <div class="row py-5">
+    <% @user_bookings.order(:start_date).each do |booking| %>
+      <h2><%= booking.vehicle.name %> : starts in <%= (booking.start_date - Date.today).to_i %> days!</h2>
+      <div class="col-8 dashboard-card <%= Booking.status_color_class(booking.status) %> dashboard-card-padding py-3">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="dashboard-card-infos">
+          <div>
+            <h3><%= booking.vehicle.name %></h3>
+            <p> Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
+            <p> Your booking starts in <%= (booking.start_date - Date.today).to_i %> days </p>
+          </div>
+          <div>
+            <p>rented by <%= booking.user.email %></p>
+            <h3 class="dashboard-card-status"> Status: <%= booking.status %></h3>
           </div>
         </div>
       </div>
