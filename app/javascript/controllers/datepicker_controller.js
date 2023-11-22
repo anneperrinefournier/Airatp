@@ -36,9 +36,16 @@ export default class extends Controller {
       if (hiddenField) {
         hiddenField.value = daysDifference;
       }
+      console.log(daysDifference)
 
-      const vehicle = this.data.get("vehicle")
-      this.totalPriceTarget = `Total price = ${daysDifference * vehicle.price_per_day}`
+      const price = document.querySelector(".price-per-day")
+      console.log(price.textContent)
+
+      const result = Number(price.textContent) * daysDifference
+      console.log(result)
+
+      this.totalPriceTarget.innerText = `Total price = ${result}`
+      this.totalPriceTarget.dataset.result = result;
     }
   }
 
