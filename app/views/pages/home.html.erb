@@ -54,22 +54,30 @@
     <div class="column">
       <h2>Choose a type of vehicle</h2>
       <div class="cards">
-          <div id="terrestrial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/tCKKg1W/road-220058-1280.jpg)">
-            <%= link_to "Terrestrial", vehicles_path({vehicle_type: "terrestrial"}) %>
-          </div>
+          <%= link_to vehicles_path(vehicle_type: "terrestrial") do %>
+            <div id="terrestrial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/tCKKg1W/road-220058-1280.jpg)">
+            Terrestrial
+            </div>
+          <% end %>
 
-          <div id="aerial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/GT9xH3d/sky-1441936-1280.jpg)">
-            <%= link_to "Aerial", vehicles_path({vehicle_type: "aerial"}) %>
-          </div>
+          <%= link_to vehicles_path(vehicle_type: "aerial") do %>
+            <div id="aerial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/GT9xH3d/sky-1441936-1280.jpg)">
+              Aerial
+            </div>
+          <% end %>
 
-          <div id="maritime" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/5L4rKft/waves-3473335-1280.jpg)">
-            <%= link_to "Maritime", vehicles_path({vehicle_type: "maritime"}) %>
-          </div>
+          <%= link_to vehicles_path(vehicle_type: "maritime") do %>
+            <div id="maritime" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/5L4rKft/waves-3473335-1280.jpg)">
+              Maritime
+            </div>
+          <% end %>
 
-          <div id="spatial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/rGfZ0HG/astronomy-1867616-1280.jpg)">
-            <%= link_to "Spatial", vehicles_path({vehicle_type: "spatial"}) %>
-          </div>
-        </div>
+          <%= link_to vehicles_path(vehicle_type: "spatial") do %>
+            <div id="spatial" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/rGfZ0HG/astronomy-1867616-1280.jpg)">
+              Spatial
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
