@@ -1,41 +1,58 @@
 .dashboard-card {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 
-.dashboard-card > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+  & > img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
 
-.dashboard-card h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+  h3.dashboard-card-status {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
 
-.dashboard-card p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+  &.text-grey {
+    h3.dashboard-card-status {
+      color: grey;
+    }
+  }
 
+  &.text-green {
+    h3.dashboard-card-status {
+      color: green;
+    }
+  }
 
-.dashboard-card .dashboard-card-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
+  &.text-red {
+    h3.dashboard-card-status {
+      color: red;
+    }
+  }
 
-.dashboard-card-infos .dashboard-card-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  p {
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  .dashboard-card-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+    & .dashboard-card-user {
+      position: absolute;
+      right: 16px;
+      top: -20px;
+      width: 40px;
+    }
+  }
 }
 
 .dashboard-card-padding {
