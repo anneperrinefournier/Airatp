@@ -4,6 +4,10 @@ class BookingsController < ApplicationController
     @user_bookings = current_user.bookings
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     @vehicle = Vehicle.find(params[:vehicle_id])
     @booking = @vehicle.bookings.new(booking_params)
