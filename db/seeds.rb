@@ -76,8 +76,8 @@ vehicle = Vehicle.new(
   description: "You will arrive at your destination in the blink of an eye. Though you might become immortal in the process and turn into a skeleton under the moonlight, you will enjoy the company of rude and funny pirates."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176894639492571206/bohemond8467_the_black_pearl_from_pirates_of_the_carribbean_cfa0c3ef-7259-4c0b-a3f2-54541cf4105d.png?ex=6570878b&is=655e128b&hm=4f43632b82a4ba67933eef2ad0e93430d6f968b90795494c0c0cc72b571f44bb&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "black_pearl.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "black_pearl.png", content_type: "image/jpg")
+vehicle.last.save
 
 
 vehicle = Vehicle.new(
@@ -93,8 +93,8 @@ vehicle = Vehicle.new(
 	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462878790918144/bohemond8467_on_a_hanger_in_a_closet_two_translucid_wings_134bf63b-4637-42b8-ac8a-fab734e03b09.png?ex=656ef56f&is=655c806f&hm=cd18a7888ce5943007bf90f85299c2eb0ce696fb4f1bf02238a06c284ba1ab4d&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
+vehicle.last.save
 
 
 vehicle = Vehicle.new(
@@ -110,8 +110,8 @@ vehicle = Vehicle.new(
   description: "Better not be seasick because riding the clouds is very much like riding waves from a raging sea ! This vehicle is a bit old but it allows you to cross worlds and go beyond our good old earth."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176895364197003324/bohemond8467_a_flying_boat_a720103e-b119-447b-93de-6213265c5393.png?ex=65708838&is=655e1338&hm=c2b746fdef267c512c7d8014b9361729f41b490ded7308b7d0cd043cd34193b8&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "flying_boat.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "flying_boat.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -126,8 +126,8 @@ vehicle = Vehicle.new(
   description: "For a romantic walk among the parisian sky with your loved one, this hot-air balloon will be the perfect ride. Enjoy a cup of champagne and the view on the Eiffel tower."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463363597930516/bohemond8467_a_hot_air_balloon_but_in_science_fiction_b2fbab63-1b7e-4523-a263-b66ebbd0330b.png?ex=656ef5e3&is=655c80e3&hm=99a89a8d6a41d9552e4f2cd82473c349023de7bbdcc090df3f6fb358ddf466cc&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "hot_air_balloon.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "hot_air_balloon.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -142,8 +142,8 @@ vehicle = Vehicle.new(
   description: "Ever dreamt of flying high and fast ? Rent this suit to get the chance of being a super-hero the time of your rental. Perfect for work. xoxo, gossip girl."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462888442023976/bohemond8467_the_suit_from_Iron_Man_in_a_dressing_ec667fdf-600c-45d1-92ad-236525f7d59d.png?ex=656ef572&is=655c8072&hm=1ac381567f8edb9a55c162ae64fe17105f4e2131baae965100e1973009e5c390&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "iron_man_suit.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "iron_man_suit.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -158,8 +158,8 @@ vehicle = Vehicle.new(
   description: "Are you tired of being stuck underearth in a noisy and smelly and crowded and basically horrible subway ? Well, you can now travel in the same environment but in the sky. Pretty cool, huh ?"
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463436893388810/bohemond8467_an_aerial_subway_12db04fd-e15e-45fe-8953-f256460c1f83.png?ex=656ef5f4&is=655c80f4&hm=4bbf44ea469be12270ee62a9f7ff9fb7ea2a2a7cce270cc7bf0b3ea27cb414dd&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "aerial_subway.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "aerial_subway.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -174,8 +174,8 @@ vehicle = Vehicle.new(
   description: "This bad boy is quite old now, even technically it will only be invented in the future. Because it is quite old, it is now available at an unbeatable price, so do not hesitate for too long!"
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176896250054975538/bohemond8467_the_falcon_millenium_from_star_wars_c6cdc0c6-c4ed-4bc3-a290-4a7aa67e6690.png?ex=6570890b&is=655e140b&hm=344bf0c43cb42083e5e8198385f19a64976ddd556f452e7fd216e0073bb32542&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "millenium_falcon.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "millenium_falcon.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -190,8 +190,8 @@ vehicle = Vehicle.new(
   description: "You have short legs and your friends always walk faster than you and they're not very nice and don't wait up? Rent these awesome giant boots and get your revenge now! But be careful, with these, you will be the one to wait up!"
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463012748591114/bohemond8467_boots_from_giants_to_travel_in_adb910bb-6df9-4d30-8b56-be374c3c2eb9.png?ex=656ef58f&is=655c808f&hm=c33f0f6650a67490f7dcf8c33909bd08a07f5cbc78606da87d3a6e5e1aca2969&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "seven_league_boots.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "seven_league_boots.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -206,8 +206,8 @@ vehicle = Vehicle.new(
   description: "You hate the subway? Well we hate it too, and we will actually pay you to take it, it is the least we can do, especially with line 13."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463436893388810/bohemond8467_an_aerial_subway_12db04fd-e15e-45fe-8953-f256460c1f83.png?ex=656ef5f4&is=655c80f4&hm=4bbf44ea469be12270ee62a9f7ff9fb7ea2a2a7cce270cc7bf0b3ea27cb414dd&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "subway_line.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "subway_line.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -222,8 +222,8 @@ vehicle = Vehicle.new(
   description: "Do not fear the hotness of Tattooine, with this superfast moto you will catch every cool refreshment existing on this planet. Be careful though, you might be chased down by a lord sith."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176896951292276776/bohemond8467_the_motorcycles_from_tatooine_in_star_wars_01bf781a-ac31-41fe-8322-21c62957d512.png?ex=657089b2&is=655e14b2&hm=265bf7e93a50191d398f57300d6efc982773bc7423f2e491466627bfa52a077a&=&format=webp&width=1038&height=1038")
-vehicles.last.photo.attach(io: file, filename: "motojet.png", content_type: "image/jpg")
-vehicles.last.save
+vehicle.last.photo.attach(io: file, filename: "motojet.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -237,6 +237,9 @@ vehicle = Vehicle.new(
   ecological_label: 'H',
   description: "What an engine, what a machine! If you are always late at work or think your current means of transportation is too slow, you might like this incredible podracer: you will definitely be the fastest on earth!"
 )
+file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+vehicle.last.photo.attach(io: file, filename: "anakin_podracer.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -250,6 +253,9 @@ vehicle = Vehicle.new(
   ecological_label: 'A',
   description: "The Hoverboard is a sleek and futuristic personal transportation device equipped with anti-gravity technology. With a minimalist design and a smooth hover, it offers an effortless and stylish mode of travel through urban landscapes. Riders can effortlessly glide above the ground, zipping through city streets and futuristic plazas. The Hoverboard is the epitome of modern mobility, combining efficiency with a touch of sci-fi flair."
 )
+file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+vehicles.last.photo.attach(io: file, filename: "hoverboard.png", content_type: "image/jpg")
+vehicles.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -263,6 +269,9 @@ vehicle = Vehicle.new(
   ecological_label: 'A',
   description: "The Wagon is not your ordinary mode of transportation; it's a rolling coding school on wheels, designed for aspiring programmers and tech enthusiasts. With its sleek, tech-inspired exterior, the Wagon travels from city to city, bringing coding education to the masses. Inside, state-of-the-art workstations equipped with the latest technology await eager learners. Fueled by creative logic, the Wagon provides a dynamic and collaborative coding environment. Whether you're a novice or an experienced developer, the Wagon is the perfect mobile classroom for unlocking the secrets of programming and innovation. Get on board and embark on a code-learning journey like never before!"
 )
+file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+vehicle.last.photo.attach(io: file, filename: "wagon.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -276,6 +285,9 @@ vehicle = Vehicle.new(
   ecological_label: 'A',
   description: "If you have difficulties to leave your bed, go outside with it and finish your night! The Stilt Bed is no ordinary sleeping arrangement; it's a magical elevated dream platform that transcends the boundaries of the waking world. Suspended on slender stilts, the bed hovers above the ground, allowing the dreamer to enter the realm of dreams with ease. Crafted from the softest clouds and adorned with starlight, the Stilt Bed offers a peaceful and otherworldly space for a restful night's sleep. Fuelled by the essence of imagination, this enchanted bed takes its occupant on fantastical journeys through the landscapes of dreams, where anything is possible and every night is an adventure in Slumber Haven."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902134147584080/bohemond8467_a_flying_bed_e028f3fa-5562-49e5-ad13-550ceb5bf4b6.png?ex=65708e86&is=655e1986&hm=5331e5d06f255d59238fa7b8a78a9f8c2b97e77843f354198621af978455288e&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "stilt_bed.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -289,6 +301,9 @@ vehicle = Vehicle.new(
   ecological_label: 'B',
   description: "The Knight Bus is a magical mode of transportation for witches and wizards in need. With its vibrant purple color and eccentric design, it appears in a pinch, transporting passengers to their desired destination. The bus is known for its unique ability to navigate through the magical and non-magical realms, providing a quick and reliable way for wizards to travel. The interior is surprisingly spacious, featuring beds, chandeliers, and a shrunken head that provides entertainment during the journey. The Knight Bus is a quirky and essential part of the wizarding world's transportation network."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902425081299046/bohemond8467_the_magic_bus_from_harry_potter_f990797b-eda0-4233-a435-1bdb420a137e.png?ex=65708ecb&is=655e19cb&hm=6d38ccedd8396bc3b0a279ba2dafe2789be960bf71e4449f657147405c51bc9a&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "knight_bus.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -302,6 +317,9 @@ vehicle = Vehicle.new(
   ecological_label: 'A',
   description: "The Mermaid Tail is an elegant and magical means of personal aquatic transportation. Crafted from enchanted seashells and powered by the magic of the ocean, it allows you to gracefully glide through underwater realms. The Mermaid Tail offers a smooth and enchanting journey beneath the waves."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902087246880829/bohemond8467_an_empty_mermaids_tail_for_a_human_to_put_on_like__e27b9e42-e523-4310-b884-e640e96949d6.png?ex=65708e7b&is=655e197b&hm=fb908cbbab8ec489c5395c2a7506fbe83cd011f355b81fa018ea2220f80b3d54&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -315,6 +333,9 @@ vehicle = Vehicle.new(
   ecological_label: 'F',
   description: "The Jolly Roger is the infamous pirate ship commanded by the cunning Captain Hook, terrorizing the waters of Neverland. With its menacing black sails adorned with a skull and crossbones, the ship strikes fear into the hearts of sailors. Manned by a crew of mischievous pirates, the Jolly Roger is a formidable vessel, sailing the magical seas with the intent of capturing Peter Pan and his Lost Boys. Powered by the mystical essence of mermaid's tears, the Jolly Roger is a symbol of adventure, danger, and the eternal pursuit of treasure in the whimsical world of Neverland."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462937725091870/bohemond8467_the_pirate_boat_Jolly_Roger_of_Captain_Hook_4061d56c-4c71-449e-b2d7-75edb9d610da.png?ex=656ef57d&is=655c807d&hm=d3ae392563d746ab85e6b91f7ff54efe71de8a52b152cbbb81555382e4d97ac0&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.last.save
 
 
 vehicle = Vehicle.new(
@@ -329,6 +350,10 @@ vehicle = Vehicle.new(
   ecological_label: 'B',
   description: "The Firebolt is a top-of-the-line racing broomstick, renowned for its incredible cruising_speed and precision. With a sleek design and a phoenix feather core, it's the choice of professional Quidditch players and cruising_speed enthusiasts. The Firebolt offers a thrilling and exhilarating ride through the magical skies."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.last.save
+
 
 vehicle = Vehicle.new(
   user: user,
@@ -342,6 +367,9 @@ vehicle = Vehicle.new(
   ecological_label: 'B',
   description: "The Hippogriff is a majestic magical creature capable of flight. With its powerful wings and loyal nature, it serves as a noble and elegant steed for wizards seeking a unique and enchanting mode of transportation. Riding a Hippogriff offers a breathtaking experience as it soars through the skies."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176903483329347705/bohemond8467_a_hippogriff_1e7ff123-962f-4cd2-a443-3a5124990566.png?ex=65708fc8&is=655e1ac8&hm=5a0825d0a5da3f243984f4ab0c06715adfc2390d872b0af0756adf0edc4c9fa7&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -355,6 +383,9 @@ vehicle = Vehicle.new(
   ecological_label: 'G',
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -368,7 +399,9 @@ vehicle = Vehicle.new(
   ecological_label: 'C',
   description: "The flying carpet is a magical flying carpet, woven with enchanted threads that allow it to soar through the skies. Originating from the mystical city of Agrabah, it offers a comfortable and smooth ride for adventurers. The flying carpet is a classic and timeless choice for transportation."
 )
-
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463469969682512/bohemond8467_a_flying_carpet_c53adcce-9b06-425b-a16c-ab03f5d5a921.png?ex=656ef5fc&is=655c80fc&hm=282463269256e3d600bcded60628bbe5fcacf67a199a7c509de0fb5146759857&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.last.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -382,6 +415,9 @@ vehicle = Vehicle.new(
   ecological_label: 'G',
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463585518567424/bohemond8467_a_tardis_from_doctor_who_783e12e7-2c0d-43ab-9ed2-7d04c278889c.png?ex=656ef618&is=655c8118&hm=4d9901a1bae2cac9c21db717349e7a1ba4918dde37263d3ff15252e2773b5c30&=&format=webp&width=1038&height=1038")
+vehicle.last.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.last.save
 
 Booking.create!(
   user: renter,

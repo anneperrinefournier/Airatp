@@ -1,10 +1,12 @@
 <div class="container my-5">
 
+
 <div class="container my-5" >
+  <h3 class="price-per-day">Price/day : <%= @vehicle.price_per_day %>€</h3>
   <%= simple_form_for([@vehicle, Booking.new], local: true) do |form| %>
     <div id="number_of_days_placeholder"></div>
-    <%= form.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-     <%= form.hidden_field :number_of_days, id: "number_of_days_hidden" %>
+    <%= form.input :start_date, label: "Pick your dates", as: :string, input_html: { data: { controller: "datepicker" } } %>
+
 
     <div class="actions my-3">
       <%= form.button :submit, 'Book', class: "btn btn-success" %>
