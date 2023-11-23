@@ -13,7 +13,7 @@
     <% if @vehicle.photo.attached? %>
       <%= cl_image_tag(@vehicle.photo.key, alt: (@vehicle.name + "-picture"), id: "vehicle-picture") %>
     <% else %>
-      <%= cl_image_tag('development/eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+      <%= cl_image_tag('eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
     <% end %>
   </div>
 
