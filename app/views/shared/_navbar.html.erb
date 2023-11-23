@@ -6,40 +6,49 @@
       <% end %>
     </div>
 
-    <div class="nav-filers">
+    <div class="nav-filters">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
         <ul class="navbar-nav mr-auto">
-          <div class="nav-item-position"><li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <% if params[:vehicle_type]%>
-                <div class="filter"><%= selected_type = "Vehicle type" %></div>
-                <div><%= selected_type = params[:vehicle_type].capitalize %></div>
-              <% else %>
-                <div class="filter"><%= selected_type = "Vehicle type" %></div>
-              <% end %>
-            </a>
-              <div class="dropdown-menu" aria-labelledby="vehicleTypeNavbarDropdown">
-                <%= link_to "All", vehicles_path, class:"dropdown-item" %>
-                <%= link_to "Terrestrial", vehicles_path(vehicle_type: "terrestrial"), class:"dropdown-item" %>
-                <%= link_to "Aerial", vehicles_path(vehicle_type: "aerial"), class:"dropdown-item" %>
-                <%= link_to "Maritime", vehicles_path(vehicle_type: "maritime"), class:"dropdown-item" %>
-                <%= link_to "Spatial", vehicles_path(vehicle_type: "spatial"), class:"dropdown-item" %>
-              </div>
-          </li></div>
+          <li class="nav-item dropdown">
+                  <% if params[:vehicle_type]%>
+                    <a class="nav-link dropdown-toggle" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <%= content_tag :div, selected_type = "Vehicle type", class: "filter" %>
+                      <%= selected_type = params[:vehicle_type].capitalize %>
+                    </a>
+                  <% else %>
+                    <a class="nav-link dropdown-toggle" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= content_tag :div, selected_type = "Vehicle type", class: "filter" %>
+                    <%= "Choose your vehicle type" %>
+                    </a>
+                  <% end %>
+                <div class="dropdown-menu" aria-labelledby="vehicleTypeNavbarDropdown">
+                  <%= link_to "All", vehicles_path, class:"dropdown-item" %>
+                  <%= link_to "Terrestrial", vehicles_path(vehicle_type: "terrestrial"), class:"dropdown-item" %>
+                  <%= link_to "Aerial", vehicles_path(vehicle_type: "aerial"), class:"dropdown-item" %>
+                  <%= link_to "Maritime", vehicles_path(vehicle_type: "maritime"), class:"dropdown-item" %>
+                  <%= link_to "Spatial", vehicles_path(vehicle_type: "spatial"), class:"dropdown-item" %>
+                </div>
+            </li>
 
-          <div class="nav-item-position"><li class="nav-item active">
+
+        <div class="vertical-line-after-this">
+          <li class="nav-item active">
             <div class="filter">Dates</div>
-            <input type="text" data-controller= "datepicker" id="startDatePicker" placeholder="Dates">
-          </li></div>
+            <input type="text" data-controller= "datepicker" id="startDatePicker" placeholder="How long?">
+          </li>
+        </div>
 
-          <div class="nav-item-position" data-controller= "travelers" data-action="keyup->travelers#search"><li class="nav-item active">
+        <div class="vertical-line-after-this">
+          <li class="nav-item active" data-controller= "travelers" data-action="keyup->travelers#search">
             <div class="filter" data-target= "numberOfTravelers">Travelers</div>
-            <input type="text" placeholder="Number of travelers" >
-          </li></div>
+            <input type="text" placeholder="How many travelers?">
+          </li>
+        </div>
         </ul>
       </div>
     </div>

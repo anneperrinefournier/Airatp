@@ -1,6 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $background-gray;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,28 +15,38 @@
   width: 40px;
 }
 
-.nav-filers {
-  width: 40%;
-  display:flex;
+
+.nav-filters {
+  background-color: $white;
+  display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
   border: 2px solid $lightblue;
-  border-radius: 30px;
-  padding: 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 80px;
+  padding: 0px 30px;
 }
 
-.navbar-nav mr-auto {
+.navbar-nav {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
+  align-items: first baseline;
+
 }
-.nav-item-position {
+
+.navbar-nav li {
   padding: 10px;
 }
 
 .navbar {
   margin-bottom: 20px;
   padding: 15px;
+}
+
+.vertical-line-after-this {
+  /* Style de la ligne verticale */
+  border-left: 1px solid $lightblue;
+  height: 100%;
+  padding: 10px;
+  margin: 10px 0px;
 }
