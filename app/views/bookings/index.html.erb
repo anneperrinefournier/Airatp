@@ -29,7 +29,8 @@
               <p> Your booking starts in <%= (booking.start_date - Date.today).to_i %> days </p>
             </div>
             <div>
-              <p>rented by <%= booking.user.email %></p>
+              <h3>Total Price <%= booking.total_price %>€</h3>
+              <p>rented by <%= booking.user.email %> </p>
               <h3 class="dashboard-card-status"> Status: <%= booking.status %></h3>
             </div>
           </div>
