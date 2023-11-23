@@ -1,0 +1,14 @@
+
+.text-awesome {
+  color: #395D73;
+  background-image: linear-gradient(gold, gold);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+   transition: background-size .7s, background-position .5s ease-in-out;
+}
+
+.text-awesome:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}

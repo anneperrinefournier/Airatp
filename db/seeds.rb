@@ -299,7 +299,7 @@ vehicle = Vehicle.new(
   description: "The Mermaid Tail is an elegant and magical means of personal aquatic transportation. Crafted from enchanted seashells and powered by the magic of the ocean, it allows you to gracefully glide through underwater realms. The Mermaid Tail offers a smooth and enchanting journey beneath the waves."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902087246880829/bohemond8467_an_empty_mermaids_tail_for_a_human_to_put_on_like__e27b9e42-e523-4310-b884-e640e96949d6.png?ex=65708e7b&is=655e197b&hm=fb908cbbab8ec489c5395c2a7506fbe83cd011f355b81fa018ea2220f80b3d54&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.photo.attach(io: file, filename: "mermaid_tail.png", content_type: "image/jpg")
 vehicle.save
 
 vehicle = Vehicle.new(
@@ -315,7 +315,7 @@ vehicle = Vehicle.new(
   description: "The Jolly Roger is the infamous pirate ship commanded by the cunning Captain Hook, terrorizing the waters of Neverland. With its menacing black sails adorned with a skull and crossbones, the ship strikes fear into the hearts of sailors. Manned by a crew of mischievous pirates, the Jolly Roger is a formidable vessel, sailing the magical seas with the intent of capturing Peter Pan and his Lost Boys. Powered by the mystical essence of mermaid's tears, the Jolly Roger is a symbol of adventure, danger, and the eternal pursuit of treasure in the whimsical world of Neverland."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462937725091870/bohemond8467_the_pirate_boat_Jolly_Roger_of_Captain_Hook_4061d56c-4c71-449e-b2d7-75edb9d610da.png?ex=656ef57d&is=655c807d&hm=d3ae392563d746ab85e6b91f7ff54efe71de8a52b152cbbb81555382e4d97ac0&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.photo.attach(io: file, filename: "jolly_roger.png", content_type: "image/jpg")
 vehicle.save
 
 
@@ -332,7 +332,7 @@ vehicle = Vehicle.new(
   description: "The Firebolt is a top-of-the-line racing broomstick, renowned for its incredible cruising_speed and precision. With a sleek design and a phoenix feather core, it's the choice of professional Quidditch players and cruising_speed enthusiasts. The Firebolt offers a thrilling and exhilarating ride through the magical skies."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.photo.attach(io: file, filename: "firebolt.png", content_type: "image/jpg")
 vehicle.save
 
 
@@ -349,7 +349,7 @@ vehicle = Vehicle.new(
   description: "The Hippogriff is a majestic magical creature capable of flight. With its powerful wings and loyal nature, it serves as a noble and elegant steed for wizards seeking a unique and enchanting mode of transportation. Riding a Hippogriff offers a breathtaking experience as it soars through the skies."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176903483329347705/bohemond8467_a_hippogriff_1e7ff123-962f-4cd2-a443-3a5124990566.png?ex=65708fc8&is=655e1ac8&hm=5a0825d0a5da3f243984f4ab0c06715adfc2390d872b0af0756adf0edc4c9fa7&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.photo.attach(io: file, filename: "hyppogriff.png", content_type: "image/jpg")
 vehicle.save
 
 dragon = Vehicle.new(
@@ -364,8 +364,8 @@ dragon = Vehicle.new(
   ecological_label: 'G',
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
 )
-file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
-dragon.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176904954485690479/bohemond8467_a_dragon_like_in_Eragon_6303409e-3446-4d09-9a6f-9d569fed9157.png?ex=65709126&is=655e1c26&hm=9d85cccf1cd800d4bb39cf1e30f7ac5136bbd3a2e694fea806bb57fe5153e557&=&format=webp&width=1038&height=1038")
+dragon.photo.attach(io: file, filename: "dragon.png", content_type: "image/jpg")
 dragon.save
 
 flying_carpet = Vehicle.new(
@@ -381,7 +381,7 @@ flying_carpet = Vehicle.new(
   description: "The flying carpet is a magical flying carpet, woven with enchanted threads that allow it to soar through the skies. Originating from the mystical city of Agrabah, it offers a comfortable and smooth ride for adventurers. The flying carpet is a classic and timeless choice for transportation."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463469969682512/bohemond8467_a_flying_carpet_c53adcce-9b06-425b-a16c-ab03f5d5a921.png?ex=656ef5fc&is=655c80fc&hm=282463269256e3d600bcded60628bbe5fcacf67a199a7c509de0fb5146759857&=&format=webp&width=1038&height=1038")
-flying_carpet.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+flying_carpet.photo.attach(io: file, filename: "flying_carpet.png", content_type: "image/jpg")
 flying_carpet.save
 
 tardis = Vehicle.new(
@@ -397,7 +397,7 @@ tardis = Vehicle.new(
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463585518567424/bohemond8467_a_tardis_from_doctor_who_783e12e7-2c0d-43ab-9ed2-7d04c278889c.png?ex=656ef618&is=655c8118&hm=4d9901a1bae2cac9c21db717349e7a1ba4918dde37263d3ff15252e2773b5c30&=&format=webp&width=1038&height=1038")
-tardis.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+tardis.photo.attach(io: file, filename: "tardis.png", content_type: "image/jpg")
 tardis.save
 
 

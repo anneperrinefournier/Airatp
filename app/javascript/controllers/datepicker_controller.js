@@ -1,18 +1,21 @@
 import { Controller } from "@hotwired/stimulus"
 import flatpickr from "flatpickr"; // You need to import this to use new flatpickr()
-
+import rangePlugin from "flatpickrRangePlugin";
 
 export default class extends Controller {
-
+static targets = ["startDateInput", "endDateInput"]
 
   connect() {
     const options = {
       minDate: "today",
       mode: "range",
+      "plugins": [new rangePlugin({ input: this.endDateInputTarget})],
+      dateFormat: "d/m/Y h:iK",
       onChange: this.handleChange.bind(this),
     };
 
-    this.fp = flatpickr(this.element, options);
+
+    this.fp = flatpickr(this.startDateInputTarget, options);
   }
 
   handleChange(selectedDates, dateStr, instance) {
@@ -23,7 +26,7 @@ export default class extends Controller {
 
 
       const event = new CustomEvent("datepicker:dates-selected", {
-        detail: { daysDifference },
+        detail: {  startDate, endDate, daysDifference },
       });
 
       window.dispatchEvent(event);

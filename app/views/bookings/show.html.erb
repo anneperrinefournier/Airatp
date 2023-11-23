@@ -22,21 +22,20 @@
 
 <div class="booking">
   <div class="booking-info my-4">
-    <h3><%= @booking.vehicle.price_per_day %>€ per day</h3>
-    <h3>Total Price: <%= @booking.total_price %>€ total</h3>
 
+    <h3>Booking Details</h3>
+    <h4 class="my-3">Total Price : <%= @booking.total_price %>€</h4>
+    <p>Start Date: <%= @booking.start_date %> </p>
+    <p> End Date: <%= @booking.end_date %></p>
+
+  </div>
+  <div class="line p-3">
     <h5> Cruising speed : <%= @booking.vehicle.cruising_speed%></h5>
     <h5> Fuel type : <%= @booking.vehicle.fuel_type%></h5>
   </div>
-  <div>
-  <h5>Booking Details</h5>
-    <p>Start Date: <%= @booking.start_date %></p>
-    <p>End Date: <%= @booking.end_date %></p>
-    <!-- Add more details as needed -->
-  </div>
 
 
+</div>
   <div class="my-3">
   <%= link_to "Back to Dashboard", bookings_path, class: "btn btn-secondary" %>
   </div>
-</div>
