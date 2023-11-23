@@ -381,7 +381,7 @@ vehicle = Vehicle.new(
   ecological_label: 'G',
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
 )
-file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176904954485690479/bohemond8467_a_dragon_like_in_Eragon_6303409e-3446-4d09-9a6f-9d569fed9157.png?ex=65709126&is=655e1c26&hm=9d85cccf1cd800d4bb39cf1e30f7ac5136bbd3a2e694fea806bb57fe5153e557&=&format=webp&width=1038&height=1038")
 vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
 vehicle.save
 
