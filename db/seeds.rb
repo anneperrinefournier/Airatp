@@ -10,7 +10,7 @@
 
 require "open-uri"
 
-p "is detroying - #{Vehicle.all.count} vehicles - #{User.all.count} users - #{Booking.all.count}"
+p "is detroying - #{Vehicle.all.count} vehicles - #{User.all.count} users - #{Booking.all.count} bookings"
 Booking.destroy_all
 Vehicle.all.each do |vehicle|
   vehicle.photo.purge
