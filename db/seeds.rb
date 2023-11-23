@@ -30,8 +30,7 @@ p Booking.count
 user = User.create!(email: 'john@example.com', password: 'password')
 renter = User.create!(email: 'renter@example.com', password: 'password2')
 
-vehicles = []
-vehicles.push(Vehicle.new(
+fairy_wings = Vehicle.new(
   user: user,
 	name: "Fairy's wings",
 	vehicle_type: 'aerial',
@@ -42,12 +41,12 @@ vehicles.push(Vehicle.new(
 	fuel_type: 'magical',
 	ecological_label: 'B',
 	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
-))
+)
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462878790918144/bohemond8467_on_a_hanger_in_a_closet_two_translucid_wings_134bf63b-4637-42b8-ac8a-fab734e03b09.png?ex=656ef56f&is=655c806f&hm=cd18a7888ce5943007bf90f85299c2eb0ce696fb4f1bf02238a06c284ba1ab4d&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
-vehicle.save
+fairy_wings.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
+fairy_wings.save
 
-vehicles.push(Vehicle.new(
+nautilus = Vehicle.new(
   user: user,
 	name: 'Nautilus',
   vehicle_type: 'maritime',
@@ -58,10 +57,10 @@ vehicles.push(Vehicle.new(
   fuel_type: 'essence',
   ecological_label: 'F',
   description: "The Nautilus is the famous submarine able to navigate far under the seas. You will enjoy your travel as it is equipped with the best furniture possible. Unfortunately you won't be able to command it yourself,  its captain, Nemo, comes with the rental."
-))
+)
 file = URI.open("https://www.disneyphile.fr/wp-content/uploads/2021/08/nautilus-boat.jpg")
-vehicles.last.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
-vehicles.last.save
+nautilus.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
+nautilus.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -403,7 +402,7 @@ vehicle.save
 
 Booking.create!(
   user: renter,
-  vehicle: vehicles[0],
+  vehicle: fairy_wings,
   start_date: Date.new(2023, 11, 20),
   end_date: Date.new(2023, 11, 24),
   total_price: 400,
@@ -412,7 +411,7 @@ Booking.create!(
 
 Booking.create!(
   user: renter,
-  vehicle: vehicles[1],
+  vehicle: nautilus,
   start_date: Date.new(2023, 11, 22),
   end_date: Date.new(2023, 11, 26),
   total_price: 300,
