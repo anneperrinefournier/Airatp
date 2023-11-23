@@ -30,24 +30,23 @@ p Booking.count
 user = User.create!(email: 'john@example.com', password: 'password')
 renter = User.create!(email: 'renter@example.com', password: 'password2')
 
-vehicles = []
-vehicles.push(Vehicle.new(
+fairy_wings = Vehicle.new(
   user: user,
-  name: 'Tesla Model S',
-  vehicle_type: 'terrestrial',
-  address: '123 Main Street',
-  passengers_capacity: 4,
-  price_per_day: 50.0,
-  cruising_speed: 120.0,
-  fuel_type: 'Gasoline',
-  ecological_label: 'Eco-Friendly',
-  description: 'A comfortable and fuel-efficient car for your travels.'
-))
-file = URI.open("https://static.actu.fr/uploads/2023/04/photo-tesla-plaid-face-960x640.jpg")
-vehicles.last.photo.attach(io: file, filename: "tesla-model-s.png", content_type: "image/jpg")
-vehicles.last.save
+	name: "Fairy's wings",
+	vehicle_type: 'aerial',
+	address: 'Istanbul',
+	passengers_capacity: 1,
+	price_per_day: 3700,
+	cruising_speed: 40,
+	fuel_type: 'magical',
+	ecological_label: 'B',
+	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
+)
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462878790918144/bohemond8467_on_a_hanger_in_a_closet_two_translucid_wings_134bf63b-4637-42b8-ac8a-fab734e03b09.png?ex=656ef56f&is=655c806f&hm=cd18a7888ce5943007bf90f85299c2eb0ce696fb4f1bf02238a06c284ba1ab4d&=&format=webp&width=1038&height=1038")
+fairy_wings.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
+fairy_wings.save
 
-vehicles.push(Vehicle.new(
+nautilus = Vehicle.new(
   user: user,
 	name: 'Nautilus',
   vehicle_type: 'maritime',
@@ -58,10 +57,10 @@ vehicles.push(Vehicle.new(
   fuel_type: 'essence',
   ecological_label: 'F',
   description: "The Nautilus is the famous submarine able to navigate far under the seas. You will enjoy your travel as it is equipped with the best furniture possible. Unfortunately you won't be able to command it yourself,  its captain, Nemo, comes with the rental."
-))
+)
 file = URI.open("https://www.disneyphile.fr/wp-content/uploads/2021/08/nautilus-boat.jpg")
-vehicles.last.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
-vehicles.last.save
+nautilus.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
+nautilus.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -77,22 +76,6 @@ vehicle = Vehicle.new(
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176894639492571206/bohemond8467_the_black_pearl_from_pirates_of_the_carribbean_cfa0c3ef-7259-4c0b-a3f2-54541cf4105d.png?ex=6570878b&is=655e128b&hm=4f43632b82a4ba67933eef2ad0e93430d6f968b90795494c0c0cc72b571f44bb&=&format=webp&width=1038&height=1038")
 vehicle.photo.attach(io: file, filename: "black_pearl.png", content_type: "image/jpg")
-vehicle.save
-
-vehicle = Vehicle.new(
-  user: user,
-	name: "Fairy's wings",
-	vehicle_type: 'aerial',
-	address: 'Istanbul',
-	passengers_capacity: 1,
-	price_per_day: 3700,
-	cruising_speed: 40,
-	fuel_type: 'magical',
-	ecological_label: 'B',
-	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
-)
-file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462878790918144/bohemond8467_on_a_hanger_in_a_closet_two_translucid_wings_134bf63b-4637-42b8-ac8a-fab734e03b09.png?ex=656ef56f&is=655c806f&hm=cd18a7888ce5943007bf90f85299c2eb0ce696fb4f1bf02238a06c284ba1ab4d&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
 vehicle.save
 
 vehicle = Vehicle.new(
@@ -252,8 +235,8 @@ vehicle = Vehicle.new(
   description: "The Hoverboard is a sleek and futuristic personal transportation device equipped with anti-gravity technology. With a minimalist design and a smooth hover, it offers an effortless and stylish mode of travel through urban landscapes. Riders can effortlessly glide above the ground, zipping through city streets and futuristic plazas. The Hoverboard is the epitome of modern mobility, combining efficiency with a touch of sci-fi flair."
 )
 file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
-vehicles.photo.attach(io: file, filename: "hoverboard.png", content_type: "image/jpg")
-vehicles.save
+vehicle.photo.attach(io: file, filename: "hoverboard.png", content_type: "image/jpg")
+vehicle.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -419,7 +402,7 @@ vehicle.save
 
 Booking.create!(
   user: renter,
-  vehicle: vehicles[0],
+  vehicle: fairy_wings,
   start_date: Date.new(2023, 11, 20),
   end_date: Date.new(2023, 11, 24),
   total_price: 400,
@@ -428,7 +411,7 @@ Booking.create!(
 
 Booking.create!(
   user: renter,
-  vehicle: vehicles[1],
+  vehicle: nautilus,
   start_date: Date.new(2023, 11, 22),
   end_date: Date.new(2023, 11, 26),
   total_price: 300,
