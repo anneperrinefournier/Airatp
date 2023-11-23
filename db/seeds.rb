@@ -30,24 +30,23 @@ p Booking.count
 user = User.create!(email: 'john@example.com', password: 'password')
 renter = User.create!(email: 'renter@example.com', password: 'password2')
 
-vehicles = []
-vehicles.push(Vehicle.new(
+fairy_wings = Vehicle.new(
   user: user,
-  name: 'Tesla Model S',
-  vehicle_type: 'terrestrial',
-  address: '123 Main Street',
-  passengers_capacity: 4,
-  price_per_day: 50.0,
-  cruising_speed: 120.0,
-  fuel_type: 'Gasoline',
-  ecological_label: 'Eco-Friendly',
-  description: 'A comfortable and fuel-efficient car for your travels.'
-))
-file = URI.open("https://static.actu.fr/uploads/2023/04/photo-tesla-plaid-face-960x640.jpg")
-vehicles.last.photo.attach(io: file, filename: "tesla-model-s.png", content_type: "image/jpg")
-vehicles.last.save
+	name: "Fairy's wings",
+	vehicle_type: 'aerial',
+	address: 'Istanbul',
+	passengers_capacity: 1,
+	price_per_day: 3700,
+	cruising_speed: 40,
+	fuel_type: 'magical',
+	ecological_label: 'B',
+	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
+)
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462878790918144/bohemond8467_on_a_hanger_in_a_closet_two_translucid_wings_134bf63b-4637-42b8-ac8a-fab734e03b09.png?ex=656ef56f&is=655c806f&hm=cd18a7888ce5943007bf90f85299c2eb0ce696fb4f1bf02238a06c284ba1ab4d&=&format=webp&width=1038&height=1038")
+fairy_wings.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
+fairy_wings.save
 
-vehicles.push(Vehicle.new(
+nautilus = Vehicle.new(
   user: user,
 	name: 'Nautilus',
   vehicle_type: 'maritime',
@@ -58,10 +57,10 @@ vehicles.push(Vehicle.new(
   fuel_type: 'essence',
   ecological_label: 'F',
   description: "The Nautilus is the famous submarine able to navigate far under the seas. You will enjoy your travel as it is equipped with the best furniture possible. Unfortunately you won't be able to command it yourself,  its captain, Nemo, comes with the rental."
-))
+)
 file = URI.open("https://www.disneyphile.fr/wp-content/uploads/2021/08/nautilus-boat.jpg")
-vehicles.last.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
-vehicles.last.save
+nautilus.photo.attach(io: file, filename: "nautilus.png", content_type: "image/jpg")
+nautilus.save
 
 vehicle = Vehicle.new(
   user: user,
@@ -77,22 +76,6 @@ vehicle = Vehicle.new(
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176894639492571206/bohemond8467_the_black_pearl_from_pirates_of_the_carribbean_cfa0c3ef-7259-4c0b-a3f2-54541cf4105d.png?ex=6570878b&is=655e128b&hm=4f43632b82a4ba67933eef2ad0e93430d6f968b90795494c0c0cc72b571f44bb&=&format=webp&width=1038&height=1038")
 vehicle.photo.attach(io: file, filename: "black_pearl.png", content_type: "image/jpg")
-vehicle.save
-
-vehicle = Vehicle.new(
-  user: user,
-	name: "Fairy's wings",
-	vehicle_type: 'aerial',
-	address: 'Istanbul',
-	passengers_capacity: 1,
-	price_per_day: 3700,
-	cruising_speed: 40,
-	fuel_type: 'magical',
-	ecological_label: 'B',
-	description: "Why walk with your tired legs when you can simply rent these fabulous wings from a magical fairy? They will be particularly convenient for a night in disguise or to go pick up your kids from school."
-)
-file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462878790918144/bohemond8467_on_a_hanger_in_a_closet_two_translucid_wings_134bf63b-4637-42b8-ac8a-fab734e03b09.png?ex=656ef56f&is=655c806f&hm=cd18a7888ce5943007bf90f85299c2eb0ce696fb4f1bf02238a06c284ba1ab4d&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "fairy_wings.png", content_type: "image/jpg")
 vehicle.save
 
 vehicle = Vehicle.new(
@@ -203,7 +186,7 @@ vehicle = Vehicle.new(
   ecological_label: 'H',
   description: "You hate the subway? Well we hate it too, and we will actually pay you to take it, it is the least we can do, especially with line 13."
 )
-file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463436893388810/bohemond8467_an_aerial_subway_12db04fd-e15e-45fe-8953-f256460c1f83.png?ex=656ef5f4&is=655c80f4&hm=4bbf44ea469be12270ee62a9f7ff9fb7ea2a2a7cce270cc7bf0b3ea27cb414dd&=&format=webp&width=1038&height=1038")
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1177181317541150791/bohemond8467_a_picture_of_subway_line_13_in_paris_8db08f56-9a64-4458-ab33-82db50a40cf7.png?ex=65719289&is=655f1d89&hm=1a526eced483fab4b86f4bf3c9f70d2f3a242618048521ccc1c325bc27352d24&=&format=webp&width=1038&height=1038")
 vehicle.photo.attach(io: file, filename: "subway_line.png", content_type: "image/jpg")
 vehicle.save
 
@@ -223,7 +206,7 @@ file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/11
 vehicle.photo.attach(io: file, filename: "motojet.png", content_type: "image/jpg")
 vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: "Anakin's podracer",
   vehicle_type: 'terrestrial',
@@ -235,8 +218,11 @@ Vehicle.create!(
   ecological_label: 'H',
   description: "What an engine, what a machine! If you are always late at work or think your current means of transportation is too slow, you might like this incredible podracer: you will definitely be the fastest on earth!"
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1177180097502003230/bohemond8467_anakins_podracer_in_star_wars_6b0e8041-3a0c-4c37-a0f9-2f43df8083db.png?ex=65719166&is=655f1c66&hm=97c131e1d56ae4718d8c7ff3fefda544b2c837ca91825746d0e5e6a3a35fae21&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "anakin_podracer.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Hoverboard',
   vehicle_type: 'terrestrial',
@@ -248,8 +234,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "The Hoverboard is a sleek and futuristic personal transportation device equipped with anti-gravity technology. With a minimalist design and a smooth hover, it offers an effortless and stylish mode of travel through urban landscapes. Riders can effortlessly glide above the ground, zipping through city streets and futuristic plazas. The Hoverboard is the epitome of modern mobility, combining efficiency with a touch of sci-fi flair."
 )
+file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+vehicle.photo.attach(io: file, filename: "hoverboard.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Wagon',
   vehicle_type: 'terrestrial',
@@ -261,8 +250,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "The Wagon is not your ordinary mode of transportation; it's a rolling coding school on wheels, designed for aspiring programmers and tech enthusiasts. With its sleek, tech-inspired exterior, the Wagon travels from city to city, bringing coding education to the masses. Inside, state-of-the-art workstations equipped with the latest technology await eager learners. Fueled by creative logic, the Wagon provides a dynamic and collaborative coding environment. Whether you're a novice or an experienced developer, the Wagon is the perfect mobile classroom for unlocking the secrets of programming and innovation. Get on board and embark on a code-learning journey like never before!"
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1177184030563778580/bohemond8467_a_red_wagon_with_three_windows_f800b30d-0eb9-4f12-bbb6-228b37796ef6.png?ex=6571950f&is=655f200f&hm=2d105c33fab0cd3f02d5400b474bbb71a5129b4ff1db33612962cba7ff2bd29a&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "wagon.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Stilt Bed',
   vehicle_type: 'terrestrial',
@@ -274,8 +266,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "If you have difficulties to leave your bed, go outside with it and finish your night! The Stilt Bed is no ordinary sleeping arrangement; it's a magical elevated dream platform that transcends the boundaries of the waking world. Suspended on slender stilts, the bed hovers above the ground, allowing the dreamer to enter the realm of dreams with ease. Crafted from the softest clouds and adorned with starlight, the Stilt Bed offers a peaceful and otherworldly space for a restful night's sleep. Fuelled by the essence of imagination, this enchanted bed takes its occupant on fantastical journeys through the landscapes of dreams, where anything is possible and every night is an adventure in Slumber Haven."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902134147584080/bohemond8467_a_flying_bed_e028f3fa-5562-49e5-ad13-550ceb5bf4b6.png?ex=65708e86&is=655e1986&hm=5331e5d06f255d59238fa7b8a78a9f8c2b97e77843f354198621af978455288e&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "stilt_bed.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Knight Bus',
   vehicle_type: 'terrestrial',
@@ -287,8 +282,11 @@ Vehicle.create!(
   ecological_label: 'B',
   description: "The Knight Bus is a magical mode of transportation for witches and wizards in need. With its vibrant purple color and eccentric design, it appears in a pinch, transporting passengers to their desired destination. The bus is known for its unique ability to navigate through the magical and non-magical realms, providing a quick and reliable way for wizards to travel. The interior is surprisingly spacious, featuring beds, chandeliers, and a shrunken head that provides entertainment during the journey. The Knight Bus is a quirky and essential part of the wizarding world's transportation network."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902425081299046/bohemond8467_the_magic_bus_from_harry_potter_f990797b-eda0-4233-a435-1bdb420a137e.png?ex=65708ecb&is=655e19cb&hm=6d38ccedd8396bc3b0a279ba2dafe2789be960bf71e4449f657147405c51bc9a&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "knight_bus.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
   name: 'Mermaid Tail',
   vehicle_type: 'terrestrial',
@@ -300,8 +298,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "The Mermaid Tail is an elegant and magical means of personal aquatic transportation. Crafted from enchanted seashells and powered by the magic of the ocean, it allows you to gracefully glide through underwater realms. The Mermaid Tail offers a smooth and enchanting journey beneath the waves."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902087246880829/bohemond8467_an_empty_mermaids_tail_for_a_human_to_put_on_like__e27b9e42-e523-4310-b884-e640e96949d6.png?ex=65708e7b&is=655e197b&hm=fb908cbbab8ec489c5395c2a7506fbe83cd011f355b81fa018ea2220f80b3d54&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Jolly Roger',
   vehicle_type: 'aerial',
@@ -313,9 +314,12 @@ Vehicle.create!(
   ecological_label: 'F',
   description: "The Jolly Roger is the infamous pirate ship commanded by the cunning Captain Hook, terrorizing the waters of Neverland. With its menacing black sails adorned with a skull and crossbones, the ship strikes fear into the hearts of sailors. Manned by a crew of mischievous pirates, the Jolly Roger is a formidable vessel, sailing the magical seas with the intent of capturing Peter Pan and his Lost Boys. Powered by the mystical essence of mermaid's tears, the Jolly Roger is a symbol of adventure, danger, and the eternal pursuit of treasure in the whimsical world of Neverland."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462937725091870/bohemond8467_the_pirate_boat_Jolly_Roger_of_Captain_Hook_4061d56c-4c71-449e-b2d7-75edb9d610da.png?ex=656ef57d&is=655c807d&hm=d3ae392563d746ab85e6b91f7ff54efe71de8a52b152cbbb81555382e4d97ac0&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Firebolt',
   vehicle_type: 'aerial',
@@ -327,8 +331,12 @@ Vehicle.create!(
   ecological_label: 'B',
   description: "The Firebolt is a top-of-the-line racing broomstick, renowned for its incredible cruising_speed and precision. With a sleek design and a phoenix feather core, it's the choice of professional Quidditch players and cruising_speed enthusiasts. The Firebolt offers a thrilling and exhilarating ride through the magical skies."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+
+vehicle = Vehicle.new(
   user: user,
 	name: 'Hippogriff',
   vehicle_type: 'aerial',
@@ -340,8 +348,11 @@ Vehicle.create!(
   ecological_label: 'B',
   description: "The Hippogriff is a majestic magical creature capable of flight. With its powerful wings and loyal nature, it serves as a noble and elegant steed for wizards seeking a unique and enchanting mode of transportation. Riding a Hippogriff offers a breathtaking experience as it soars through the skies."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176903483329347705/bohemond8467_a_hippogriff_1e7ff123-962f-4cd2-a443-3a5124990566.png?ex=65708fc8&is=655e1ac8&hm=5a0825d0a5da3f243984f4ab0c06715adfc2390d872b0af0756adf0edc4c9fa7&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+dragon = Vehicle.new(
   user: user,
   name: 'Dragon',
   vehicle_type: 'aerial',
@@ -353,8 +364,11 @@ Vehicle.create!(
   ecological_label: 'G',
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
+dragon.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+dragon.save
 
-Vehicle.create!(
+flying_carpet = Vehicle.new(
   user: user,
 	name: 'Flying carpet',
   vehicle_type: 'aerial',
@@ -366,8 +380,11 @@ Vehicle.create!(
   ecological_label: 'C',
   description: "The flying carpet is a magical flying carpet, woven with enchanted threads that allow it to soar through the skies. Originating from the mystical city of Agrabah, it offers a comfortable and smooth ride for adventurers. The flying carpet is a classic and timeless choice for transportation."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463469969682512/bohemond8467_a_flying_carpet_c53adcce-9b06-425b-a16c-ab03f5d5a921.png?ex=656ef5fc&is=655c80fc&hm=282463269256e3d600bcded60628bbe5fcacf67a199a7c509de0fb5146759857&=&format=webp&width=1038&height=1038")
+flying_carpet.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+flying_carpet.save
 
-Vehicle.create!(
+tardis = Vehicle.new(
   user: user,
   name: 'Tardis',
   vehicle_type: 'spatial',
@@ -379,23 +396,54 @@ Vehicle.create!(
   ecological_label: 'G',
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463585518567424/bohemond8467_a_tardis_from_doctor_who_783e12e7-2c0d-43ab-9ed2-7d04c278889c.png?ex=656ef618&is=655c8118&hm=4d9901a1bae2cac9c21db717349e7a1ba4918dde37263d3ff15252e2773b5c30&=&format=webp&width=1038&height=1038")
+tardis.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+tardis.save
+
 
 Booking.create!(
-  user: renter,
-  vehicle: vehicles[0],
-  start_date: Date.new(2023, 11, 20),
-  end_date: Date.new(2023, 11, 24),
-  total_price: 400,
-  status: 1
+  user: user,
+  vehicle: dragon,
+  start_date: Date.new(2023, 11, 22),
+  end_date: Date.new(2023, 11, 26),
+  total_price: 300,
+  status: 0
 )
 
 Booking.create!(
   user: renter,
-  vehicle: vehicles[1],
+  vehicle: fairy_wings,
+  start_date: Date.new(2023, 11, 20),
+  end_date: Date.new(2023, 11, 24),
+  total_price: 400,
+  status: 0
+)
+
+Booking.create!(
+  user: renter,
+  vehicle: nautilus,
   start_date: Date.new(2023, 11, 22),
   end_date: Date.new(2023, 11, 26),
   total_price: 300,
-  status: 1
+  status: 0
+)
+
+Booking.create!(
+  user: renter,
+  vehicle: tardis,
+  start_date: Date.new(2023, 11, 22),
+  end_date: Date.new(2023, 11, 26),
+  total_price: 300,
+  status: 0
+)
+
+Booking.create!(
+  user: renter,
+  vehicle: flying_carpet,
+  start_date: Date.new(2023, 11, 22),
+  end_date: Date.new(2023, 11, 26),
+  total_price: 300,
+  status: 0
 )
 
 p "created vehicles number - #{Vehicle.all.count} / user number #{User.all.count} / booking number #{Booking.all.count} "

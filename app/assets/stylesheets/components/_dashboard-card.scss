@@ -1,4 +1,4 @@
-.dashboard-card {
+.booking-card {
 overflow: hidden;
 background: var(--white, #FFF);
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -13,26 +13,26 @@ text-decoration: none;
     object-fit: cover;
   }
 
-  h3.dashboard-card-status {
+  h4.booking-card-status {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
   }
 
   &.text-grey {
-    h3.dashboard-card-status {
+    h4.booking-card-status {
       color: grey;
     }
   }
 
   &.text-green {
-    h3.dashboard-card-status {
+    h4.booking-card-status {
       color: green;
     }
   }
 
   &.text-red {
-    h3.dashboard-card-status {
+    h4.booking-card-status {
       color: red;
     }
   }
@@ -43,7 +43,7 @@ text-decoration: none;
     margin: 0;
   }
 
-  .dashboard-card-infos {
+  .booking-card-infos {
     text-decoration: none;
     padding: 16px;
     display: flex;
@@ -51,7 +51,7 @@ text-decoration: none;
     align-items: flex-end;
     position: relative;
 
-    & .dashboard-card-user {
+    & .booking-card-user {
       text-decoration: none;
       position: absolute;
       right: 16px;
@@ -61,6 +61,53 @@ text-decoration: none;
   }
 }
 
-.dashboard-card-padding {
+.booking-card-padding {
   padding: 10px;
+}
+
+
+.dashboard-vehicle-card-container {
+  width: 50%;
+  height: 500px;
+
+  .dashboard-vehicle-card {
+    overflow: hidden;
+    background: var(--white, #FFF);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: 2px solid #6BA7BF;
+    text-decoration: none;
+
+    & > div.dashboard-vehicle-card-image {
+      width: 100%;
+      height: 300px;
+    }
+
+    & > h3.dashboard-vehicle-card-title {
+      color: white;
+    }
+
+    p {
+      font-size: 12px;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    .booking-card-infos {
+      text-decoration: none;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+
+      & .booking-card-user {
+        text-decoration: none;
+        position: absolute;
+        right: 16px;
+        top: -20px;
+        width: 40px;
+      }
+    }
+  }
 }

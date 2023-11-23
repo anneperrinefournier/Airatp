@@ -1,6 +1,16 @@
 <%= render "shared/navbar" %>
 
-<div class="container mt-5">
+<div class="container mt-3">
+  <% if @user == @vehicle.user %>
+    <div class="d-flex justify-content-end">
+      <%= link_to "Edit vehicle", edit_vehicle_path(@vehicle), class:"btn btn-primary" %>
+      <%= link_to "Delete vehicle", vehicle_path(@vehicle), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      },
+      class:"btn btn-danger" %>
+    </div>
+  <% end %>
   <div class="card-test">
     <div class="card-info">
       <h3 style="text-align: center"><%= @vehicle.name %></h3>
@@ -13,30 +23,31 @@
     <% if @vehicle.photo.attached? %>
       <%= cl_image_tag(@vehicle.photo.key, alt: (@vehicle.name + "-picture"), id: "vehicle-picture") %>
     <% else %>
-      <%= cl_image_tag('development/eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+      <%= cl_image_tag('eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
     <% end %>
   </div>
 
+  <div class="booking">
+    <div class="booking-info my-4">
+      <h3>Price/day : <%= @vehicle.price_per_day %>€</h3>
+      <h3 class="price-per-day d-none"><%= @vehicle.price_per_day %></h3>
+      <h5> Cruising speed : <%= @vehicle.cruising_speed%></h5>
+      <h5> Fuel type : <%= @vehicle.fuel_type%></h5>
+    </div>
 
-
-
-
-<div class="booking data-controller="datepicker">
-  <div class="booking-info my-4">
-    <h3 class="price-per-day"><%= @vehicle.price_per_day %> €</h3>
-    <h5> Cruising speed : TBD</h5>
-    <h5> Fuel type : <%= @vehicle.fuel_type%></h5>
-    <div id="totalPriceContainer">
-        <p data-search-target="totalPrice" > Number of days <span id="number_of_days_display"></span></p>
+    <div class="line">
+      <%= render 'bookings/form', vehicle: @vehicle %>
     </div>
   </div>
 
-  <div class="line ">
-     <%= render 'bookings/form', vehicle: @vehicle %>
+    <div class="booking-info line" data-controller= "total-price">
+      <h3 class="price-per-day">Total Price</h3>
+        <span  id="number_of_days_display"></span><h4 data-value = "days" data-total-price-target= "total" ></h4>
+    </div>
   </div>
-</div>
 
-</div>
+
   <div class="my-3">
      <%= link_to "Back to Filtered Results", vehicles_path(vehicle_type: @vehicle.vehicle_type), class: "btn btn-secondary" %>
   </div>
+</div>

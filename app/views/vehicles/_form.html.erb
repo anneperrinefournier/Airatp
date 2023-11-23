@@ -1,0 +1,16 @@
+<%= simple_form_for(@vehicle, local: true) do |form| %>
+  <%= form.input :name, as: :string %>
+  <%= form.input :photo, as: :file %>
+  <%= form.input :vehicle_type, as: :string %>
+  <%= form.input :address, as: :string %>
+  <%= form.input :passengers_capacity, as: :integer %>
+  <%= form.input :price_per_day, as: :float %>
+  <%= form.input :cruising_speed, as: :float %>
+  <%= form.input :fuel_type, as: :string %>
+  <%= form.input :ecological_label, as: :string %>
+  <%= form.input :description, as: :text %>
+
+  <div class="actions my-3">
+    <%= form.button :submit, 'Rent', class: "btn btn-primary" %>
+  </div>
+<% end %>
