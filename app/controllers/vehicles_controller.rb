@@ -11,4 +11,10 @@ class VehiclesController < ApplicationController
       @vehicles = Vehicle.all
     end
   end
+
+  def search_by_passengers
+    number_of_passengers = params[:number_of_passengers]
+    @vehicles = Vehicle.where(passengers_capacity: number_of_passengers)
+    render json: @vehicles
+  end
 end
