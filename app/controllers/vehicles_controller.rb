@@ -1,4 +1,18 @@
 class VehiclesController < ApplicationController
+  def new
+    @vehicle = Vehicle.new
+  end
+
+  def create
+    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle.user = current_user
+    if @vehicle.save
+      redirect_to vehicles_path
+    else
+      render 'new', status: :unprocessable_entity
+    end
+  end
+
   def show
     @vehicle = Vehicle.find(params[:id])
     @booking = Booking.new
@@ -12,9 +26,9 @@ class VehiclesController < ApplicationController
     end
   end
 
-  def search_by_passengers
-    number_of_passengers = params[:number_of_passengers]
-    @vehicles = Vehicle.where(passengers_capacity: number_of_passengers)
-    render json: @vehicles
+  private
+
+  def vehicle_params
+    params.require(:vehicle).permit(:name, :photo, :vehicle_type, :address, :passengers_capacity, :price_per_day, :cruising_speed, :fuel_type, :ecological_label, :description)
   end
 end
