@@ -223,7 +223,7 @@ file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/11
 vehicle.photo.attach(io: file, filename: "motojet.png", content_type: "image/jpg")
 vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: "Anakin's podracer",
   vehicle_type: 'terrestrial',
@@ -235,8 +235,11 @@ Vehicle.create!(
   ecological_label: 'H',
   description: "What an engine, what a machine! If you are always late at work or think your current means of transportation is too slow, you might like this incredible podracer: you will definitely be the fastest on earth!"
 )
+file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+vehicle.photo.attach(io: file, filename: "anakin_podracer.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Hoverboard',
   vehicle_type: 'terrestrial',
@@ -248,8 +251,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "The Hoverboard is a sleek and futuristic personal transportation device equipped with anti-gravity technology. With a minimalist design and a smooth hover, it offers an effortless and stylish mode of travel through urban landscapes. Riders can effortlessly glide above the ground, zipping through city streets and futuristic plazas. The Hoverboard is the epitome of modern mobility, combining efficiency with a touch of sci-fi flair."
 )
+file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+vehicles.photo.attach(io: file, filename: "hoverboard.png", content_type: "image/jpg")
+vehicles.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Wagon',
   vehicle_type: 'terrestrial',
@@ -261,8 +267,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "The Wagon is not your ordinary mode of transportation; it's a rolling coding school on wheels, designed for aspiring programmers and tech enthusiasts. With its sleek, tech-inspired exterior, the Wagon travels from city to city, bringing coding education to the masses. Inside, state-of-the-art workstations equipped with the latest technology await eager learners. Fueled by creative logic, the Wagon provides a dynamic and collaborative coding environment. Whether you're a novice or an experienced developer, the Wagon is the perfect mobile classroom for unlocking the secrets of programming and innovation. Get on board and embark on a code-learning journey like never before!"
 )
+file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+vehicle.photo.attach(io: file, filename: "wagon.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Stilt Bed',
   vehicle_type: 'terrestrial',
@@ -274,8 +283,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "If you have difficulties to leave your bed, go outside with it and finish your night! The Stilt Bed is no ordinary sleeping arrangement; it's a magical elevated dream platform that transcends the boundaries of the waking world. Suspended on slender stilts, the bed hovers above the ground, allowing the dreamer to enter the realm of dreams with ease. Crafted from the softest clouds and adorned with starlight, the Stilt Bed offers a peaceful and otherworldly space for a restful night's sleep. Fuelled by the essence of imagination, this enchanted bed takes its occupant on fantastical journeys through the landscapes of dreams, where anything is possible and every night is an adventure in Slumber Haven."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902134147584080/bohemond8467_a_flying_bed_e028f3fa-5562-49e5-ad13-550ceb5bf4b6.png?ex=65708e86&is=655e1986&hm=5331e5d06f255d59238fa7b8a78a9f8c2b97e77843f354198621af978455288e&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "stilt_bed.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Knight Bus',
   vehicle_type: 'terrestrial',
@@ -287,8 +299,11 @@ Vehicle.create!(
   ecological_label: 'B',
   description: "The Knight Bus is a magical mode of transportation for witches and wizards in need. With its vibrant purple color and eccentric design, it appears in a pinch, transporting passengers to their desired destination. The bus is known for its unique ability to navigate through the magical and non-magical realms, providing a quick and reliable way for wizards to travel. The interior is surprisingly spacious, featuring beds, chandeliers, and a shrunken head that provides entertainment during the journey. The Knight Bus is a quirky and essential part of the wizarding world's transportation network."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902425081299046/bohemond8467_the_magic_bus_from_harry_potter_f990797b-eda0-4233-a435-1bdb420a137e.png?ex=65708ecb&is=655e19cb&hm=6d38ccedd8396bc3b0a279ba2dafe2789be960bf71e4449f657147405c51bc9a&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "knight_bus.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
   name: 'Mermaid Tail',
   vehicle_type: 'terrestrial',
@@ -300,8 +315,11 @@ Vehicle.create!(
   ecological_label: 'A',
   description: "The Mermaid Tail is an elegant and magical means of personal aquatic transportation. Crafted from enchanted seashells and powered by the magic of the ocean, it allows you to gracefully glide through underwater realms. The Mermaid Tail offers a smooth and enchanting journey beneath the waves."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902087246880829/bohemond8467_an_empty_mermaids_tail_for_a_human_to_put_on_like__e27b9e42-e523-4310-b884-e640e96949d6.png?ex=65708e7b&is=655e197b&hm=fb908cbbab8ec489c5395c2a7506fbe83cd011f355b81fa018ea2220f80b3d54&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Jolly Roger',
   vehicle_type: 'aerial',
@@ -313,9 +331,12 @@ Vehicle.create!(
   ecological_label: 'F',
   description: "The Jolly Roger is the infamous pirate ship commanded by the cunning Captain Hook, terrorizing the waters of Neverland. With its menacing black sails adorned with a skull and crossbones, the ship strikes fear into the hearts of sailors. Manned by a crew of mischievous pirates, the Jolly Roger is a formidable vessel, sailing the magical seas with the intent of capturing Peter Pan and his Lost Boys. Powered by the mystical essence of mermaid's tears, the Jolly Roger is a symbol of adventure, danger, and the eternal pursuit of treasure in the whimsical world of Neverland."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176462937725091870/bohemond8467_the_pirate_boat_Jolly_Roger_of_Captain_Hook_4061d56c-4c71-449e-b2d7-75edb9d610da.png?ex=656ef57d&is=655c807d&hm=d3ae392563d746ab85e6b91f7ff54efe71de8a52b152cbbb81555382e4d97ac0&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Firebolt',
   vehicle_type: 'aerial',
@@ -327,8 +348,12 @@ Vehicle.create!(
   ecological_label: 'B',
   description: "The Firebolt is a top-of-the-line racing broomstick, renowned for its incredible cruising_speed and precision. With a sleek design and a phoenix feather core, it's the choice of professional Quidditch players and cruising_speed enthusiasts. The Firebolt offers a thrilling and exhilarating ride through the magical skies."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+
+vehicle = Vehicle.new(
   user: user,
 	name: 'Hippogriff',
   vehicle_type: 'aerial',
@@ -340,8 +365,11 @@ Vehicle.create!(
   ecological_label: 'B',
   description: "The Hippogriff is a majestic magical creature capable of flight. With its powerful wings and loyal nature, it serves as a noble and elegant steed for wizards seeking a unique and enchanting mode of transportation. Riding a Hippogriff offers a breathtaking experience as it soars through the skies."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176903483329347705/bohemond8467_a_hippogriff_1e7ff123-962f-4cd2-a443-3a5124990566.png?ex=65708fc8&is=655e1ac8&hm=5a0825d0a5da3f243984f4ab0c06715adfc2390d872b0af0756adf0edc4c9fa7&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
   name: 'Dragon',
   vehicle_type: 'aerial',
@@ -353,8 +381,11 @@ Vehicle.create!(
   ecological_label: 'G',
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
 	name: 'Flying carpet',
   vehicle_type: 'aerial',
@@ -366,8 +397,11 @@ Vehicle.create!(
   ecological_label: 'C',
   description: "The flying carpet is a magical flying carpet, woven with enchanted threads that allow it to soar through the skies. Originating from the mystical city of Agrabah, it offers a comfortable and smooth ride for adventurers. The flying carpet is a classic and timeless choice for transportation."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463469969682512/bohemond8467_a_flying_carpet_c53adcce-9b06-425b-a16c-ab03f5d5a921.png?ex=656ef5fc&is=655c80fc&hm=282463269256e3d600bcded60628bbe5fcacf67a199a7c509de0fb5146759857&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
-Vehicle.create!(
+vehicle = Vehicle.new(
   user: user,
   name: 'Tardis',
   vehicle_type: 'spatial',
@@ -379,6 +413,9 @@ Vehicle.create!(
   ecological_label: 'G',
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463585518567424/bohemond8467_a_tardis_from_doctor_who_783e12e7-2c0d-43ab-9ed2-7d04c278889c.png?ex=656ef618&is=655c8118&hm=4d9901a1bae2cac9c21db717349e7a1ba4918dde37263d3ff15252e2773b5c30&=&format=webp&width=1038&height=1038")
+vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+vehicle.save
 
 Booking.create!(
   user: renter,

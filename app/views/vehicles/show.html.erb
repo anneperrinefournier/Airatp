@@ -21,22 +21,26 @@
 
 
 
-<div class="booking data-controller="datepicker">
+<div class="booking">
   <div class="booking-info my-4">
-    <h3 class="price-per-day"><%= @vehicle.price_per_day %> €</h3>
-    <h5> Cruising speed : TBD</h5>
+    <h3>Price/day : <%= @vehicle.price_per_day %>€</h3>
+    <h3 class="price-per-day d-none"><%= @vehicle.price_per_day %></h3>
+    <h5> Cruising speed : <%= @vehicle.cruising_speed%></h5>
     <h5> Fuel type : <%= @vehicle.fuel_type%></h5>
-    <div id="totalPriceContainer">
-        <p data-search-target="totalPrice" > Number of days <span id="number_of_days_display"></span></p>
-    </div>
   </div>
 
-  <div class="line ">
+  <div class="line">
      <%= render 'bookings/form', vehicle: @vehicle %>
   </div>
 </div>
 
+  <div class="booking-info line" data-controller= "total-price">
+    <h3 class="price-per-day">Total Price</h3>
+      <span  id="number_of_days_display"></span><h4 data-value = "days" data-total-price-target= "total" ></h4>
+  </div>
 </div>
+
+
   <div class="my-3">
      <%= link_to "Back to Filtered Results", vehicles_path(vehicle_type: @vehicle.vehicle_type), class: "btn btn-secondary" %>
   </div>
