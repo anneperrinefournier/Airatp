@@ -203,7 +203,7 @@ vehicle = Vehicle.new(
   ecological_label: 'H',
   description: "You hate the subway? Well we hate it too, and we will actually pay you to take it, it is the least we can do, especially with line 13."
 )
-file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463436893388810/bohemond8467_an_aerial_subway_12db04fd-e15e-45fe-8953-f256460c1f83.png?ex=656ef5f4&is=655c80f4&hm=4bbf44ea469be12270ee62a9f7ff9fb7ea2a2a7cce270cc7bf0b3ea27cb414dd&=&format=webp&width=1038&height=1038")
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1177181317541150791/bohemond8467_a_picture_of_subway_line_13_in_paris_8db08f56-9a64-4458-ab33-82db50a40cf7.png?ex=65719289&is=655f1d89&hm=1a526eced483fab4b86f4bf3c9f70d2f3a242618048521ccc1c325bc27352d24&=&format=webp&width=1038&height=1038")
 vehicle.photo.attach(io: file, filename: "subway_line.png", content_type: "image/jpg")
 vehicle.save
 
@@ -235,7 +235,7 @@ vehicle = Vehicle.new(
   ecological_label: 'H',
   description: "What an engine, what a machine! If you are always late at work or think your current means of transportation is too slow, you might like this incredible podracer: you will definitely be the fastest on earth!"
 )
-file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1177180097502003230/bohemond8467_anakins_podracer_in_star_wars_6b0e8041-3a0c-4c37-a0f9-2f43df8083db.png?ex=65719166&is=655f1c66&hm=97c131e1d56ae4718d8c7ff3fefda544b2c837ca91825746d0e5e6a3a35fae21&=&format=webp&width=1038&height=1038")
 vehicle.photo.attach(io: file, filename: "anakin_podracer.png", content_type: "image/jpg")
 vehicle.save
 
@@ -267,7 +267,7 @@ vehicle = Vehicle.new(
   ecological_label: 'A',
   description: "The Wagon is not your ordinary mode of transportation; it's a rolling coding school on wheels, designed for aspiring programmers and tech enthusiasts. With its sleek, tech-inspired exterior, the Wagon travels from city to city, bringing coding education to the masses. Inside, state-of-the-art workstations equipped with the latest technology await eager learners. Fueled by creative logic, the Wagon provides a dynamic and collaborative coding environment. Whether you're a novice or an experienced developer, the Wagon is the perfect mobile classroom for unlocking the secrets of programming and innovation. Get on board and embark on a code-learning journey like never before!"
 )
-file = URI.open("https://cdn.discordapp.com/attachments/1168489400993316946/1176546352923148319/bohemond8467_sketching_in_black_and_white_of_a_spaceship_in_the_206b199c-b8cf-4c0a-95c9-62db69cf5e66.png?ex=656f432d&is=655cce2d&hm=e94713730ca3b191356663c2ae3537760e4396d91b5fefaf3b30959cef56072f&")
+file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1177184030563778580/bohemond8467_a_red_wagon_with_three_windows_f800b30d-0eb9-4f12-bbb6-228b37796ef6.png?ex=6571950f&is=655f200f&hm=2d105c33fab0cd3f02d5400b474bbb71a5129b4ff1db33612962cba7ff2bd29a&=&format=webp&width=1038&height=1038")
 vehicle.photo.attach(io: file, filename: "wagon.png", content_type: "image/jpg")
 vehicle.save
 
