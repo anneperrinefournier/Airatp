@@ -12,43 +12,42 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
-                  <% if params[:vehicle_type]%>
-                    <a class="nav-link dropdown-toggle" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <%= content_tag :div, selected_type = "Vehicle type", class: "filter" %>
-                      <%= selected_type = params[:vehicle_type].capitalize %>
-                    </a>
-                  <% else %>
-                    <a class="nav-link dropdown-toggle" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= content_tag :div, selected_type = "Vehicle type", class: "filter" %>
-                    <%= "Choose your vehicle type" %>
-                    </a>
-                  <% end %>
-                <div class="dropdown-menu" aria-labelledby="vehicleTypeNavbarDropdown">
-                  <%= link_to "All", vehicles_path, class:"dropdown-item" %>
-                  <%= link_to "Terrestrial", vehicles_path(vehicle_type: "terrestrial"), class:"dropdown-item" %>
-                  <%= link_to "Aerial", vehicles_path(vehicle_type: "aerial"), class:"dropdown-item" %>
-                  <%= link_to "Maritime", vehicles_path(vehicle_type: "maritime"), class:"dropdown-item" %>
-                  <%= link_to "Spatial", vehicles_path(vehicle_type: "spatial"), class:"dropdown-item" %>
-                </div>
+            <% if params[:vehicle_type]%>
+              <a class="nav-link dropdown-toggle" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= content_tag :div, selected_type = "Vehicle type", class: "filter" %>
+                <%= selected_type = params[:vehicle_type].capitalize %>
+              </a>
+            <% else %>
+              <a class="nav-link dropdown-toggle" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= content_tag :div, selected_type = "Vehicle type", class: "filter" %>
+              <%= "Choose your vehicle type" %>
+              </a>
+            <% end %>
+
+            <div class="dropdown-menu" aria-labelledby="vehicleTypeNavbarDropdown">
+              <%= link_to "All", vehicles_path, class:"dropdown-item" %>
+              <%= link_to "Terrestrial", vehicles_path(vehicle_type: "terrestrial"), class:"dropdown-item" %>
+              <%= link_to "Aerial", vehicles_path(vehicle_type: "aerial"), class:"dropdown-item" %>
+              <%= link_to "Maritime", vehicles_path(vehicle_type: "maritime"), class:"dropdown-item" %>
+              <%= link_to "Spatial", vehicles_path(vehicle_type: "spatial"), class:"dropdown-item" %>
+            </div>
+          </li>
+
+          <div class="vertical-line-after-this">
+            <li class="nav-item active">
+              <div class="filter">Dates</div>
+              <input type="text" data-controller= "datepicker" id="startDatePicker" placeholder="How long?">
             </li>
+          </div>
 
-
-        <div class="vertical-line-after-this">
-          <li class="nav-item active">
-            <div class="filter">Dates</div>
-            <input type="text" data-controller= "datepicker" id="startDatePicker" placeholder="How long?">
-          </li>
-        </div>
-
-        <div class="vertical-line-after-this">
-          <li class="nav-item active" data-controller= "travelers" data-action="keyup->travelers#search">
-            <div class="filter" data-target= "numberOfTravelers">Passagers</div>
-            <input type="text" placeholder="How many passagers?">
-          </li>
-        </div>
+          <div class="vertical-line-after-this">
+            <li class="nav-item active" data-controller= "travelers" data-action="keyup->travelers#search">
+              <div class="filter" data-target= "numberOfTravelers">Passagers</div>
+              <input type="text" placeholder="How many passagers?">
+            </li>
+          </div>
         </ul>
       </div>
     </div>
@@ -59,7 +58,7 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://i.pinimg.com/474x/f3/24/08/f32408382ef9e9de1ef32ba0dc6ed007.jpg", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileNavbarDropdown">
-              <%= link_to "Dashboard", bookings_path, class: "dropdown-item" %>
+              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

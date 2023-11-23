@@ -352,7 +352,7 @@ file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/11
 vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
 vehicle.save
 
-vehicle = Vehicle.new(
+dragon = Vehicle.new(
   user: user,
   name: 'Dragon',
   vehicle_type: 'aerial',
@@ -365,10 +365,10 @@ vehicle = Vehicle.new(
   description: "The Dragon is a majestic and awe-inspiring mythical creature that serves as a powerful mode of transportation for the bravest of wizards. With scales that gleam like precious metals and wings that span the skies, the dragon is a symbol of strength and magical prowess. Riding atop a dragon's back is not merely a means of travel; it's an exhilarating experience through the mystical landscapes below. Fueled by the fiery breath of the dragon itself, this legendary creature offers a journey like no other, soaring through the clouds and embracing the freedom of the open skies. Only those with a heart full of courage and a spirit of adventure dare to mount the back of a dragon and embark on a flight of fantasy."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176902168427634738/bohemond8467_a_flying_broom_43120250-1979-4716-9c59-18f8d4fe338a.png?ex=65708e8e&is=655e198e&hm=986ef4764bf25e4a648a45d45b3105fd55fe79dc21dd94fb70214389e43ff64e&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
-vehicle.save
+dragon.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+dragon.save
 
-vehicle = Vehicle.new(
+flying_carpet = Vehicle.new(
   user: user,
 	name: 'Flying carpet',
   vehicle_type: 'aerial',
@@ -381,10 +381,10 @@ vehicle = Vehicle.new(
   description: "The flying carpet is a magical flying carpet, woven with enchanted threads that allow it to soar through the skies. Originating from the mystical city of Agrabah, it offers a comfortable and smooth ride for adventurers. The flying carpet is a classic and timeless choice for transportation."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463469969682512/bohemond8467_a_flying_carpet_c53adcce-9b06-425b-a16c-ab03f5d5a921.png?ex=656ef5fc&is=655c80fc&hm=282463269256e3d600bcded60628bbe5fcacf67a199a7c509de0fb5146759857&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
-vehicle.save
+flying_carpet.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+flying_carpet.save
 
-vehicle = Vehicle.new(
+tardis = Vehicle.new(
   user: user,
   name: 'Tardis',
   vehicle_type: 'spatial',
@@ -397,8 +397,18 @@ vehicle = Vehicle.new(
   description: "The Tardis is a Time Lord's iconic time-traveling spacecraft, capable of transcending time and space. With its deceptively simple blue police box exterior, the Tardis houses a vast and infinite interior, providing a unique and unpredictable journey through the timelines. Powered by artron energy, the Tardis is a remarkable and enigmatic mode of transportation."
 )
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463585518567424/bohemond8467_a_tardis_from_doctor_who_783e12e7-2c0d-43ab-9ed2-7d04c278889c.png?ex=656ef618&is=655c8118&hm=4d9901a1bae2cac9c21db717349e7a1ba4918dde37263d3ff15252e2773b5c30&=&format=webp&width=1038&height=1038")
-vehicle.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
-vehicle.save
+tardis.photo.attach(io: file, filename: "Mermaid_tail.png", content_type: "image/jpg")
+tardis.save
+
+
+Booking.create!(
+  user: user,
+  vehicle: dragon,
+  start_date: Date.new(2023, 11, 22),
+  end_date: Date.new(2023, 11, 26),
+  total_price: 300,
+  status: 0
+)
 
 Booking.create!(
   user: renter,
@@ -406,7 +416,7 @@ Booking.create!(
   start_date: Date.new(2023, 11, 20),
   end_date: Date.new(2023, 11, 24),
   total_price: 400,
-  status: 1
+  status: 0
 )
 
 Booking.create!(
@@ -415,7 +425,25 @@ Booking.create!(
   start_date: Date.new(2023, 11, 22),
   end_date: Date.new(2023, 11, 26),
   total_price: 300,
-  status: 1
+  status: 0
+)
+
+Booking.create!(
+  user: renter,
+  vehicle: tardis,
+  start_date: Date.new(2023, 11, 22),
+  end_date: Date.new(2023, 11, 26),
+  total_price: 300,
+  status: 0
+)
+
+Booking.create!(
+  user: renter,
+  vehicle: flying_carpet,
+  start_date: Date.new(2023, 11, 22),
+  end_date: Date.new(2023, 11, 26),
+  total_price: 300,
+  status: 0
 )
 
 p "created vehicles number - #{Vehicle.all.count} / user number #{User.all.count} / booking number #{Booking.all.count} "

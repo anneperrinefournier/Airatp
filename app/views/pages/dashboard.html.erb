@@ -1,0 +1,134 @@
+<% require 'date' %>
+
+<%= render "shared/navbar" %>
+
+<div class="container">
+  <h1>Dashboard</h1>
+  <h2>You have <strong><%= @user_vehicles.count %></strong> vehicles</h2>
+  <div class="d-flex flex-wrap">
+    <%= @user_vehicles.order(:name).each do |vehicle| %>
+      <div class="mb-4 p-2 dashboard-vehicle-card-container">
+        <div class="dashboard-vehicle-card d-flex flex-column">
+          <% if vehicle.photo.attached? %>
+            <div class="dashboard-vehicle-card-image d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(vehicle.photo.key, alt: (vehicle.name + "-picture"), id: "vehicle-picture", crop: :fill) %>')">
+              <%= link_to vehicle.name, vehicle_path(vehicle), class:"dashboard-vehicle-card-title" %>
+            </div>
+          <% else %>
+            <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path('eaa35mokrpgg4yg15ngp', alt: (vehicle.name + "-picture"), id: "vehicle-picture", crop: :fill) %>')">
+              <h3 class="dashboard-vehicle-card-title"><%= vehicle.name %></h3>
+            </div>
+          <% end %>
+
+          <div class="dashboard-vehicle-card-infos flex-grow-1">
+            <%= vehicle.description %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-3 row">
+    <div class="col-8">
+      <h2>You have <strong><%= @user_bookings.count %></strong> bookings.</h2>
+    </div>
+    <% @user_bookings.order(:start_date).each do |booking| %>
+      <div class="mb-4">
+        <h3><%= booking.vehicle.name %> : starts in <%= (booking.start_date - Date.today).to_i %> days!</h3>
+        <div class="col-8 booking-card <%= Booking.status_color_class(booking.status) %> booking-card-padding py-3">
+          <%= link_to booking_path(booking) do %>
+            <% if booking.vehicle.photo.attached? %>
+              <%= cl_image_tag(booking.vehicle.photo.key, alt: (booking.vehicle.name + "-picture"), id: "vehicle-picture", width: 400, height: 300, crop: :fill) %>
+            <% else %>
+              <%= cl_image_tag('eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+            <% end %>
+          <% end %>
+          <div class="booking-card-infos">
+            <div>
+              <h4><%= booking.vehicle.name %></h4>
+              <p> Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
+              <p> Your booking starts in <%= (booking.start_date - Date.today).to_i %> days </p>
+            </div>
+            <div>
+              <p>rented by <%= booking.user.email %></p>
+              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-3 row">
+    <div class="col-8">
+      <h2>You have <strong><%= @waiting_bookings.count %></strong> reservations to confirm</h2>
+    </div>
+    <% @waiting_bookings.order(:start_date).each do |booking| %>
+      <div class="mb-4">
+        <h3><%= booking.vehicle.name %> : starts in <%= (booking.start_date - Date.today).to_i %> days!</h3>
+        <div class="col-8 booking-card <%= Booking.status_color_class(booking.status) %> booking-card-padding py-3">
+          <%= link_to booking_path(booking) do %>
+            <% if booking.vehicle.photo.attached? %>
+              <%= cl_image_tag(booking.vehicle.photo.key, alt: (booking.vehicle.name + "-picture"), id: "vehicle-picture", width: 400, height: 300, crop: :fill) %>
+            <% else %>
+              <%= cl_image_tag('eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+            <% end %>
+          <% end %>
+          <div class="booking-card-infos">
+            <div>
+              <h4><%= booking.vehicle.name %></h4>
+              <p>Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
+              <p>Your booking starts in <%= (booking.start_date - Date.today).to_i %> days</p>
+            </div>
+            <div>
+              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+              <% if @user == booking.vehicle.user && booking.status == "pending" %>
+                <div>
+                  <%= link_to "Accept",
+                    accept_booking_path(booking),
+                    data: { turbo_method: :patch },
+                    class:'btn btn-success' %>
+                  <%= link_to "Reject",
+                    reject_booking_path(booking),
+                    data: { turbo_method: :patch },
+                    class:'btn btn-danger' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="mt-3 row">
+    <div class="col-8">
+      <h2>You have accepted <strong><%= @validated_bookings.count %></strong> bookings</h2>
+    </div>
+    <% @validated_bookings.order(:start_date).each do |booking| %>
+      <div class="mb-4">
+        <h3><%= booking.vehicle.name %> : starts in <%= (booking.start_date - Date.today).to_i %> days!</h3>
+        <div class="col-8 booking-card <%= Booking.status_color_class(booking.status) %> booking-card-padding py-3">
+          <%= link_to booking_path(booking) do %>
+            <% if booking.vehicle.photo.attached? %>
+              <%= cl_image_tag(booking.vehicle.photo.key, alt: (booking.vehicle.name + "-picture"), id: "vehicle-picture", width: 400, height: 300, crop: :fill) %>
+            <% else %>
+              <%= cl_image_tag('eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+            <% end %>
+          <% end %>
+          <div class="booking-card-infos">
+            <div>
+              <h4><%= booking.vehicle.name %></h4>
+              <p>Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
+              <p>Your booking starts in <%= (booking.start_date - Date.today).to_i %> days</p>
+            </div>
+            <div>
+              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
