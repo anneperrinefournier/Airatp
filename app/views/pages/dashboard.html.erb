@@ -6,7 +6,7 @@
   <h1>Dashboard</h1>
   <h2>You have <strong><%= @user_vehicles.count %></strong> vehicles</h2>
   <div class="d-flex flex-wrap">
-    <%= @user_vehicles.order(:name).each do |vehicle| %>
+    <% @user_vehicles.order(:name).each do |vehicle| %>
       <div class="mb-4 p-2 dashboard-vehicle-card-container">
         <div class="dashboard-vehicle-card d-flex flex-column">
           <% if vehicle.photo.attached? %>
@@ -29,7 +29,7 @@
 
   <div class="mt-3 row">
     <div class="col-8">
-      <h2>You have <strong><%= @user_bookings.count %></strong> bookings.</h2>
+      <h2>You have <strong><%= @user_bookings.count %></strong> bookings</h2>
     </div>
     <% @user_bookings.order(:start_date).each do |booking| %>
       <div class="mb-4">
@@ -60,7 +60,7 @@
 
   <div class="mt-3 row">
     <div class="col-8">
-      <h2>You have <strong><%= @waiting_bookings.count %></strong> reservations to confirm</h2>
+      <h2><strong><%= @waiting_bookings.count %></strong> reservations to confirm</h2>
     </div>
     <% @waiting_bookings.order(:start_date).each do |booking| %>
       <div class="mb-4">
@@ -103,7 +103,7 @@
 
   <div class="mt-3 row">
     <div class="col-8">
-      <h2>You have accepted <strong><%= @validated_bookings.count %></strong> bookings</h2>
+      <h2><strong><%= @validated_bookings.count %></strong> accepted bookings</h2>
     </div>
     <% @validated_bookings.order(:start_date).each do |booking| %>
       <div class="mb-4">
@@ -130,5 +130,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
