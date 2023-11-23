@@ -12,7 +12,6 @@ export default class extends Controller {
       this.startDateValue = startDate;
       this.endDateValue = endDate;
       this.daysValue = daysDifference;
-      console.log(endDate)
 
       this.calculateTotal();
 
@@ -20,14 +19,10 @@ export default class extends Controller {
   }
 
   calculateTotal() {
-    const startDate = new Date(this.startDateValue);
-    const endDate = new Date(this.endDateValue);
-    console.log(endDate)
+
     const day = this.daysValue;
     const price = document.querySelector(".price-per-day").innerHTML;
     const total_price = day * price;
-
     this.totalTarget.textContent = `${day}x${price}=${total_price}€`;
-
   }
 }
