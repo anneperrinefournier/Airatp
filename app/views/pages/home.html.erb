@@ -10,12 +10,12 @@
           </div>
         </div>
 
-        <div class="buttons">
+        <div class="buttons-log-inline">
           <% if user_signed_in? %>
             <div class="nav-item dropdown">
               <%= image_tag "https://i.pinimg.com/474x/f3/24/08/f32408382ef9e9de1ef32ba0dc6ed007.jpg", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="profileNavbarDropdown">
-                <%= link_to "Dashboard", bookings_path, class: "dropdown-item" %>
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               </div>
             </div>
