@@ -28,16 +28,16 @@ p "number of bookings"
 p Booking.count
 
 frodon = User.new(email: 'frodon.sake@terredumilieu.com', password: 'password')
-# file = URI.open("https://static.wikia.nocookie.net/lotr/images/3/32/Frodo_%28FotR%29.png/revision/latest?cb=20221006065757")
-# user.photo.attach(io: file, filename: "frodon_saquet", content_type: 'image/jpg')
+file = URI.open("https://static.wikia.nocookie.net/lotr/images/3/32/Frodo_%28FotR%29.png/revision/latest?cb=20221006065757")
+frodon.photo.attach(io: file, filename: "frodon_saquet", content_type: 'image/jpg')
 frodon.save
 
 user = User.new(email: 'john@example.com', password: 'usermdp')
 user.save
 
 jack = User.new(email: 'jacksparrow@caraibes.com', password: 'jackmdp')
-# file = URI.open("https://scontent-cdg4-2.xx.fbcdn.net/v/t1.18169-9/11200805_10153889836504741_718631745012518813_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=be3454&_nc_ohc=SIm6mQwGOeUAX8XS_oN&_nc_ht=scontent-cdg4-2.xx&oh=00_AfDSAJFhsoeIpXtpudwtysW8j5FXcDaxntG46oltgvGOKw&oe=658824E7")
-# renter.photo.attach(io: file, filename: "jack_sparrow", content_type: 'image/jpg')
+file = URI.open("https://scontent-cdg4-2.xx.fbcdn.net/v/t1.18169-9/11200805_10153889836504741_718631745012518813_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=be3454&_nc_ohc=SIm6mQwGOeUAX8XS_oN&_nc_ht=scontent-cdg4-2.xx&oh=00_AfDSAJFhsoeIpXtpudwtysW8j5FXcDaxntG46oltgvGOKw&oe=658824E7")
+jack.photo.attach(io: file, filename: "jack_sparrow", content_type: 'image/jpg')
 jack.save
 
 fairy_wings = Vehicle.new(
