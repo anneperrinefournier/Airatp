@@ -2,16 +2,27 @@ class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[show edit update destroy]
 
   def index
-    if params[:vehicle_type].present?
-      @vehicles = Vehicle.where(vehicle_type: params[:vehicle_type])
+
+    if params[:vehicle_type].present? && params[:queryname].present? && params[:passengers_capacity].present?
+      @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
+                         .merge(passengers_capacity_range)
+                         .merge(vehicle_type: params[:vehicle_type])
+
+    elsif params[:vehicle_type].present? && params[:queryname].present?
+      @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
+                         .merge(vehicle_type: params[:vehicle_type])
     elsif params[:queryname].present? && params[:passengers_capacity].present?
       @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
                          .merge(passengers_capacity_range)
-
+    elsif [:vehicle_type].present? && params[:passengers_capacity].present?
+      @vehicles = Vehicle.where(vehicle_type: params[:vehicle_type])
+                         .merge(passengers_capacity_range)
+    elsif params[:vehicle_type].present?
+      @vehicles = Vehicle.where(vehicle_type: params[:vehicle_type])
     elsif params[:queryname].present?
       @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
     elsif params[:passengers_capacity].present?
-      passengers_capacity_range
+      @vehicles = passengers_capacity_range
     else
       @vehicles = Vehicle.all
     end
