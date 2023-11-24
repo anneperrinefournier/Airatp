@@ -68,7 +68,7 @@
             </div>
             <div>
               <p>rented by <%= booking.user.email %></p>
-              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+              <h4 class="booking-card-status"><%= booking.status %></h4>
             </div>
           </div>
         </div>
@@ -97,20 +97,18 @@
               <p>Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
               <p>Your booking starts in <%= (booking.start_date - Date.today).to_i %> days</p>
             </div>
-            <div>
-              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+            <div data-controller='update-status'>
+              <h4 class="booking-card-status" data-update-status-target="status"><%= booking.status.capitalize %></h4>
               <% if @user == booking.vehicle.user && booking.status == "pending" %>
                 <div>
                   <%= link_to "Accept",
                     accept_booking_path(booking),
                     data: { turbo_method: :patch,
-                    controller: 'update-status',
                     action: 'click->update-status#update' },
                     class:'btn btn-success' %>
                   <%= link_to "Reject",
                     reject_booking_path(booking),
                     data: { turbo_method: :patch,
-                    controller: 'update-status',
                     action: 'click->update-status#update' },
                     class:'btn btn-danger' %>
                 </div>
@@ -144,7 +142,7 @@
               <p>Your booking starts in <%= (booking.start_date - Date.today).to_i %> days</p>
             </div>
             <div>
-              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+              <h4 class="booking-card-status"><%= booking.status %></h4>
             </div>
           </div>
         </div>

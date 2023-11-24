@@ -33,10 +33,4 @@ export default class extends Controller {
     }
     event.target.classList.add('active')
   }
-
-  validateBooking(event) {
-    event.preventDefault()
-
-    
-  }
 }
