@@ -3,7 +3,7 @@
 
 <div class="container">
 
-  <h1>Vehicles list</h1>
+  <h1> <%= @vehicles.count%> vehicles available near you </h1>
   <div class="flexbox">
     <div>
         <!-- Trigger/Open The Modal -->
@@ -36,6 +36,7 @@
                 <p>Vehicle type: <%= vehicle.vehicle_type %></p>
                 <p>Ecological label: <%= vehicle.ecological_label %></p>
               </div>
+              <div class="div"> <%= link_to "more details", vehicle_path(vehicle), class:"btn btn-secondary"%></div>
             </div>
           </div>
         </div>
