@@ -37,7 +37,11 @@
           <%= form_with class: "entire-form", url: vehicles_path, method: :get do %>
           <div class="vertical-line-after-this input-width-small">
             <li class="nav-item active">
-              <input  class="form-control"  type="text"  id="startDatePicker" placeholder="Dates" data-controller="navbar-datepicker">
+              <input  class="form-control nav-form-control"
+                      type="text"
+                      id="startDatePicker"
+                      placeholder="Select dates"
+                      data-controller="navbar-datepicker">
                   <%#= text_field_tag :start_date,
                       params[:start_date],
                         id: "startDatePicker",
@@ -80,7 +84,6 @@
 
     <div class="nav-end">
       <ul class="navbar-nav me-auto">
-      <div class="buttons-log">
         <% if user_signed_in? %>
               <div class="nav-item dropdown">
                 <%= image_tag "https://i.pinimg.com/474x/f3/24/08/f32408382ef9e9de1ef32ba0dc6ed007.jpg", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -90,14 +93,15 @@
                 </div>
               </div>
             <% else %>
-              <div id="suscribe" class="btn">
+      <div class="btns-log">
+              <div class="suscribe">
                 <%= link_to "Suscribe", new_user_registration_path, class: "links" %>
               </div>
-              <div id="connect" class="btn">
+              <div class="connect">
                 <%= link_to "Connect", new_user_session_path, class: "links" %>
               </div>
-            <% end %>
          </div>
+            <% end %>
         </div>
       </ul>
     </div>
