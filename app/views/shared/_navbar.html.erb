@@ -40,7 +40,7 @@
                   <%= text_field_tag :start_date,
                   params[:start_date],
                         id: "startDatePicker",
-                        class: "form-control",
+                        class: "form-control nav-form-control",
                         data: { controller: "navbar_datepicker" },
                         placeholder: "Select dates"
                 %>
@@ -51,7 +51,7 @@
               <li class="nav-item active">
                 <%= text_field_tag :passengers_capacity,
                   params[:passengers_capacity],
-                  class: "form-control",
+                  class: "form-control nav-form-control",
                   placeholder: "How many passagers?"
                 %>
               </li>
@@ -62,7 +62,7 @@
               <li class="nav-item active">
                   <%= text_field_tag :queryname,
                     params[:queryname],
-                    class: "form-control",
+                    class: "form-control nav-form-control",
                     placeholder: "Search a vehicle"
                     %>
               </li>
