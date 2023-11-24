@@ -6,20 +6,6 @@
   <h1> <%= @vehicles.count%> vehicles available near you </h1>
   <div class="flexbox">
     <div>
-        <!-- Trigger/Open The Modal -->
-      <button class="filter-additionnal", id="modalTrigger">Filters</button>
-
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>contenu de la modal</p>
-        </div>
-
-      </div>
-
       <% @vehicles.each do |vehicle| %>
         <div class="">
           <div class="p-3">
@@ -30,13 +16,39 @@
                 <%= cl_image_tag('/eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
               <% end %>
               <div class="d-flex vehicle-description flex-column">
-                <h2><%= link_to vehicle.name, vehicle_path(vehicle) %></h2>
-                <p>Capacity: <%= vehicle.passengers_capacity %> <%= vehicle.passengers_capacity > 1 ? 'peoples' : 'person' %></p>
-                <p>Price: <%= vehicle.price_per_day %>€/day</p>
-                <p>Vehicle type: <%= vehicle.vehicle_type %></p>
-                <p>Ecological label: <%= vehicle.ecological_label %></p>
+                <div>
+                  <h3><%= vehicle.name %></h3>
+                  <p>Capacity: <strong><%= vehicle.passengers_capacity %> <%= vehicle.passengers_capacity > 1 ? 'peoples' : 'person' %></strong></p>
+                  <p>Price: <strong><%= vehicle.price_per_day %>€/day</strong></p>
+                  <p>Vehicle type: <strong><%= vehicle.vehicle_type %></strong></p>
+                  <p>Ecological label: <strong><%= vehicle.ecological_label %></strong></p>
+                  <button class="filter-additional", id="modalTrigger">More details</button>
+                </div>
+                <div>
+                  <div id="myModal" class="modal">
+                      <!-- Modal content -->
+                      <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <div id="card-test-modal">
+                          <div class="card-info">
+                            <h3><%= vehicle.name %></h3>
+                            <div class="center">
+                            <i class="fa-solid fa-star">   4.9</i>
+                            <i class="fa-solid fa-user-astronaut">      <%= vehicle.passengers_capacity%></i>
+                            </div>
+                            <p class="card-text mt-5"><%=vehicle.description%></p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="my-3">
+                    <%= link_to "Choose this vehicle", vehicle_path(vehicle), class: "btn-airatp-lightblue" %>
+                  </div>
+                </div>
+
+                <!-- The Modal -->
+
               </div>
-              <div class="div"> <%= link_to "more details", vehicle_path(vehicle), class:"btn btn-secondary"%></div>
             </div>
           </div>
         </div>
@@ -49,8 +61,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 <script>

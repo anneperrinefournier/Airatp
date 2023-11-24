@@ -7,10 +7,10 @@ static targets = ["startDateInput", "endDateInput"]
 
   connect() {
     const options = {
-      minDate: "today",
       mode: "range",
+      minDate: "today",
+      dateFormat: "d/m/Y",
       "plugins": [new rangePlugin({ input: this.endDateInputTarget})],
-      dateFormat: "d/m/Y h:iK",
       onChange: this.handleChange.bind(this),
     };
 
