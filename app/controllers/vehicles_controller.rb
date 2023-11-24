@@ -5,11 +5,11 @@ class VehiclesController < ApplicationController
     if params[:vehicle_type].present? && params[:queryname].present? && params[:passengers_capacity].present?
       @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
                          .merge(passengers_capacity_range)
-                         .merge(vehicle_type: params[:vehicle_type])
+                         .where(vehicle_type: params[:vehicle_type])
 
     elsif params[:vehicle_type].present? && params[:queryname].present?
       @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
-                         .merge(vehicle_type: params[:vehicle_type])
+                         .where(vehicle_type: params[:vehicle_type])
     elsif params[:queryname].present? && params[:passengers_capacity].present?
       @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
                          .merge(passengers_capacity_range)
