@@ -31,9 +31,9 @@
 
   <div class="booking" >
     <div class="booking-info my-4">
-      <h3>Price/day : <%= @vehicle.price_per_day %>€</h3>
-      <h3 class="price-per-day d-none"><%= @vehicle.price_per_day %></h3>
-      <h5> Cruising speed : <strong><%= @vehicle.cruising_speed%></strong></h5>
+      <h3>Price/day : <%= @vehicle.price_per_day.to_i %>€</h3>
+      <h3 class="price-per-day d-none"><%= @vehicle.price_per_day.to_i %></h3>
+      <h5> Cruising speed : <strong><%= @vehicle.cruising_speed.to_i%> km/h</strong></h5>
       <h5> Fuel type : <strong><%= @vehicle.fuel_type%></strong></h5>
     </div>
 
