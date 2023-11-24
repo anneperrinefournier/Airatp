@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def accept_booking
     @booking = Booking.find(params[:id])
-    if current_user == @booking.vehicle.user && @booking.status == Status.pending
+    if current_user == @booking.vehicle.user && @booking.status == "pending"
       @booking.update(status: :validated)
       render json:{
         status: @booking.status.capitalize

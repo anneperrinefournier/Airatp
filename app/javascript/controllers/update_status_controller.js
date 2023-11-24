@@ -22,7 +22,7 @@ export default class extends Controller {
     .then(response => response.json())
     .then(data => {
       this.statusTarget.innerText = data.status;
-      if (data.status == "Validated"){
+      if (data.status == "Validated") {
         this.statusTarget.classList.add("text-success");
         this.statusTarget.classList.remove("text-secondary");
         this.statusTarget.classList.remove("text-danger");
