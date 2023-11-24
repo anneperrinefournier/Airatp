@@ -1,15 +1,17 @@
 <%= render "shared/navbar" %>
 
-
 <div class="container mt-3" data-controller="total-price">
   <% if @user == @vehicle.user %>
-    <div class="d-flex justify-content-end">
-      <%= link_to "Edit vehicle", edit_vehicle_path(@vehicle), class:"btn btn-primary" %>
-      <%= link_to "Delete vehicle", vehicle_path(@vehicle), data: {
-        turbo_method: :delete,
-        turbo_confirm: "Are you sure?"
-      },
-      class:"btn btn-danger" %>
+    <div class="d-flex gap-3 justify-content-center align-items-center">
+      <div class="btn-airatp-lightblue">
+        <%= link_to "Edit vehicle", edit_vehicle_path(@vehicle), class: "links" %>
+      </div>
+      <div class="btn-airatp-redpink">
+        <%= link_to "Delete vehicle", vehicle_path(@vehicle), class: "links", data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %>
+      </div>
     </div>
   <% end %>
   <div class="card-test">
@@ -49,6 +51,7 @@
 </div>
 
   <div class="my-3">
-     <%= link_to "Back to Filtered Results", vehicles_path(vehicle_type: @vehicle.vehicle_type), class: "btn-airatp-lightblue" %>
+     <%= link_to "Back to Filtered Results", vehicles_path(vehicle_type: @vehicle.vehicle_type), class: "btn-airatp-lightblue links" %>
   </div>
+
 </div>

@@ -20,12 +20,8 @@
               </div>
             </div>
           <% else %>
-            <div class="suscribe">
-              <%= link_to "Suscribe", new_user_registration_path, class: "links" %>
-            </div>
-            <div class="connect">
-              <%= link_to "Connect", new_user_session_path, class: "links" %>
-            </div>
+              <%= link_to "Suscribe", new_user_registration_path, class: "suscribe" %>
+              <%= link_to "Connect", new_user_session_path, class: "connect" %>
           <% end %>
         </div>
       </div>
