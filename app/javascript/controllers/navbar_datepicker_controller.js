@@ -9,7 +9,7 @@ export default class extends Controller {
     const options = {
       minDate: "today",
       mode: "range",
-      dateFormat: "d/m/Y h:iK",
+      dateFormat: "d/m",
     };
 
 
