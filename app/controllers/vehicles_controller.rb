@@ -52,7 +52,7 @@ class VehiclesController < ApplicationController
 
   def update
     @vehicle = Vehicle.find(params[:id])
-    if vehicle.user == current_user
+    if @vehicle.user == current_user
       @vehicle = Vehicle.new(vehicle_params)
       if @vehicle.save
         redirect_to vehicle_path(@vehicle)
