@@ -100,7 +100,7 @@
             <div data-controller='update-status'>
               <h4 class="booking-card-status" data-update-status-target="status"><%= booking.status.capitalize %></h4>
               <% if @user == booking.vehicle.user && booking.status == "pending" %>
-                <div>
+                <div data-update-status-target="buttons">
                   <%= link_to "Accept",
                     accept_booking_path(booking),
                     data: { turbo_method: :patch,
