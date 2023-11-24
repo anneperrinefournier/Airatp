@@ -15,8 +15,8 @@ Booking.destroy_all
 Vehicle.all.each do |vehicle|
   vehicle.photo.purge
 end
-Vehicle.destroy_all
 User.destroy_all
+Vehicle.destroy_all
 
 p "destroyed- vehicles: #{Vehicle.all.count} - users:#{User.all.count}"
 p "destroyed- bookings:#{Booking.all.count}"
@@ -27,8 +27,18 @@ p User.count
 p "number of bookings"
 p Booking.count
 
-user = User.create!(email: 'john@example.com', password: 'password')
-renter = User.create!(email: 'renter@example.com', password: 'password2')
+frodon = User.new(email: 'frodon.sake@terredumilieu.com', password: 'password')
+# file = URI.open("https://static.wikia.nocookie.net/lotr/images/3/32/Frodo_%28FotR%29.png/revision/latest?cb=20221006065757")
+# user.photo.attach(io: file, filename: "frodon_saquet", content_type: 'image/jpg')
+frodon.save
+
+user = User.new(email: 'john@example.com', password: 'usermdp')
+user.save
+
+jack = User.new(email: 'jacksparrow@caraibes.com', password: 'jackmdp')
+# file = URI.open("https://scontent-cdg4-2.xx.fbcdn.net/v/t1.18169-9/11200805_10153889836504741_718631745012518813_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=be3454&_nc_ohc=SIm6mQwGOeUAX8XS_oN&_nc_ht=scontent-cdg4-2.xx&oh=00_AfDSAJFhsoeIpXtpudwtysW8j5FXcDaxntG46oltgvGOKw&oe=658824E7")
+# renter.photo.attach(io: file, filename: "jack_sparrow", content_type: 'image/jpg')
+jack.save
 
 fairy_wings = Vehicle.new(
   user: user,
@@ -63,7 +73,7 @@ nautilus.photo.attach(io: file, filename: "nautilus.png", content_type: "image/j
 nautilus.save
 
 vehicle = Vehicle.new(
-  user: user,
+  user: jack,
 	name: 'The Black Pearl Baby',
   vehicle_type: 'maritime',
   address: 'pont des arts paris',
@@ -399,51 +409,5 @@ tardis = Vehicle.new(
 file = URI.open("https://media.discordapp.net/attachments/1168489400993316946/1176463585518567424/bohemond8467_a_tardis_from_doctor_who_783e12e7-2c0d-43ab-9ed2-7d04c278889c.png?ex=656ef618&is=655c8118&hm=4d9901a1bae2cac9c21db717349e7a1ba4918dde37263d3ff15252e2773b5c30&=&format=webp&width=1038&height=1038")
 tardis.photo.attach(io: file, filename: "tardis.png", content_type: "image/jpg")
 tardis.save
-
-
-Booking.create!(
-  user: user,
-  vehicle: dragon,
-  start_date: Date.new(2023, 11, 22),
-  end_date: Date.new(2023, 11, 26),
-  total_price: 300,
-  status: 0
-)
-
-Booking.create!(
-  user: renter,
-  vehicle: fairy_wings,
-  start_date: Date.new(2023, 11, 20),
-  end_date: Date.new(2023, 11, 24),
-  total_price: 400,
-  status: 0
-)
-
-Booking.create!(
-  user: renter,
-  vehicle: nautilus,
-  start_date: Date.new(2023, 11, 22),
-  end_date: Date.new(2023, 11, 26),
-  total_price: 300,
-  status: 0
-)
-
-Booking.create!(
-  user: renter,
-  vehicle: tardis,
-  start_date: Date.new(2023, 11, 22),
-  end_date: Date.new(2023, 11, 26),
-  total_price: 300,
-  status: 0
-)
-
-Booking.create!(
-  user: renter,
-  vehicle: flying_carpet,
-  start_date: Date.new(2023, 11, 22),
-  end_date: Date.new(2023, 11, 26),
-  total_price: 300,
-  status: 0
-)
 
 p "created vehicles number - #{Vehicle.all.count} / user number #{User.all.count} / booking number #{Booking.all.count} "
