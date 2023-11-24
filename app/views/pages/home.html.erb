@@ -1,7 +1,7 @@
 <div class="header-background">
   <div class="container">
     <div class="row">
-      <div class="d-flex justify-content-between my-5">
+      <div class="d-flex justify-content-between align-items-start my-5">
         <div class="d-flex align-items-center m-10">
             <%= image_tag("airatp-logo.png", alt: "Logo Airatp", id: "logo-img") %>
           <div class="h1-position">
@@ -10,7 +10,7 @@
           </div>
         </div>
 
-        <div class="buttons-log-inline">
+        <div class="btns-log">
           <% if user_signed_in? %>
             <div class="nav-item dropdown">
               <%= image_tag "https://i.pinimg.com/474x/f3/24/08/f32408382ef9e9de1ef32ba0dc6ed007.jpg", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -20,10 +20,10 @@
               </div>
             </div>
           <% else %>
-            <div id="suscribe" class="btn">
+            <div class="suscribe">
               <%= link_to "Suscribe", new_user_registration_path, class: "links" %>
             </div>
-            <div id="connect" class="btn">
+            <div class="connect">
               <%= link_to "Connect", new_user_session_path, class: "links" %>
             </div>
           <% end %>
@@ -34,10 +34,15 @@
       <div class="row">
         <div class="col">
           <p>Welcome to Airatp, where extraordinary journeys begin! 🚀 </p>
-          <p>Explore a unique platform with legendary transports – from magical brooms to iconic Millennium Falcons. Choose your dream ride and bid farewell to fashionably late arrivals! More than a rental service, Airatp is a portal to unforgettable experiences.</p>
-          <p>Glide on a dragon or time-travel in a TARDIS. Our user-friendly platform lets you pick, choose, and start your adventure instantly. No more waiting – redefine travel with Airatp! ✨</p>
+          <p>Explore a unique platform with legendary transports – from magical brooms to iconic Millennium Falcons. Glide on a dragon or time-travel in a TARDIS. Pick, choose, and start your adventure instantly! No more waiting – redefine travel with Airatp! ✨</p>
+          <div class="btn-airatp-redpink">
+          <% if user_signed_in? %>
+            <%= link_to "Start your journey!", vehicles_path, class: "links" %>
+          <% else %>
+            <%= link_to "Start your journey!", new_user_session_path, class: "links" %>
+          <% end %>
+          </div>
         </div>
-        <%# <div class="col"><img class="img-header" src="https://i.ibb.co/nrMQrBQ/hippo.webp" alt="flying on a hippogriff"></div> %>
 
         <div class="col">
           <div id="mixup-images" class="d-flex">
