@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
 
     @booking.total_price = (@booking.end_date - @booking.start_date) * @vehicle.price_per_day
     if @booking.save!
-      redirect_to bookings_path, notice: 'Booking was successfully created.'
+      redirect_to dashboard_path, notice: 'Booking was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

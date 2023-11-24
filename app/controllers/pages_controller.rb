@@ -13,9 +13,11 @@ class PagesController < ApplicationController
 
   def accept_booking
     @booking = Booking.find(params[:id])
-    if current_user == @booking.vehicle.user && @booking.status == Status.pending
+    if current_user == @booking.vehicle.user && @booking.status == "pending"
       @booking.update(status: :validated)
-      redirect_to dashboard_path
+      render json:{
+        status: @booking.status.capitalize
+      }
     end
   end
 
@@ -23,7 +25,9 @@ class PagesController < ApplicationController
     @booking = Booking.find(params[:id])
     if current_user == @booking.vehicle.user && @booking.status == "pending"
       @booking.update(status: :refused)
-      redirect_to dashboard_path
+      render json:{
+        status: @booking.status.capitalize
+      }
     end
   end
 end

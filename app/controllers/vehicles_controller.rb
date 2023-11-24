@@ -2,6 +2,7 @@ class VehiclesController < ApplicationController
   before_action :set_vehicle, only: %i[show edit update destroy]
 
   def index
+
     if params[:vehicle_type].present? && params[:queryname].present? && params[:passengers_capacity].present?
       @vehicles = Vehicle.where("name ILIKE ?", "%#{params[:queryname]}%")
                          .merge(passengers_capacity_range)

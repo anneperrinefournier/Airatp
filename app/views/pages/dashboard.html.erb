@@ -22,23 +22,35 @@
   </div>
 
   <div data-dashboard-target="ownVehiclesInfo" class="d-none">
-    <h2>You own <strong><%= @user_vehicles.count %></strong> vehicles</h2>
+  <div class="title-own-vehicles d-flex justify-content-between">
+      <h2>You own <strong><%= @user_vehicles.count %></strong> vehicles</h2>
+      <%= link_to "Add a vehicle", new_vehicle_path, class: "btn-airatp-lightblue align-item-center" %>
+  </div>
     <div class="d-flex flex-wrap">
       <% @user_vehicles.order(:name).each do |vehicle| %>
         <div class="mb-4 p-2 dashboard-vehicle-card-container">
           <div class="dashboard-vehicle-card d-flex flex-column">
             <% if vehicle.photo.attached? %>
-              <div class="dashboard-vehicle-card-image d-flex align-items-center justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(vehicle.photo.key, alt: (vehicle.name + "-picture"), id: "vehicle-picture", crop: :fill) %>')">
-                <%= link_to vehicle.name, vehicle_path(vehicle), class:"dashboard-vehicle-card-title" %>
+              <div class="dashboard-vehicle-card-image d-flex justify-content-end" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(vehicle.photo.key, alt: (vehicle.name + "-picture"), id: "vehicle-picture", crop: :fill) %>')">
+                <%#= link_to vehicle.name, vehicle_path(vehicle), class:"dashboard-vehicle-card-title align-self-center" %>
+                <% if @user == vehicle.user %>
+                  <div class="d-flex justify-content-end dashboard-vehicle-buttons align-self-end">
+                    <%= link_to "Show vehicle", edit_vehicle_path(vehicle), class:"btn btn-secondary" %>
+                    <%= link_to "Edit vehicle", edit_vehicle_path(vehicle), class:"btn btn-primary" %>
+                    <%= link_to "Delete vehicle", vehicle_path(vehicle), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    },
+                    class:"btn btn-danger"%>
+                  </div>
+                <% end %>
               </div>
+              <div></div>
             <% else %>
               <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path('eaa35mokrpgg4yg15ngp', alt: (vehicle.name + "-picture"), id: "vehicle-picture", crop: :fill) %>')">
                 <h3 class="dashboard-vehicle-card-title"><%= vehicle.name %></h3>
               </div>
             <% end %>
-            <div class="dashboard-vehicle-card-infos flex-grow-1">
-              <%= vehicle.description %>
-            </div>
           </div>
         </div>
       <% end %>
@@ -68,7 +80,7 @@
             </div>
             <div>
               <p>rented by <%= booking.user.email %></p>
-              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+              <h4 class="booking-card-status"><%= booking.status %></h4>
             </div>
           </div>
         </div>
@@ -97,20 +109,18 @@
               <p>Start date: <%= booking.start_date %> End date: <%= booking.end_date %></p>
               <p>Your booking starts in <%= (booking.start_date - Date.today).to_i %> days</p>
             </div>
-            <div>
-              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+            <div data-controller='update-status'>
+              <h4 class="booking-card-status" data-update-status-target="status"><%= booking.status.capitalize %></h4>
               <% if @user == booking.vehicle.user && booking.status == "pending" %>
-                <div>
+                <div data-update-status-target="buttons">
                   <%= link_to "Accept",
                     accept_booking_path(booking),
                     data: { turbo_method: :patch,
-                    controller: 'update-status',
                     action: 'click->update-status#update' },
                     class:'btn btn-success' %>
                   <%= link_to "Reject",
                     reject_booking_path(booking),
                     data: { turbo_method: :patch,
-                    controller: 'update-status',
                     action: 'click->update-status#update' },
                     class:'btn btn-danger' %>
                 </div>
@@ -144,7 +154,7 @@
               <p>Your booking starts in <%= (booking.start_date - Date.today).to_i %> days</p>
             </div>
             <div>
-              <h4 class="booking-card-status"> Status: <%= booking.status %></h4>
+              <h4 class="booking-card-status"><%= booking.status %></h4>
             </div>
           </div>
         </div>
