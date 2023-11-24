@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 
-<div class="container mt-3" data-controller="total-price">
+<div class="container" data-controller="total-price">
   <% if @user == @vehicle.user %>
     <div class="d-flex justify-content-end">
       <%= link_to "Edit vehicle", edit_vehicle_path(@vehicle), class:"btn btn-primary" %>
@@ -42,7 +42,7 @@
 
   <div class="booking-info line">
     <h3 class="text-awesome" class="price-per-day">Total Price</h3>
-      <span  id="number_of_days_display"></span><h4 class="text-awesome" data-value = "days" data-total-price-target= "total" ></h4>
+      <h4 data-value = "days" data-total-price-target= "total" ></h4>
   </div>
 </div>
 
