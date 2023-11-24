@@ -289,7 +289,7 @@ vehicle.save
 vehicle = Vehicle.new(
   user: user,
   name: 'Mermaid Tail',
-  vehicle_type: 'terrestrial',
+  vehicle_type: 'maritime',
   address: '50 rue de vaugirard 75006 paris',
   passengers_capacity: 1,
   price_per_day: 50,

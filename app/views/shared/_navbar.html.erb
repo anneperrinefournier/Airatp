@@ -34,7 +34,7 @@
               <%= link_to "Spatial", vehicles_path(vehicle_type: "spatial"), class:"dropdown-item" %>
             </div>
           </li>
-
+          <%= text_field_tag :vehicle_type, params[:vehicle_type], class: "d-none" %>
           <div class="vertical-line-after-this input-width-small">
             <li class="nav-item active">
               <input  class="form-control nav-form-control"
