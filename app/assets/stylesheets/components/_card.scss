@@ -38,6 +38,13 @@
   object-position: center;
   /* Autres styles peuvent être ajoutés selon vos besoins */
 }
+.card-test-img-2 {
+  flex-shrink: 1;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* Autres styles peuvent être ajoutés selon vos besoins */
+}
 
 
 #card-test-modal {

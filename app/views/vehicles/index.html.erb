@@ -11,15 +11,15 @@
           <div class="p-3">
             <div class="card">
               <% if vehicle.photo.attached? %>
-                <%= cl_image_tag(vehicle.photo.key, height: 300, width: 400, crop: :fill) %>
+                <%= cl_image_tag(vehicle.photo.key, crop: :fill, class: "card-test-img-2", style: "height:100%") %>
               <% else %>
-                <%= cl_image_tag('/eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
+                <%= cl_image_tag('/eaa35mokrpgg4yg15ngp', crop: :fill, class: "card-test-img-2", style: "height:100%") %>
               <% end %>
               <div class="d-flex vehicle-description flex-column">
-                <div>
+                <div class="py-3">
                   <h3><%= vehicle.name %></h3>
                   <p>Capacity: <strong><%= vehicle.passengers_capacity %> <%= vehicle.passengers_capacity > 1 ? 'peoples' : 'person' %></strong></p>
-                  <p>Price: <strong><%= vehicle.price_per_day %>€/day</strong></p>
+                  <p>Price: <strong><%= vehicle.price_per_day.to_i %>€/day</strong></p>
                   <p>Vehicle type: <strong><%= vehicle.vehicle_type %></strong></p>
                   <p>Ecological label: <strong><%= vehicle.ecological_label %></strong></p>
                   <button class="filter-additional", id="modalTrigger">More details</button>
