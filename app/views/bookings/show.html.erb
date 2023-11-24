@@ -17,6 +17,7 @@
     <% else %>
       <%= cl_image_tag('eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
     <% end %>
+
   </div>
 
 
@@ -30,12 +31,12 @@
 
   </div>
   <div class="line p-3">
-    <h5> Cruising speed : <%= @booking.vehicle.cruising_speed%></h5>
-    <h5> Fuel type : <%= @booking.vehicle.fuel_type%></h5>
+    <h5> Cruising speed : <strong><%= @booking.vehicle.cruising_speed%></strong></h5>
+    <h5> Fuel type : <strong><%= @booking.vehicle.fuel_type%></strong></h5>
   </div>
 
 
 </div>
   <div class="my-3">
-  <%= link_to "Back to Dashboard", bookings_path, class: "btn btn-secondary" %>
+  <%= link_to "Back to Dashboard", bookings_path, class: "btn-airatp-lightblue" %>
   </div>

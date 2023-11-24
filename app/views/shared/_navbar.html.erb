@@ -13,6 +13,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <%= form_with class: "entire-form", url: vehicles_path, method: :get do %>
           <li class="nav-item dropdown">
             <% if params[:vehicle_type]%>
               <a class="nav-link dropdown-toggle" id="vehicleTypeNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,13 +35,17 @@
             </div>
           </li>
 
-          <%= form_with class: "entire-form", url: vehicles_path, method: :get do %>
           <div class="vertical-line-after-this input-width-small">
             <li class="nav-item active">
-                  <%= text_field_tag :start_date,
-                  params[:start_date],
+              <input  class="form-control nav-form-control"
+                      type="text"
+                      id="startDatePicker"
+                      placeholder="Select dates"
+                      data-controller="navbar-datepicker">
+                  <%#= text_field_tag :start_date,
+                      params[:start_date],
                         id: "startDatePicker",
-                        class: "form-control",
+                        class: "form-control nav-form-control",
                         data: { controller: "navbar_datepicker" },
                         placeholder: "Select dates"
                 %>
@@ -51,7 +56,7 @@
               <li class="nav-item active">
                 <%= text_field_tag :passengers_capacity,
                   params[:passengers_capacity],
-                  class: "form-control",
+                  class: "form-control nav-form-control",
                   placeholder: "How many passagers?"
                 %>
               </li>
@@ -62,7 +67,7 @@
               <li class="nav-item active">
                   <%= text_field_tag :queryname,
                     params[:queryname],
-                    class: "form-control",
+                    class: "form-control nav-form-control",
                     placeholder: "Search a vehicle"
                     %>
               </li>
@@ -79,7 +84,6 @@
 
     <div class="nav-end">
       <ul class="navbar-nav me-auto">
-      <div class="buttons-log">
         <% if user_signed_in? %>
               <div class="nav-item dropdown">
                 <%= image_tag "https://i.pinimg.com/474x/f3/24/08/f32408382ef9e9de1ef32ba0dc6ed007.jpg", class: "avatar-large dropdown-toggle", id: "profileNavbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -89,14 +93,15 @@
                 </div>
               </div>
             <% else %>
-              <div id="suscribe" class="btn">
+      <div class="btns-log">
+              <div class="suscribe">
                 <%= link_to "Suscribe", new_user_registration_path, class: "links" %>
               </div>
-              <div id="connect" class="btn">
+              <div class="connect">
                 <%= link_to "Connect", new_user_session_path, class: "links" %>
               </div>
-            <% end %>
          </div>
+            <% end %>
         </div>
       </ul>
     </div>

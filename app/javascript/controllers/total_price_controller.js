@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="total-price"
 export default class extends Controller {
-  static targets = ["total"];
+  static targets = ["total", "endDateInput"];
   static values = { days: Number }
 
   connect() {
@@ -14,6 +14,7 @@ export default class extends Controller {
       this.daysValue = daysDifference;
 
       this.calculateTotal();
+      this.toggleEndDateVisibility();
 
     });
   }
@@ -24,5 +25,9 @@ export default class extends Controller {
     const price = document.querySelector(".price-per-day").innerHTML;
     const total_price = day * price;
     this.totalTarget.textContent = `${day}x${price}=${total_price}€`;
+    this.totalTarget.classList.add('text-awesome');
+  }
+  toggleEndDateVisibility() {
+    this.endDateInputTarget.classList.remove("d-none");
   }
 }

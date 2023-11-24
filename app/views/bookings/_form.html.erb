@@ -1,16 +1,17 @@
 <div class="container my-5">
 
 
-<div class="container my-5">
+<div class="container my-5" data-controller="my-total-price">
 
   <%= simple_form_for([@vehicle, Booking.new], local: true) do |form| %>
-    <div id="number_of_days_placeholder"></div>
     <%= form.input :start_date, label: "Pick your dates", as: :string, input_html: {  data: { datepicker_target: "startDateInput" } } %>
+    <div >
 
-    <%= form.input :end_date, id: "booking_end_date", label: false, as: :string, input_html:  { class: "d-none", data: { datepicker_target: "endDateInput"} } %>
+    <%= form.input :end_date, id: "booking_end_date", label: false, as: :string, input_html:  { class: "d-none", data: { datepicker_target: "endDateInput", total_price_target: "endDateInput"} } %>
+    </div>
 
     <div class="actions my-3">
-      <%= form.button :submit, 'Book', id: "submitBtn", class: "btn btn-success" %>
+      <%= form.button :submit, 'Book', id: "submitBtn", class: "btn-airatp-redpink" %>
     </div>
   <% end %>
 </div>
