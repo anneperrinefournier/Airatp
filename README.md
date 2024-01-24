@@ -5,6 +5,7 @@ Plateforme de location de véhicules imaginaires de style Airbnb.
 Ce projet a été développé comme projet de fin de formation au Le Wagon, avec une équipe de 4 membres sur une période d’une semaine.
 
 Voir des images du projet [ici](https://troopl.com/anneperrinefournier/airatp).
+Voir le Figma du projet [ici](https://www.figma.com/file/CQilVg34ytKE5z9XZmLHUn/Airatp?type=design&node-id=9%3A34&mode=design&t=U102RpP9mPlywplD-1).
 
 ## Présentation du Projet
 
