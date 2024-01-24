@@ -1,6 +1,6 @@
 # Airatp – Plateforme de location de véhicules imaginaires de style Airbnb
 
-Ce projet a été développé comme projet de fin de formation au Le Wagon, avec une équipe de 4 membres sur une période d’une semaine. L’objectif était de créer un site web de type Airbnb spécifiquement dédié à la location de véhicules imaginaires.
+Ce projet a été développé comme projet de fin de formation au Le Wagon, avec une équipe de 4 membres sur une période d’une semaine. L’objectif était de créer un site web de type Airbnb spécifiquement dédié à la location de véhicules imaginaires.<br>
 Voir des images du projet [ici](https://troopl.com/anneperrinefournier/airatp))
 
 ## Présentation du Projet
