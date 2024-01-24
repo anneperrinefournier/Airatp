@@ -23,7 +23,6 @@ Airatp offre une plateforme permettant aux utilisateurs d'explorer et de louer u
 - **Calcul du prix :** Prix calculé en fonction de la période sélectionnée.
 - **Authentification Utilisateur :** Authentification sécurisée des utilisateurs pour la création et la gestion de leur compte.
 - **Tableau de bord des véhicules loués :** Pour accepter/refuser les demandes de location si on est le propriétaire, et pour suivre ses locations et leur statut (en attente/validé/refusé) si on est le loueur.
-- **Réservation d'un véhi
 
 # Comment Exécuter le Projet en Local
 
