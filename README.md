@@ -41,11 +41,7 @@ Airatp offre une plateforme permettant aux utilisateurs d'explorer et de louer u
 
 ## Contributeurs
 
-- **Anne-Perrine Fournier :** - Barre de navigation et de recherche, configuration du seed, flatpicker et système de réservation. Figma, html et css de la home, de la navigation et des composants récurrents.
+- **Anne-Perrine Fournier :** - Barre de navigation et de recherche, configuration du seed, flatpicker et système de réservation. Figma, html et css de la home, de la navigation, des composants récurrents, de l’index et de la show, modale.
 - **Alexis de Temmerman :** - Configuration de l’application, tableau de bord des véhicules loués, statut des véhicules (en attente/validé/refusé).
-- **Pierre-François Thomas :** - Configuration du seed, calcul du prix (JS), css et html de la page d'un véhicule.
-- **Henri Guillot** - Configuration de l’application, API mapbox, tableau de bord des véhicules loués.
-
-## Remerciements
-
-Nous tenons à remercier l’équipe du Le Wagon pour son soutien et ses enseignements tout au long de ce projet passionnant.
+- **Pierre-François Thomas :** - Configuration du seed, calcul du prix (JS).
+- **Henri Guillot** - Configuration de l’application, API mapbox, tableau de bord des véhicules loués, modale.
