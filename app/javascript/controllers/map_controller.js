@@ -8,15 +8,19 @@ export default class extends Controller {
   }
 
   connect() {
-    mapboxgl.accessToken = this.apiKeyValue
+    try {
+      mapboxgl.accessToken = this.apiKeyValue;
 
-    this.map = new mapboxgl.Map({
-      container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
-    })
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+      this.map = new mapboxgl.Map({
+        container: this.element,
+        style: "mapbox://styles/mapbox/streets-v10"
+      });
 
+      this.#addMarkersToMap();
+      this.#fitMapToMarkers();
+    } catch (error) {
+      console.error("Error connecting to Mapbox:", error);
+    }
   }
 
   #addMarkersToMap() {
