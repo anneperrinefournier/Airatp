@@ -5,7 +5,6 @@ import rangePlugin from "flatpickrRangePlugin";
 // Connects to data-controller="navbar-datepicker"
 export default class extends Controller {
   connect() {
-    console.log("coucou from navbar")
     const options = {
       minDate: "today",
       mode: "range",

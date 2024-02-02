@@ -1,0 +1,98 @@
+// CSS of the index view (all the vehicles)
+
+.h2-margin {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.col-vehicles {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.links-vehicle {
+  text-decoration: none;
+}
+
+.card-vehicle {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  font-family: 'Inter', 'sans-serif';
+
+  &:hover {
+    opacity: 0.8;
+    border: solid 2px $lightblue;
+  }
+}
+
+.card-image-size {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 300px;
+  // border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.vehicle-description {
+  padding: 10px;
+  text-decoration: none;
+  font-family: 'Inter', 'sans-serif';
+}
+
+// CSS of the show view (one vehicle)
+
+.vehicle-show-flex {
+  margin-top: 50px;
+  display: flex;
+  gap: 120px;
+}
+
+.vehicle-show-right {
+  flex: 1.5;
+  font-family: 'Inter', 'sans-serif';
+}
+
+.vehicle-show-img {
+  flex: 1.5;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.vehicle-show-description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-info {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.vehicle-booking-card {
+  display: flex;
+  gap: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 30px;
+  padding: 30px;
+
+  &:hover {
+    border: solid 2px $lightblue;
+  }
+}
+
+.line {
+  border-left: solid 2px $lightblue;
+  margin: 0px 50px;
+  padding: 0px 50px;
+}
