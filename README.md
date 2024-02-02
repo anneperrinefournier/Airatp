@@ -34,10 +34,10 @@ Airatp offre une plateforme permettant aux utilisateurs d'explorer et de louer u
 1. Clonez ce dépôt sur votre machine locale.
 2. Assurez-vous que Ruby on Rails est installé.
 3. Installez les dépendances avec la commande `bundle install`.
-4. Configurez les paramètres nécessaires, y compris les clés d'API, le cas échéant.
-5. Exécutez les migrations de base de données avec `rails db:migrate`.
-6. Lancez l'application avec `rails server`.
-7. Accédez à l'application dans votre navigateur à l'adresse `http://localhost:3000`.
+4. Créez un fichier .env et ajoutez-le à gitignore. Ajoutez les clés d'API Cloudinary et Mapbox dedans. Modifiez également cloud_name dans le fichier stockage.yml.
+6. Exécutez les migrations de base de données avec `rails db:migrate`.
+7. Lancez l'application avec `rails server`.
+8. Accédez à l'application dans votre navigateur à l'adresse `http://localhost:3000`.
 
 ## Contributeurs
 
