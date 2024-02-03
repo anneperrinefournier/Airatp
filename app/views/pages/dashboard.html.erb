@@ -71,14 +71,13 @@
       <% @user_bookings.order(:start_date).each do |booking| %>
         <div class="mb-4">
           <h3><%= booking.vehicle.name %> : starts in <%= (booking.start_date - Date.today).to_i %> days!</h3>
-          <div class="col-8 card-vehicle <%= Booking.status_color_class(booking.status) %>">
-            <%= link_to booking_path(booking), class: "links" do %>
+          <%= link_to booking_path(booking), class: "links" do %>
+            <div class="col-8 card-vehicle <%= Booking.status_color_class(booking.status) %>">
               <% if booking.vehicle.photo.attached? %>
                 <%= cl_image_tag(booking.vehicle.photo.key, alt: (booking.vehicle.name + "-picture"), class: "card-image-size", crop: :fill) %>
               <% else %>
                 <%= cl_image_tag('eaa35mokrpgg4yg15ngp', class: "card-image-size", crop: :fill) %>
               <% end %>
-            <% end %>
             <div class="vehicle-description">
               <h3><%= booking.vehicle.name %></h3>
               <p><strong>Start date:</strong> <%= booking.start_date %><br>
@@ -89,7 +88,8 @@
                   <p>rented by <%= booking.user.email %></p>
                 </div>
               </div>
-          </div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
