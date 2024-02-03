@@ -29,38 +29,36 @@
       </div>
     </div>
     <% @user_vehicles.order(:name).each do |vehicle| %>
-      <%= link_to vehicle_path(vehicle), class: "text-decoration-none" do %>
-        <div class="col-8 card-vehicle">
-          <div class="card-image-size">
-            <% if vehicle.photo.attached? %>
-              <%= cl_image_tag(vehicle.photo.key, alt: (vehicle.name + "-picture"), class: "card-image-size", crop: :fill) %>
-            <% else %>
-              <%= cl_image_tag('eaa35mokrpgg4yg15ngp', class: "card-image-size", crop: :fill) %>
-            <% end %>
-          </div>
-          <div class="vehicle-description">
-            <h3><%= vehicle.name %></h3>
-            <p>
-              <strong>Capacity:</strong> <%= vehicle.passengers_capacity %> <%= vehicle.passengers_capacity > 1 ? 'people' : 'person' %><br>
-              <strong>Price:</strong> <%= vehicle.price_per_day.to_i %>€/day<br>
-              <strong>Vehicle type:</strong> <%= vehicle.vehicle_type %><br>
-              <strong>Ecological label:</strong> <%= vehicle.ecological_label %>
-            </p>
-            <% if @user == vehicle.user %>
-              <div class="d-flex">
-                <div class="btn-airatp-dark-gray dashboard-margin-bottom me-3"><%= link_to "Show vehicle", vehicle_path(vehicle), class:"links" %></div>
-                <div class="btn-airatp-lightblue dashboard-margin-bottom me-3"><%= link_to "Edit vehicle", edit_vehicle_path(vehicle), class:"links" %></div>
-                <div class="btn-airatp-redpink dashboard-margin-bottom"><%= link_to "Delete vehicle", vehicle_path(vehicle), data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                },
-                class:"links"%>
-                </div>
-              </div>
-            <% end %>
-          </div>
+      <div class="col-8 card-vehicle">
+        <div class="card-image-size">
+          <% if vehicle.photo.attached? %>
+            <%= cl_image_tag(vehicle.photo.key, alt: (vehicle.name + "-picture"), class: "card-image-size", crop: :fill) %>
+          <% else %>
+            <%= cl_image_tag('eaa35mokrpgg4yg15ngp', class: "card-image-size", crop: :fill) %>
+          <% end %>
         </div>
-      <% end %>
+        <div class="vehicle-description">
+          <h3><%= vehicle.name %></h3>
+          <p>
+            <strong>Capacity:</strong> <%= vehicle.passengers_capacity %> <%= vehicle.passengers_capacity > 1 ? 'people' : 'person' %><br>
+            <strong>Price:</strong> <%= vehicle.price_per_day.to_i %>€/day<br>
+            <strong>Vehicle type:</strong> <%= vehicle.vehicle_type %><br>
+            <strong>Ecological label:</strong> <%= vehicle.ecological_label %>
+          </p>
+          <% if @user == vehicle.user %>
+            <div class="d-flex">
+              <div class="btn-airatp-dark-gray dashboard-margin-bottom me-3"><%= link_to "Show vehicle", vehicle_path(vehicle), class:"links" %></div>
+              <div class="btn-airatp-lightblue dashboard-margin-bottom me-3"><%= link_to "Edit vehicle", edit_vehicle_path(vehicle), class:"links" %></div>
+              <div class="btn-airatp-redpink dashboard-margin-bottom"><%= link_to "Delete vehicle", vehicle_path(vehicle), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              },
+              class:"links"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 
@@ -70,7 +68,7 @@
       </div>
       <% @user_bookings.order(:start_date).each do |booking| %>
         <div class="mb-4">
-          <h3><%= booking.vehicle.name %> : starts in <%= (booking.start_date - Date.today).to_i %> days!</h3>
+          <h3><%= booking.vehicle.name %> : starts in <%= (booking.start_date - Date.today).to_i %> day!</h3>
           <%= link_to booking_path(booking), class: "links" do %>
             <div class="col-8 card-vehicle <%= Booking.status_color_class(booking.status) %>">
               <% if booking.vehicle.photo.attached? %>
@@ -82,7 +80,7 @@
               <h3><%= booking.vehicle.name %></h3>
               <p><strong>Start date:</strong> <%= booking.start_date %><br>
               <strong>End date:</strong> <%= booking.end_date %></p>
-              <p>Your booking starts in <strong><%= (booking.start_date - Date.today).to_i %> days</strong></p>
+              <p>Your booking starts in <strong><%= (booking.start_date - Date.today).to_i %> day</strong></p>
                 <div class="booking-status-text-right">
                   <h4 class="booking-card-status"><%= booking.status %></h4>
                   <p>rented by <%= booking.user.email %></p>
