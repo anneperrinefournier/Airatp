@@ -41,7 +41,7 @@ Airatp offre une plateforme permettant aux utilisateurs d'explorer et de louer u
 
 ## Contributeurs
 
-- **Anne-Perrine Fournier :** - Barre de navigation et de recherche, configuration du seed, flatpicker et système de réservation. Figma, html et css de la home, de la navigation, des composants récurrents, de l’index et de la show, modale.
+- **Anne-Perrine Fournier :** - Barre de navigation et de recherche, configuration du seed, flatpicker et système de réservation. Figma, html et css de la home, de la navigation, des composants récurrents. Refonte html/css de toutes les pages (index et show des véhicules, dashboard et show du dashboard), refonte css/html et JS de la modale.
 - **Alexis de Temmerman :** - Configuration de l’application, tableau de bord des véhicules loués, statut des véhicules (en attente/validé/refusé).
 - **Pierre-François Thomas :** - Configuration du seed, calcul du prix (JS).
-- **Henri Guillot** - Configuration de l’application, API mapbox, tableau de bord des véhicules loués, modale.
+- **Henri Guillot** - Configuration de l’application, API mapbox, tableau de bord des véhicules loués, ancienne modale.
