@@ -3,11 +3,11 @@
 <div class="container footer-margin" data-controller="total-price">
   <% if @user == @vehicle.user %>
     <div class="d-flex gap-3">
-      <div class="btn-airatp-lightblue">
-        <%= link_to "Edit vehicle", edit_vehicle_path(@vehicle), class: "links" %>
+      <div>
+        <%= link_to "Edit vehicle", edit_vehicle_path(@vehicle), class: "btn-airatp-lightblue links" %>
       </div>
-      <div class="btn-airatp-redpink">
-        <%= link_to "Delete vehicle", vehicle_path(@vehicle), class: "links", data: {
+      <div>
+        <%= link_to "Delete vehicle", vehicle_path(@vehicle), class: "btn-airatp-redpink links", data: {
           turbo_method: :delete,
           turbo_confirm: "Are you sure?"
         } %>
@@ -35,6 +35,9 @@
             <%= render 'bookings/form', vehicle: @vehicle %>
         </div>
         </div>
+        <div class="my-5">
+        <%= link_to "Back to vehicles", vehicles_path, class: "btn-airatp-lightblue" %>
+      </div>
       </div>
     </div>
   </div>

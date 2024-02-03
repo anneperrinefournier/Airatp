@@ -1,42 +1,33 @@
 <%= render "shared/navbar" %>
 
-<br>
-
 <div class="container">
-  <div class="card-test">
-    <div class="card-info">
-      <h3 style="text-align: center"><%= @booking.vehicle.name %></h3>
-      <div class="center">
-       <i class="fa-solid fa-star">   4.9</i>
-       <i class="fa-solid fa-user-astronaut">      <%= @booking.vehicle.passengers_capacity%></i>
-      </div>
-      <p class="card-text mt-5"><%=@booking.vehicle.description%></p>
+  <div class="vehicle-show-flex">
+    <div class="vehicle-show-img">
+      <% if @booking.vehicle.photo.attached? %>
+        <%= cl_image_tag(@booking.vehicle.photo.key, crop: :fill, class: "vehicle-show-img") %>
+      <% else %>
+        <%= cl_image_tag('eaa35mokrpgg4yg15ngp', crop: :fill, class: "vehicle-show-img") %>
+      <% end %>
     </div>
-    <% if @booking.vehicle.photo.attached? %>
-      <%= cl_image_tag(@booking.vehicle.photo.key, height: 300, width: 400, crop: :fill) %>
-    <% else %>
-      <%= cl_image_tag('eaa35mokrpgg4yg15ngp', height: 300, width: 400, crop: :fill) %>
-    <% end %>
+    <div class="vehicle-show-right">
+      <h3><%= @booking.vehicle.name %>  4.9 <i class="fa-sharp fa-solid fa-star"></i></h3>
+      <i class="fa-solid fa-user"></i> <%= @booking.vehicle.passengers_capacity %><br>
+      <p class="vehicle-show-description"><%= @booking.vehicle.description %></p>
+      <strong>Cruising speed:</strong> <%= @booking.vehicle.cruising_speed.to_i %> km/h<br>
+      <strong>Fuel type:</strong> <%= @booking.vehicle.fuel_type %><br>
+      <strong>Ecological label:</strong> <%= @booking.vehicle.ecological_label %>
 
+      <div class="vehicle-booking-card">
+        <div>
+          <h3>Booking Details</h3>
+          <p><strong>Start Date:</strong> <%= @booking.start_date %><br>
+          <strong>End Date:</strong> <%= @booking.end_date %></p>
+          <h4>Total Price : <%= @booking.total_price.to_i %>€</h4>
+        </div>
+      </div>
+      <div class="my-5">
+        <%= link_to "Back to Dashboard", dashboard_path, class: "btn-airatp-lightblue" %>
+      </div>
+    </div>
   </div>
-
-
-<div class="booking">
-  <div class="booking-info my-4">
-
-    <h3>Booking Details</h3>
-    <h4 class="my-3">Total Price : <%= @booking.total_price.to_i %>€</h4>
-    <p>Start Date: <%= @booking.start_date %> </p>
-    <p> End Date: <%= @booking.end_date %></p>
-
-  </div>
-  <div class="line p-3">
-    <h5> Cruising speed : <strong><%= @booking.vehicle.cruising_speed.to_i%> km/h</strong></h5>
-    <h5> Fuel type : <strong><%= @booking.vehicle.fuel_type%></strong></h5>
-  </div>
-
-
 </div>
-  <div class="my-3">
-  <%= link_to "Back to Dashboard", bookings_path, class: "btn-airatp-lightblue" %>
-  </div>

@@ -1,4 +1,3 @@
-
 .booking-card-status {
   font-weight: bold;
 }
@@ -23,70 +22,5 @@
 .text-red {
   h4.booking-card-status {
     color: red;
-  }
-}
-
-.booking-card-infos {
-  text-decoration: none;
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-
-  & .booking-card-user {
-    text-decoration: none;
-    position: absolute;
-    right: 16px;
-    top: -20px;
-    width: 40px;
-  }
-}
-
-
-.dashboard-vehicle-card-container {
-  width: 40%;
-
-  .dashboard-vehicle-card {
-    overflow: hidden;
-    background: var(--white, #FFF);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: 2px solid #6BA7BF;
-    text-decoration: none;
-
-    & > div.dashboard-vehicle-card-image {
-      width: 100%;
-      height: 300px;
-      background-size: cover;
-      background-position: center;
-    }
-
-    & > h3.dashboard-vehicle-card-title {
-      color: white;
-    }
-
-    p {
-      font-size: 12px;
-      opacity: 0.7;
-      margin: 0;
-    }
-
-    .booking-card-infos {
-      text-decoration: none;
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      position: relative;
-
-      & .booking-card-user {
-        text-decoration: none;
-        position: absolute;
-        right: 16px;
-        top: -20px;
-        width: 40px;
-      }
-    }
   }
 }
