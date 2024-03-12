@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :vehicles, dependent: :destroy
 
   has_one_attached :photo, dependent: :destroy
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
